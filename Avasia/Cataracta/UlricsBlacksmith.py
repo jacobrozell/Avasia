@@ -19,9 +19,9 @@ def ulric_logic():
               """\n"As you know, he rents out fishing poles." """
               "\n"
               """\n"I bet you can find some pretty interesting stuff out there." """
-              """\n"I would love to be able to fish all day..." """
-              """\n"but there is always work to be done." """
-              """\n"Not that the work ever bothered me too bad. """
+              """\n"What I wouldn't give to be able to fish all day." """
+              """\n"But, there is always work to be done." """
+              """\n"Not that the work ever bothered me. """
               "\n"
               """\n"Now go bother my brother Doran at the pier." """
               "\n")
@@ -29,7 +29,10 @@ def ulric_logic():
         return "go back"
     else:
         print()
-        print(""" "Go see my brother. I need to back to work." """)
+        print(">>>Ulric's House<<<")
+        print()
+        print()
+        print(""" "Go bother my brother. I need to get back to work." """)
         print()
         return "go back"
 

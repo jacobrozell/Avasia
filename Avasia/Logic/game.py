@@ -2,22 +2,8 @@
 # Add more story -JR
 # Make next city - JR
 # Destroy all paths to cataracta - JR
-# Fix equip weapon - JR
-# Fix un-equip weapon -JR
 #
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
+# Change Combat to be outside of Cataracta and leave cataracta NOT destroyed?
 #
 # --------------------------------
 
@@ -27,37 +13,54 @@ from Avasia.Logic.Room_Storage import *
 # Util
 import Avasia.Logic.util as util
 import Avasia.Logic.config as config
-
 # ----------------------------------------------------------------
 
 
-def search_item(item):
-    item.replace(" ", "").title()
-    if item in config.player.inventory:
-        return item
-    else:
-        print("404: Item not found.")
-
-rooms_id = {}
+# READ COMMENTS FOR EXPLANATION OF WHAT IS GOING ON
 
 
+# Dictionary that holds every room
+# Its in Key Value pairs.
+# The unique id of the room points to the room itself
+# So instead of making importing the specific room every time we want to change, we can just point to its id
+all_rooms_id = {}
+
+
+# This is where the id get's set to the room itself.
 def register_area(room):
-    rooms_id[room.id] = room
+    all_rooms_id[room.id] = room
 
 
+# Where the magic truly happens:
 def mainloop():
     inventory = ["INVENTORY"]
-    equip = ["EQUIP"]
-    all_commands = ["INVENTORY", "EQUIP", "EAT"]
-    eat = ["EAT"]
+    all_commands = ["INVENTORY", "EAT", "DRINK"]
+    eat = ["EAT", "DRINK"]
     help = ["HELP", "COMMANDS"]
     current_room = None
+
     while True:
+
+        # Keep track of the old room if and only if there was an old room
         old_room_id = None if current_room is None else current_room.id
-        current_room = rooms_id[config.current_room_id]
+
+        # Current room = look for the id of th current room and return the room itself
+        current_room = all_rooms_id[config.current_room_id]
+
+        # does the room return anything?
+        # Such as "reload" or "go back"
         event_result = current_room.event()
-        if event_result == "reload":  # Room Conditional
+
+        # Reload skips over the "Which way would you like to investigate?" and reloads the room.
+        # If you don't reload between room changes (in certain cases)
+        # then the room A to room B will have the "which way would you..." in between switches
+
+        # ^^^^ You'll know this bug when you see it.
+        if event_result == "reload":
             continue
+
+        # return "go back" in a room to return to the old_room_id.
+        # This is useful for rooms that have no directions in them. (Don't go anywhere)
         elif event_result == "go back":
             config.current_room_id = old_room_id
             continue
@@ -66,53 +69,58 @@ def mainloop():
         command = input("Which way would you like to investigate?")
         command.upper()
 
+        # Show list of all commands
         if containsAny(command, help):
-            print(str(all_commands))
+            print(str(all_commands).replace("'", ""))
             print("Enter these anywhere!")
             print()
 
+        # Print the players inventory
         elif containsAny(command, inventory):
             print()
             config.player.printplayerinventory()
             print()
 
-        # Doesnt work yet.
-        elif containsAny(command, equip):
-            if len(config.player.inventory) == 0:
-                print("You have no items in your inventory.")
-                continue
-            print("Which item would you like to equip?")
+        # Eat food / drink potion:
+        elif containsAny(command, eat):
 
-            item = input(config.player.printplayerinventory())
-            item.upper()
-            nitem = search_item(item)
-            if nitem.type == "equipable":
+            if config.player.hp < config.player.maxhp:
 
-                if nitem.self == "weapon":
-                    config.player.equip_weapon(nitem)
-                else:
-                    print("THEN ITS ARMOR.")
-            else:
-                print("That item is not equipable!")
+                print("What item do you want to eat/drink?")
                 print()
 
-        # Doesnt work yet.
-        elif containsAny(command, eat):
-            if config.player.hp < config.player.maxhp:
-                print("What item do you want to eat?")
-                item = input(config.player.printplayerinventory())
-                nitem = search_item(item)
-                if nitem in config.player.inventory:
-                    if nitem.type == "edible":
-                        config.player.eat_food(nitem.restored_ammount)
+                # Get input for which item_id the user wants to eat/drink
+                itemToBeEaten = input(str(config.player.printplayerinventory()))
+
+                # Search for item_id and RETURN THE ITEM ITSELF and set it to item_object
+                item_object = config.player.return_item(itemToBeEaten)
+
+                # If the Item wasn't actually found:
+                if item_object == "false":
+                    print("Item not found!")
+                    print()
+                    continue
+
+                # We found the object but let's check and make sure the user isn't trying to eat gold or some shit
+                if item_object.type == "edible":
+                    config.player.eat_food(item_object.getAmt())
+                    print("Health restored by " + str(item_object.getAmt()) + "!")
+                    config.player.display_stats()
+                    print()
+
+            # Health is full
             else:
                 print()
                 print("Health is full!")
                 print()
 
         else:
+
+            # If the command isn't any of those... Then it must be a direction
+            # The direction function is found in Room Class
             current_room.direction(command)
             print()
+
 
 # To make a new room,
 # 1. you need to register it here,
@@ -120,6 +128,8 @@ def mainloop():
 # 3. make the room,
 # 4. and make sure you set the path in the directions in the room that leads to it.
 
+
+# When this inevitably gets super huge... Add new file and import the registers.
 register_area(southwest_c)
 register_area(althalos_house)
 register_area(southeast_c)
@@ -132,8 +142,12 @@ register_area(courtyard)
 register_area(hunter_path)
 register_area(west_cataracta)
 register_area(nGate)
+register_area(fishing_room)
+# -------------------------------------------------------------------------------
 
 
+# Call the intro()
+# Start the mainloop()
 util.intro()
 while True:
     mainloop()

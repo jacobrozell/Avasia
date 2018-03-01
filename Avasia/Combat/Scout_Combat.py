@@ -1,40 +1,47 @@
 from Avasia.Logic.Attack_Storage import *
 from Avasia.Logic.util import containsAny
 import Avasia.Logic.config as config
+from random import randrange
 
 
 def scout_combat():
-    print("An " + config.enemy_name + " appeared!")
-    print("The " + config.enemy_name + " has " + str(config.enemy_hp) + " health and " + str(
-        config.enemy_defense) + " defense!")
-    while config.enemy_hp > 0:
+    print("An " + config.enemy.getName() + " appeared!")
+    while config.enemy.getHp() > 0:
+
+        print()
+        config.enemy.display_stats()
+        config.player.display_stats()
+        print()
+
+        # Set Speed randomly every loop
+        tempplayerspeed = randrange(config.player.getSpeed(), config.player.getSpeed() * 2)
+        tempespeed = randrange(config.enemy.getSpeed(), config.enemy.getSpeed() * 2)
 
         # Multiple deaths form a list. Choose random -----------------------
-        if config.player_hp <= 0:
-            print("The " + config.enemy_name + " lays his mace into the side of your head.")
+        if config.player.getHp() <= 0:
+            print("The " + config.enemy.getName() + " lays his mace into the side of your head.")
             print("Everything goes black.")
             quit()
         # ------------------------------------------------------------------
-        elif config.enemy_hp <= 0:
-            print(config.enemy_name + " was defeated!")
+        elif config.enemy.getHp() <= 0:
+            print(config.enemy.getName() + " was defeated!")
             break
         else:
 
             # Enemy attacks first
-            if config.enemy_spd > config.player_spd:
+            if tempespeed > tempplayerspeed:
 
                 # Enemy Attack
                 print()
-                print("The " + config.enemy_name + " attacks first!")
+                print("The " + config.enemy.getName() + " attacks first!")
                 # config.player.take_hit(config.enemy_atk)
-                if config.enemy_atk <= config.player_defense:
+                if config.enemy.getAtk() <= config.player.getDef():
                     print("Your defense completely absorbs the blow!")
                     print()
                 else:
-                    config.player_hp -= config.enemy_atk - config.player_defense
-                    print("Your defense softens the blow by " + str(config.player_defense) + "!")
-                    print("You take " + str(config.enemy_atk - config.player_defense) + "!")
-                    print("Your health is now " + str(config.player_hp) + "!")
+                    amt = config.enemy.getAtk() - config.player.getDef()
+                    config.player.take_hit(amt)
+                    print("Your defense softens the blow by " + str(config.player.getDef()) + "!")
                     print()
 
                 print("Choose an attack!")
@@ -42,46 +49,47 @@ def scout_combat():
                 attack = input()
                 attack = attack.upper()
                 strik = ["SLASH"]
-                pounc = ["POUNCE"]
+                cla = ["CLAW"]
                 # Player attack
                 if containsAny(attack, strik):
                     slash()
-                elif containsAny(attack, pounc):
-                    pounce()
+                elif containsAny(attack, cla):
+                    claw()
+                else:
+                    print("Attack not found!")
+                    continue
 
             # Player attacks first
-            if config.player_spd > config.enemy_spd:
+            if tempplayerspeed >= tempespeed:
                 print()
                 print("Choose an attack!")
                 print(str(config.player.attacks))  # Class Variable
                 attack = input()
                 attack = attack.upper()
                 strik = ["SLASH"]
-                pounc = ["POUNCE"]
+                cla = ["CLAW"]
                 # Player attack
                 if containsAny(attack, strik):
                     slash()
-                elif containsAny(attack, pounc):
-                    pounce()
-
-                # config.player.choose_attack(attack)
-                # if False:
-                #    continue
+                elif containsAny(attack, cla):
+                    claw()
+                else:
+                    print("Attack not found!")
+                    continue
 
                 # Enemy Attack
                 print()
-                print("The " + config.enemy_name + " attacks first!")
+                print("The " + config.enemy.getName() + " attacks first!")
                 # config.player.take_hit(config.enemy_atk)
-                if config.enemy_atk <= config.player_defense:
+                if config.enemy.getAtk() <= config.player.getDef():
                     print("Your defense completely absorbs the blow!")
                     print()
                 else:
-                    config.player_hp -= config.enemy_atk - config.player_defense
-                    print("Your defense softens the blow by " + str(config.player_defense) + "!")
-                    print("You take " + str(config.enemy_atk - config.player_defense) + "!")
-                    print("Your health is now " + str(config.player_hp) + "!")
+                    amt = config.enemy.getAtk() - config.player.getDef()
+                    config.player.take_hit(amt)
+                    print("Your defense softens the blow by " + str(config.player.getDef()) + "!")
                     print()
 
     print()
-    print("The " + config.enemy_name + " has been defeated!")
+    print("The " + config.enemy.getName() + " has been defeated!")
     print()

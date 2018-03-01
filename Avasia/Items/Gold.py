@@ -8,8 +8,8 @@ class Gold:
     def gold_count(self):
         print("You have " + str(self.value) + " gold.")
 
-    def add_gold(self, ammount_to_add):
-        self.value += ammount_to_add
+    def add_gold(self, amount_to_add):
+        self.value += amount_to_add
 
     def subtract_gold(self, amt_to_sub):
         self.value -= amt_to_sub

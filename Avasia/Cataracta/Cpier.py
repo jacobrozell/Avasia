@@ -1,5 +1,4 @@
 from Avasia.Room.Room import *
-from Avasia.Cataracta.Fishing import fishing
 from Avasia.Logic.util import *
 
 
@@ -21,7 +20,7 @@ def pier_logic():
         print()
         ans.upper()
         yes = ["YES"]
-        no = ["NO"]
+        no = ["NO", "LEAVE"]
         if containsAny(ans, yes):
             if config.ulric == 0:
                 print(""" "Enjoy your time." """)
@@ -31,23 +30,24 @@ def pier_logic():
                 config.player_gold.gold_count()
                 print("You grab a fishing rod and bait from the wall and exit onto the pier.")
                 print()
-                fishing()
-                break
+                config.current_room_id = "fishing_id"
+                return "reload"
             if config.ulric == 1:
                 print(""" "Oh, you know my brother Ulric?" """)
                 print()
                 print(""" "He's always leading people over here to help the business out." """)
                 print(""" "I'll stick to the tradition this last time." """)
                 print(""" "Go ahead and enjoy your one free time!" """)
-                fishing()
-                config.ulric = 0
+                print()
+                config.current_room_id = "fishing_id"
+                config.ulric = 2
         elif containsAny(ans, no):
             print()
             print(""" "Oh, alright. Come back later!" """)
             print("You leave the pier.")
             print()
-            config.current_room_id = "southwest_c"
-            break
+            config.current_room_id = "southeast_c"
+            return "reload"
         else:
             print(""" "Yes or no, son?" """)
 

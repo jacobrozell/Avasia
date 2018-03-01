@@ -5,29 +5,28 @@ import Avasia.Logic.config as config
 
 # Standard attack stat
 def strike():
-    config.enemy_hp -= config.player_atk + config.enemy_defense
+    amt = config.player.getAtk() + config.enemy.getDef()
+    config.enemy.take_hit(amt)
     print()
     print("You use strike!")
-    print("The " + config.enemy_name + " took " + str(config.player_atk - config.enemy_defense) + " damage!")
-    print("The " + config.enemy_name + "'s defense softened the blow by " + str(config.enemy_defense) + "!")
-    print(config.enemy_name + " has " + str(config.enemy_hp) + " left!")
+    print("The " + config.enemy.getName() + " took " + str(config.player.getAtk() - config.enemy.getDef()) + " damage!")
+    print("The " + config.enemy.getName() + "'s defense softened the blow by " + str(config.enemy.getDef()) + "!")
     print()
 
 
 # lowers enemy defense by 5
 def pounce():
-    new_atk = config.player_atk - 5
+    new_atk = config.player.getAtk() - 5
     print()
     print("You use pounce!")
-    if config.enemy_defense > 0:
-        config.enemy_defense -= 5
-        print(config.enemy_name + " had his defense lowered to " + str(config.enemy_defense) + "!")
-    if config.enemy_defense == 0:
-        print(config.enemy_name + " can't have his defense lowered anymore!")
+    if config.enemy.getDef() > 0:
+        config.enemy.setDef(config.enemy.getDef() - 5)
+        print(config.enemy.getName() + " had his defense lowered to " + str(config.enemy.getDef()) + "!")
+    if config.enemy.getDef() == 0:
+        print(config.enemy.getName() + " can't have his defense lowered anymore!")
 
-    config.enemy_hp -= new_atk
-    print("The " + config.enemy_name + " took " + str(new_atk) + " damage!")
-    print(config.enemy_name + " has " + str(config.enemy_hp) + " left!")
+    config.enemy.take_hit(new_atk)
+    print("The " + config.enemy.getName() + " took " + str(new_atk) + " damage!")
     print()
 
 

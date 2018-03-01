@@ -11,5 +11,4 @@ from Avasia.Cataracta.NorthC import north_c
 from Avasia.Cataracta.HunterPath import hunter_path
 from Avasia.Cataracta.West import west_cataracta
 from Avasia.Cataracta.Ngate import nGate
-
-
+from Avasia.Cataracta.Fishing import fishing_room
