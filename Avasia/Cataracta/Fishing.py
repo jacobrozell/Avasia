@@ -68,6 +68,7 @@ def fishing():
                 print()
                 continue
 
+
             # Big fish
             if item == 6:
                 print("You fish up a " + Item_Storage.bigfish.name + "!")

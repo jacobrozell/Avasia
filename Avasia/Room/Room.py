@@ -11,6 +11,7 @@ class Room:
         self.on_enter = on_enter
 
     def event(self):
+        # This is a linking room
         if self.on_enter is None:
             print()
             print(">>>" + self.name + "<<<")
@@ -18,6 +19,7 @@ class Room:
             print()
             print(self.des)
         else:
+            # Logic Room
             return self.on_enter()
 
     def direction(self, command):

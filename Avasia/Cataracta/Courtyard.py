@@ -107,8 +107,6 @@ def courtyard_logic():
                                    name="Training Dummy")
 
             print("A " + training_dummy.name + " appears!")
-            # print("The training dummy has " + str(training_dummy.hp) + " health and " + str(
-            # training_dummy.defense) + " defense!")
 
             while training_dummy.hp > 0:
                 print()
@@ -462,7 +460,7 @@ def cataracta_battle():
     print("The man is dressed in black and purple robes.")
     print("As fighting breaks out all around you, the man levitates up and calls in a dark whisper "
           "that seems to stop the very movement of time.")
-    print(""" "People of Cataracta. Join us or die." """)
+    talk("People of Cataracta. Join us or die.")
     print()
     print("Many shouts of protests exit from your fellow druids.")
     print("The man laughs in such a way that sends shivers down your spine.")
@@ -493,17 +491,28 @@ def cataracta_battle():
     print()
     print(""" "Last chance." """)
     print()
-    print("You find yourself shouting protests along with all of your fellow Catarctan people.")
+    print("You find yourself shouting protests along with all of your fellow Cataractan people.")
     print("This is your purpose. To serve Kaefden. You serve your hometown.")
     print("You will fight or die.")
     print()
     config.enemy.setStats(nameIn="Agromanian Warrior",
-                          atkIn=10,
+                          atkIn=15,
                           defIn=10,
                           hpIn=90,
                           spdIn=7)
     combat()
     # Add Story
+    print()
+    print("With another foe slain, you looked around at the battle raging.")
+
+    print("Except there was no battle raging...")
+    print("You are surrounded.")
+    print("Swords point towards you.")
+    print("Vashirr floats to you.")
+
+    talk("Go tell your precious king that the Cataractan Army has failed. Before it even began.")
+
+    # config.current_room_id == nascastrum_portal
     # Remember to set current_room_id to something to avoid infinite loop!
 
 

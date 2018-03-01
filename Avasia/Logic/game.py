@@ -19,8 +19,8 @@ import Avasia.Logic.config as config
 # READ COMMENTS FOR EXPLANATION OF WHAT IS GOING ON
 
 
-# Dictionary that holds every room
-# Its in Key Value pairs.
+# Dictionary that holds every room object
+# Its in Key, Value pairs.
 # The unique id of the room points to the room itself
 # So instead of making importing the specific room every time we want to change, we can just point to its id
 all_rooms_id = {}
@@ -44,7 +44,7 @@ def mainloop():
         # Keep track of the old room if and only if there was an old room
         old_room_id = None if current_room is None else current_room.id
 
-        # Current room = look for the id of th current room and return the room itself
+        # Current room = look for the id of the current room and return the room itself
         current_room = all_rooms_id[config.current_room_id]
 
         # does the room return anything?
