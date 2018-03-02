@@ -15,6 +15,7 @@ def fishing():
     oldshoe = 0
     smallfish = 0
     bigfish = 0
+    crab = 0
     while True:
         bait -= 1
         print("It seems you have enough bait to last " + str(bait) + " casts.")
@@ -82,12 +83,23 @@ def fishing():
                 print("Whole lot of nothing...")
                 print()
 
+            if item == 7:
+               print("You fish up a " + Item_storage.crab.name + "!")
+                Item_Storage.crab.print_stats()
+                config.player.give_item(Item_Storage.crab)
+                print()
+                crab = 1
+                continue
+            if item == 7 and crab == 1:
+                print("Whole lot of nothing...")
+                print()
             # Catch Nothing
-            if item == 7 or item == 8 or item == 9 or item == 10:
+            if item == 8 or item == 9 or item == 10:
                 print("You fish up a heavy amount of seaweed.")
                 print("You throw it back over the pier.")
                 print()
                 continue
+
 
         elif containsAny(ans, no):
             print("You thank Doran and return the fishing pole.")

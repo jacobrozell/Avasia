@@ -3,7 +3,7 @@ from Avasia.Room.Room import *
 
 def ngAte():
     print("You can't leave Cataracta now!")
-    print("Enter the courtyard to start your training.")
+    print("Head over to the Legion's courtyard to begin your training.")
     print()
     return "go back"
 

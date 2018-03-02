@@ -9,8 +9,8 @@ def c_fountain_logic():
     print()
     print(
         "\n"
-        "\nAround the garden are young children playing while their parents socialize."
-        "\nIn front of you is a fountain made of the crystal, Anula."
+        "\nAround the garden are young druid children playing while their parents socialize."
+        "\nIn front of you is a fountain made of the blue crystal, Anula."
         "\nThe fountain is filled with gold pieces, scattered around the base, "
         "most of which are on tails."
         "\n")
