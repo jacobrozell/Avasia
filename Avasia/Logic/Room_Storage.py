@@ -17,4 +17,5 @@ from Avasia.Cataracta.Fishing import fishing_room
 
 # Nacastrum Castle
 from Avasia.Nacastrum_Castle.C_Portal_Room import c_portal_room
+from Avasia.Nacastrum_Castle.West_Hallway import west_hallway
 

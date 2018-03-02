@@ -5,8 +5,8 @@ from Avasia.Logic.util import *
 
 def c_fountain_logic():
     c_fountain.print_name()
-    print("Around the garden are young children playing while their parents socialize."
-        "\nIn front of you is a fountain made of the crystal, Anula."
+    print("Around the garden are young druid children playing while their parents socialize."
+        "\nIn front of you is a fountain made of the blue crystal, Anula."
         "\nThe fountain is filled with gold pieces, scattered around the base, "
         "most of which are on tails."
         "\n")

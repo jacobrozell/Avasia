@@ -1,6 +1,5 @@
 import Avasia.Logic.config as config
 import Avasia.Logic.Item_Storage as item
-from Avasia.Player.PlayerClass import Player
 
 
 def containsAny(string, options):
@@ -19,13 +18,14 @@ def intro():
     print("---------Avasia: Sword of Courage---------")
     print()
     print()
-    print("History: It's been 7 years since Vashirr betrayed Kaefden."
-          "\nThe Agromanians have remained idle since the attack on Oceandale."
-          "\nNacastrum is still being rebuilt with the diligent leadership of its new king."
-          "\nRecently, news was brought to King Kaefden that Vashirr is teaching Agromanians magic."
-          "\nWith this knowledge, King Kaefden has begun to recruit an army to stand up against the Agromanians."
-          "\n\nYou are a druid living in the great city of Cataracta."
-          "\nCataracta's king is recruiting an army for the upcoming war and your name was the first on the list."
+    print("It has been 7 years since Vashirr, the old king of Nacastrum, betrayed Avasia."
+          "\nThe Agromanians, a vicious people of the northwest, have remained idle since their attack on Oceandale."
+          "\nNacastrum, the city of the Mage, is still being rebuilt under the diligent leadership of its new king."
+          "\nRecently, news was brought to King Kaefden IV that Vashirr is teaching Agromanians magic."
+          "\nWith this knowledge, King Kaefden IV has begun to recruit an army to march on the Agromanians before they have a chance to muster."
+          "\n\nYou are a druid living in the peaceful city of Cataracta."
+          "\nCataracta has formed a pact with the people of Aylova to join the fight when the time comes."
+          "\nTh leader of Cataracta is drafting an army for the upcoming war and you have decided to volunteer."
           "\nThis is where your story begins..."
           "\n")
     print("\n"
@@ -48,9 +48,9 @@ def intro():
     print(">>>" + config.player.getName() + "'s House<<<")
     print()
     print()
-    print("Today is the day you join the Cataractan Army."
-          "\nYou'll have to make your way to the courtyard to begin training."
-          "\nYou collect your belongings and leave your home with a new sense of duty to your fellow Cataractan.")
+    print("Today is the day you join Cataracta's Legion."
+          "\nTo join, you must head to the Legion's courtyard."
+          "\nYou collect your belongings and leave your home with a sense of pride.")
     config.player_gold.add_gold(100)
     config.player.give_item(item.potion)
     print()

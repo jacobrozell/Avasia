@@ -1,4 +1,4 @@
-from Avasia.Logic.util import *
+import Avasia.Logic.util as util
 import Avasia.Logic.config as config
 import Avasia.Logic.Item_Storage as Item_Storage
 from random import randint
@@ -13,6 +13,7 @@ def fishing():
     oldshoe = 0
     smallfish = 0
     bigfish = 0
+    crab = 0
     while True:
         bait -= 1
         print("It seems you have enough bait to last " + str(bait) + " casts.")
@@ -28,8 +29,8 @@ def fishing():
         print()
         ans.upper()
         y = ["YES", "Y"]
-        no = ["NO", "N"]
-        if containsAny(ans, y):
+        n = ["NO", "N"]
+        if util.containsAny(ans, y):
             item = randint(1, 10)
 
             # Old shoe
@@ -80,14 +81,24 @@ def fishing():
                 print("Whole lot of nothing...")
                 print()
 
+            if item == 7:
+                print("You fish up a " + Item_Storage.crab.name + "!")
+                Item_Storage.crab.print_stats()
+                config.player.give_item(Item_Storage.crab)
+                print()
+                crab = 1
+                continue
+            if item == 7 and crab == 1:
+                print("Whole lot of nothing...")
+                print()
             # Catch Nothing
-            if item == 7 or item == 8 or item == 9 or item == 10:
+            if item == 8 or item == 9 or item == 10:
                 print("You fish up a heavy amount of seaweed.")
                 print("You throw it back over the pier.")
                 print()
                 continue
 
-        elif containsAny(ans, no):
+        elif util.containsAny(ans, n):
             print("You thank Doran and return the fishing pole.")
             print("You leave the pier.")
             print()

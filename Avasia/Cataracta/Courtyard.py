@@ -1,22 +1,27 @@
 from Avasia.Room.Room import *
 from Avasia.Logic.util import *
+from Avasia.Logic.config import *
 from Avasia.Enemy.EnemyClass import Enemy
 from Avasia.Combat.CombatLogic import combat
 
 
 def courtyard_logic():
-    if config.courtyard == 1:
-        return "go back"
-    config.courtyard = 1
     courtyard.print_name()
-    talk("Good Morning and welcome.")
-    talk("My name is Cellious.")
-    talk("You're here because Kaefden needs an army.")
-    talk("I'm sure word has gotten around...")
-    talk("A group of former Agromanians have escaped from Krothgar.")
-    talk("They set aside our differences and they warned us.")
-    talk("Vashirr, the former King of Nacastrum, is training an army of magic-wielding warriors.")
-    talk("This is a threat unlike anything we have ever seen.")
+    print("You make your way to the Cataractan Legion's courtyard to begin your training.")
+    print("A large group of people are standing around three men who seem to be giving a speech.")
+    print()
+    print("One of the men speaks out in a loud booming voice.")
+    print()
+    talk("Greetings, men and women, welcome.")
+    talk("My name is Cellious, I am the leader of the Pridestalkers, commonly known as the hunters.")
+    talk("You are all here because Cataracta needs an army.")
+    talk("I'm sure word has gotten around.")
+    talk("A group of former Agromanians have fled Krothgar and turned against their people for the greater good.")
+    talk("They set aside their differences and they warned the people of Aylova.")
+    talk("Vashirr, the former King of Nacastrum, is forming an army of magic-wielding warriors.")
+    talk("Most of you know how to defend yourselves and have no problem fighting the beasts that threaten us daily.")
+    talk("But these marauders are unlike anything we've ever seen.")
+    talk("Enough talk, it is time we hone your skills to fight when the time comes.")
     print()
     talk("We will begin training based of what your speciality is.")
     talk("I need Hunters with me; Scouts with Dentros; Guardians with Acustos.")
@@ -27,7 +32,7 @@ def courtyard_logic():
         hunter = ["HUNTER"]
         scout = ["SCOUT"]
         guardian = ["GUARDIAN"]
-        user_class = input("Which class are you apart of?")
+        user_class = input("What class are you?") #we should have a explanation as to what class is what and stuff here.
         user_class = user_class.upper()
 
         if containsAny(user_class, hunter):
@@ -475,6 +480,7 @@ def cataracta_battle():
 
     print()
 
+    config.player.hp = config.player.maxhp
     # Need level stat and exp Stat - Jacob 10-26-17
     print("You gain 1000 exp points!")
     print("You grow to level 2!")
@@ -524,15 +530,28 @@ def cataracta_battle():
     print("The entire city is in ashes.")
     print()
     print("You feel a feeling of sorrow and pulsing anger.")
+    print("You start walking, mostly out of instinct.")
+    # add imagery
+    print("After a while, you find yourself at the ruined gates of the once Great Cataractan Castle.")
+    print("You walk the anula filled hallway, to the throne room.")
+    print("King Kimious lies dead in the floor.")
+    print()
+    talk("What hope is there against a force such as this?")
+    print()
+    print("You suddenly remember the portal to Nacastrum.")
+    print("After Nacastrum was betrayed by it's king, Vashirr, portals were added in the major cities for quick access.")
+    print("The Agromanians must have killed everyone in the castle before teleporting to the courtyard.")
+    print("If not, allies from Nacastrum and Aylova alike would have swarmed the castle.")
+    print()
+    print("You decide that you need to send word of Cataracta's fall to the Keafden.")
+    print("The quickest way to the Kaefden Capital, Aylova, is to take the portal in Nacastrum.")
+    print("And the quickest way to Nacastrum is through the portal that links the cities.")
+    print()
+    # add shit
+    print("You step through the portal.")
 
-    # fix that ^^
-
-    print("You remember the portal to Nacastrum.")
-
-    print("GO TO PORTAL/ TAKE PORTAL")
-
-
-    # config.current_room_id == nascastrum_portal
+    config.current_room_id = "c_portal_room"
+    return "reload"
     # Remember to set current_room_id to something to avoid infinite loop!
 
 

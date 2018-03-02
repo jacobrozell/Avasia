@@ -143,6 +143,7 @@ register_area(west_cataracta)
 register_area(nGate)
 register_area(fishing_room)
 register_area(c_portal_room)
+register_area(west_hallway)
 # -------------------------------------------------------------------------------
 
 
