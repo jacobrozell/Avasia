@@ -23,10 +23,13 @@ potion = Food(name="Potion",
               restored_amount=10,
               value=25,
               id="potion")
+
 # ------------------------Junk----------------------------
 oldshoe = Junk(name="Old-shoe",
                des="An old shoe covered in mud and seaweed.",
                value=2,
                id="oldshoe")
+
+# ------------------------Artifact Weapon----------------------------
 
 

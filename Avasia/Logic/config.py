@@ -36,4 +36,3 @@ player = Player(name="",
 player_gold = Gold(name="Gold",
                    des="Shiny gold coins.",
                    value=0)
-

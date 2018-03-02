@@ -26,7 +26,7 @@ def pier_logic():
                 print(""" "Enjoy your time." """)
                 print()
                 print("You pay Doran 15 gold.")
-                config.player_gold.value -= 15
+                config.player_gold.subtract_gold(15)
                 config.player_gold.gold_count()
                 print("You grab a fishing rod and bait from the wall and exit onto the pier.")
                 print()
@@ -41,6 +41,7 @@ def pier_logic():
                 print()
                 config.current_room_id = "fishing_id"
                 config.ulric = 2
+                return "reload"
         elif containsAny(ans, no):
             print()
             print(""" "Oh, alright. Come back later!" """)

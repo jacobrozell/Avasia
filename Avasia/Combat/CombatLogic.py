@@ -8,7 +8,9 @@ import Avasia.Logic.config as config
 def combat():
     if config.player.class_id == "hunter":
         hunter_combat()
+
     elif config.player.class_id == "scout":
         scout_combat()
+
     else:
         guardian_combat()

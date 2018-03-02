@@ -46,7 +46,7 @@ def hunter_combat():
                     print()
 
                 print("Choose an attack!")
-                print(str(config.player.attacks))  # Class Variable
+                print(str(config.player.attacks))
                 attack = input()
                 attack = attack.upper()
                 strik = ["STRIKE"]

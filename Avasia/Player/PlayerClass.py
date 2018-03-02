@@ -52,25 +52,6 @@ class Player:
             print("You don't have that attack!")
             return False
 
-    def equip_weapon(self, weapon):
-        if weapon in self.inventory:
-            self.atk += weapon.atk
-            print("You equipped " + str(weapon) + "!")
-        else:
-            print("You don't have that item.")
-            if len(self.equipped_weapon) > 0:
-                print("You have " + str(self.equipped_weapon) + " equipped!")
-            else:
-                print("You have no weapon equipped.")
-
-    def unequip_weapon(self, weapon):
-        if weapon in self.equipped_weapon:
-            self.atk -= weapon.atk
-            self.equipped_weapon.pop(weapon)
-        else:
-            print("That weapon isn't equipped!")
-            print("You have " + str(self.equipped_weapon) + " equipped!")
-
     def eat_food(self, ammount):
         self.hp += ammount
         if self.hp > self.maxhp:
