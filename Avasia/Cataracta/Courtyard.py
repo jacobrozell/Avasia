@@ -12,14 +12,21 @@ def courtyard_logic():
     print(">>>Training Courtyard<<<")
     print()
     print()
-    talk("Good Morning and welcome.")
-    talk("My name is Cellious.")
-    talk("You're here because Kaefden needs an army.")
-    talk("I'm sure word has gotten around...")
-    talk("A group of former Agromanians have escaped from Krothgar.")
-    talk("They set aside our differences and they warned us.")
-    talk("Vashirr, the former King of Nacastrum, is training an army of magic-wielding warriors.")
-    talk("This is a threat unlike anything we have ever seen.")
+    print("You make your way to the Cataractan Legion's courtyard to begin your training.")
+    print("A large group of people are standing around three men who seem to be giving a speech.")
+    print()
+    print("One of the men speaks out in a loud booming voice.")
+    print()
+    talk("Greetings, men and women, welcome.")
+    talk("My name is Cellious, I am the leader of the Pridestalkers, commonly known as the hunters.")
+    talk("You are all here because Cataracta needs an army.")
+    talk("I'm sure word has gotten around.")
+    talk("A group of former Agromanians have fleed Krothgar and turned against their people for the greater good.")
+    talk("They set aside their differences and they warned the people of Aylova.")
+    talk("Vashirr, the former King of Nacastrum, is forming an army of magic-wielding warriors.")
+    talk("Most of you know how to defend yourselves and have no problem fighting the beasts that threaten us daily.")
+    talk("But these marauders are unlike anything we've ever seen.")
+    talk("Enough talk, it is time we hone your skills to fight when the time comes.")
     print()
     talk("We will begin training based of what your speciality is.")
     talk("I need Hunters with me; Scouts with Dentros; Guardians with Acustos.")
@@ -30,7 +37,7 @@ def courtyard_logic():
         hunter = ["HUNTER"]
         scout = ["SCOUT"]
         guardian = ["GUARDIAN"]
-        user_class = input("Which class are you apart of?")
+        user_class = input("What class are you?") #we should have a explanation as to what class is what and stuff here.
         user_class = user_class.upper()
 
         if containsAny(user_class, hunter):

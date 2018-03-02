@@ -7,15 +7,21 @@ def pier_logic():
     print(">>>Doran's Pier<<<")
     print()
     print()
-    print("You enter into a fishing hut along side the river.")
-    print("Smells of fresh fish and bait penetrate into your nostrils.")
+    print("You enter the fishing hut posted along side the Varatho river.")
+    print("The hut reeks of fish and bait.")
     print("Various fishing poles line the walls in all shapes, sizes, and colors.")
     print()
-    print("Doran, the owner, calls from behind the counter with a gruff, almost agitated voice.")
-    print(""" "Hello. I'm Doran. Welcome to the my pier. """)
+    print("Doran, who appears to be the owner, hears you enter and calls from a back room with a rough, agitated voice.")
+    talk("Oi! Whatya be doin' in my hut?")
     print()
+    print("You explain that you saw the pier and wanted to take a closer look.")
+    print()
+    print(" ""Hmm.."" Doran hums before responding. ""I don't allow many people to come visit."" ")
+    talk("To many of these landfolk don't have any appreciation for the river or my pier.")
     while True:
-        print("""\n"Would you like to fish for the price of 15 gold? You can keep whatever you find." """)
+        talk("Perhaps for a few gold, you can take a look. Think of it as insurance.")
+        talk("I'll even let you borrow a fishing rod and some bait.")
+        talk("What do ye say? 15 gold?")
         ans = input()
         print()
         ans.upper()
@@ -23,34 +29,42 @@ def pier_logic():
         no = ["NO", "LEAVE"]
         if containsAny(ans, yes):
             if config.ulric == 0:
-                print(""" "Enjoy your time." """)
+                print("")
                 print()
                 print("You pay Doran 15 gold.")
                 config.player_gold.subtract_gold(15)
                 config.player_gold.gold_count()
-                print("You grab a fishing rod and bait from the wall and exit onto the pier.")
+                print("He hands you an old fishing rod and some bait then points toward the door to the pier.")
                 print()
+                talk("Becareful not to fall in the river.")
+                talk("Varatho ain't a kind beast to those who swim her rapids.")
                 config.current_room_id = "fishing_id"
                 return "reload"
             if config.ulric == 1:
-                print(""" "Oh, you know my brother Ulric?" """)
+                print("You explain to Doran that his brother, Ulric, sent you.")
                 print()
-                print(""" "He's always leading people over here to help the business out." """)
-                print(""" "I'll stick to the tradition this last time." """)
-                print(""" "Go ahead and enjoy your one free time!" """)
+                talk("Ay', you spoke to Ulric, did ye?")
+                talk("He's always leading people over here to 'help the business out', as he puts it.")
+                talk("I think he sends 'em here so he isn't bothered.")
+                talk("I'm sure he told you that I'd let you borrow a fishing pole to fish for a bit.")
+                talk("Fine, here. Go ahead. Just make sure you're kind to the river and don't ruin my pier!")
+                print()
+                print("Doran hands you an old fishing rod and some bait then points you towards the door to the pier.")
                 print()
                 config.current_room_id = "fishing_id"
                 config.ulric = 2
                 return "reload"
         elif containsAny(ans, no):
             print()
-            print(""" "Oh, alright. Come back later!" """)
+            talk("Then what're you doin' standin' around here for?")
+            talk("You change your mind, you come see me.")
+            print()
             print("You leave the pier.")
             print()
             config.current_room_id = "southeast_c"
             return "reload"
         else:
-            print(""" "Yes or no, son?" """)
+            print("I don't understand")
 
 
 c_pier = Room(name="", des="", id="c_pier", directions="", on_enter=pier_logic)

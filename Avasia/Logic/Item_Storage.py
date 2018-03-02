@@ -24,6 +24,12 @@ potion = Food(name="Potion",
               value=25,
               id="potion")
 
+crab = Food(name="Crab",
+            des="When consumed, it restores 15 hp.",
+            restored_amount=15,
+            value=15,
+            id="crab")
+
 # ------------------------Junk----------------------------
 oldshoe = Junk(name="Old-shoe",
                des="An old shoe covered in mud and seaweed.",
