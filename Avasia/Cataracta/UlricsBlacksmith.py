@@ -4,10 +4,7 @@ import Avasia.Logic.config as config
 
 def ulric_logic():
     if config.ulric == 0:
-        print()
-        print(">>>Ulric's House<<<")
-        print()
-        print()
+        ulric_house.print_name()
         print(
             "You go south to Ulric's Blacksmith, a small building, with clutters of metal and materials everywhere.")
         print("You approach Ulric, who is sitting on the steps of his house.")
@@ -36,6 +33,6 @@ def ulric_logic():
         print()
         return "go back"
 
-ulric_house = Room(name="", des="", id="ulric_house", directions="", on_enter=ulric_logic)
+ulric_house = Room(name="Ulric's House", des="", id="ulric_house", directions="", on_enter=ulric_logic)
 
 

@@ -8,10 +8,7 @@ def courtyard_logic():
     if config.courtyard == 1:
         return "go back"
     config.courtyard = 1
-    print()
-    print(">>>Training Courtyard<<<")
-    print()
-    print()
+    courtyard.print_name()
     talk("Good Morning and welcome.")
     talk("My name is Cellious.")
     talk("You're here because Kaefden needs an army.")
@@ -506,15 +503,38 @@ def cataracta_battle():
     print("With another foe slain, you looked around at the battle raging.")
 
     print("Except there was no battle raging...")
-    print("You are surrounded.")
-    print("Swords point towards you.")
-    print("Vashirr floats to you.")
-
+    print("Cataractan allies lie dead all around you.")
+    print("Swords, axes, and spears alike all glimmer in the sunlight.")
+    print("You are utterly surrounded.\n")
+    print("The man in the purple robes chuckles maliciously.")
+    talk("Stand down, warriors.")
+    print("He walks slowly over to you.\n")
     talk("Go tell your precious king that the Cataractan Army has failed. Before it even began.")
+    talk("Tell him that Vashirr sent you.")
+    print("Vashirr ushers an order to an Agromanian.")
+    print("As the Agromanian approaches you, you try to stand and fight, but something is holding you back.")
+    print("Vashirr smiles as you figure out that he is muttering a holding spell.")
+    print("The agromanian roars as he smacks you with the handle of his axe.")
+    print("------------------------------------------------------------------------------------------------")
+    print()
+    print()
+    print()
+    print("You stumble up off the ground and immediately smell blood and smoke. ")
+    print("You look to the Cataractan castle. Now in flames and rubble.")
+    print("The entire city is in ashes.")
+    print()
+    print("You feel a feeling of sorrow and pulsing anger.")
+
+    # fix that ^^
+
+    print("You remember the portal to Nacastrum.")
+
+    print("GO TO PORTAL/ TAKE PORTAL")
+
 
     # config.current_room_id == nascastrum_portal
     # Remember to set current_room_id to something to avoid infinite loop!
 
 
-courtyard = Room(name="", des="", id="courtyard", directions="", on_enter=courtyard_logic)
+courtyard = Room(name="Courtyard", des="", id="courtyard", directions="", on_enter=courtyard_logic)
 

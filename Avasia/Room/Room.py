@@ -22,6 +22,12 @@ class Room:
             # Logic Room
             return self.on_enter()
 
+    def print_name(self):
+        print()
+        print(">>>" + self.name + "<<<")
+        print()
+        print()
+
     def direction(self, command):
         north = ["NORTH"]
         east = ["EAST"]

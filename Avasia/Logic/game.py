@@ -70,19 +70,19 @@ def mainloop():
         command.upper()
 
         # Show list of all commands
-        if containsAny(command, help):
+        if util.containsAny(command, help):
             print(str(all_commands).replace("'", ""))
             print("Enter these anywhere!")
             print()
 
         # Print the players inventory
-        elif containsAny(command, inventory):
+        elif util.containsAny(command, inventory):
             print()
             config.player.printplayerinventory()
             print()
 
         # Eat food / drink potion:
-        elif containsAny(command, eat):
+        elif util.containsAny(command, eat):
 
             if config.player.hp < config.player.maxhp:
 
@@ -129,7 +129,6 @@ def mainloop():
 # 4. and make sure you set the path in the directions in the room that leads to it.
 
 
-# When this inevitably gets super huge... Add new file and import the registers.
 register_area(southwest_c)
 register_area(althalos_house)
 register_area(southeast_c)
@@ -143,6 +142,7 @@ register_area(hunter_path)
 register_area(west_cataracta)
 register_area(nGate)
 register_area(fishing_room)
+register_area(c_portal_room)
 # -------------------------------------------------------------------------------
 
 

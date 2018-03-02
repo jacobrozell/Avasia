@@ -3,10 +3,7 @@ from Avasia.Logic.util import *
 
 
 def pier_logic():
-    print()
-    print(">>>Doran's Pier<<<")
-    print()
-    print()
+    c_pier.print_name()
     print("You enter into a fishing hut along side the river.")
     print("Smells of fresh fish and bait penetrate into your nostrils.")
     print("Various fishing poles line the walls in all shapes, sizes, and colors.")
@@ -53,4 +50,4 @@ def pier_logic():
             print(""" "Yes or no, son?" """)
 
 
-c_pier = Room(name="", des="", id="c_pier", directions="", on_enter=pier_logic)
+c_pier = Room(name="Doran's Pier", des="", id="c_pier", directions="", on_enter=pier_logic)

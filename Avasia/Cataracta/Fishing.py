@@ -6,9 +6,7 @@ from Avasia.Room.Room import Room
 
 
 def fishing():
-    print()
-    print(">>>Fishing<<<")
-    print()
+    fishing_room.print_name()
     print("You see the rippling water surrounding you.")
     print("You feel the cool breeze of you the wind over the water.")
     bait = randint(4, 7)
@@ -97,4 +95,4 @@ def fishing():
         else:
             print()
 
-fishing_room = Room(name="", des="", id="fishing_id", directions="", on_enter=fishing)
+fishing_room = Room(name="Fishing", des="", id="fishing_id", directions="", on_enter=fishing)

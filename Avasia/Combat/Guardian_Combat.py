@@ -88,6 +88,7 @@ def guardian_combat():
                     amt = config.enemy.getAtk() - config.player.getDef()
                     config.player.take_hit(amt)
                     print("Your defense softens the blow by " + str(config.player.getDef()) + "!")
+
                     print()
     print()
     print("The " + config.enemy.getName() + " has been defeated!")

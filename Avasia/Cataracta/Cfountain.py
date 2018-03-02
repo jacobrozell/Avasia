@@ -4,12 +4,8 @@ from Avasia.Logic.util import *
 
 
 def c_fountain_logic():
-    print()
-    print(">>>Castle Gardens<<<")
-    print()
-    print(
-        "\n"
-        "\nAround the garden are young children playing while their parents socialize."
+    c_fountain.print_name()
+    print("Around the garden are young children playing while their parents socialize."
         "\nIn front of you is a fountain made of the crystal, Anula."
         "\nThe fountain is filled with gold pieces, scattered around the base, "
         "most of which are on tails."
@@ -51,6 +47,6 @@ def c_fountain_logic():
             return "go back"
 
 
-c_fountain = Room(name="", des="", id="c_fountain", directions="", on_enter=c_fountain_logic)
+c_fountain = Room(name="Castle Garden", des="", id="c_fountain", directions="", on_enter=c_fountain_logic)
 
 
