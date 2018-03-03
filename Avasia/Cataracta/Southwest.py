@@ -1,4 +1,4 @@
-from Avasia.Room.Room import *
+from Avasia.Room.Room import Room
 
 
 southwest_c = Room(name="Southwest Cataracta",

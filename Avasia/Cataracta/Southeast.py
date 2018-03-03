@@ -1,4 +1,4 @@
-from Avasia.Room.Room import *
+from Avasia.Room.Room import Room
 
 southeast_c = Room(name="Southeast Cataracta",
                    des="To the NORTH, a pier stretches out over the river."

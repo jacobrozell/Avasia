@@ -1,8 +1,8 @@
-from Avasia.Room.Room import *
-from Avasia.Logic.util import *
-from Avasia.Logic.config import *
+from Avasia.Room.Room import Room
+import Avasia.Logic.config as config
 from Avasia.Enemy.EnemyClass import Enemy
 from Avasia.Combat.CombatLogic import combat
+from Avasia.Logic.util import talk
 
 
 def courtyard_logic():
@@ -431,6 +431,8 @@ def courtyard_logic():
             break
 
     cataracta_battle()
+    config.current_room_id = "c_portal_room"
+    return "reload"
 
 
 def cataracta_battle():
@@ -547,12 +549,14 @@ def cataracta_battle():
     print("The quickest way to the Kaefden Capital, Aylova, is to take the portal in Nacastrum.")
     print("And the quickest way to Nacastrum is through the portal that links the cities.")
     print()
-    # add shit
+    print("You walk through the blood stained halls and find the portal room.")
+    print("The portal is a 8 ft spherical void in the center of the room.")
+    print("It radiates blue and red light that bounce off the stone walls.")
+    print()
+    print("You will avenge your city.")
+    print("You will avenge your brethren.")
+    print("Your journey truly begins at this exact moment.")
     print("You step through the portal.")
-
-    config.current_room_id = "c_portal_room"
-    return "reload"
-    # Remember to set current_room_id to something to avoid infinite loop!
 
 
 courtyard = Room(name="Courtyard", des="", id="courtyard", directions="", on_enter=courtyard_logic)

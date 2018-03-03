@@ -1,5 +1,6 @@
-from Avasia.Room.Room import *
-from Avasia.Logic.util import *
+from Avasia.Room.Room import Room
+from Avasia.Logic.util import talk, containsAny
+import Avasia.Logic.config as config
 
 
 def pier_logic():
@@ -27,8 +28,6 @@ def pier_logic():
         no = ["NO", "LEAVE"]
         if containsAny(ans, yes):
             if config.ulric == 0:
-                print("")
-                print()
                 print("You pay Doran 15 gold.")
                 config.player_gold.subtract_gold(15)
                 config.player_gold.gold_count()

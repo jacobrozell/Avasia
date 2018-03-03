@@ -1,6 +1,3 @@
-from Avasia.Logic.util import *
-import Avasia.Logic.config
-
 
 class Player:
     def __init__(self, atk, spd, hp, defense, name, class_id):

@@ -1,5 +1,3 @@
-import Avasia.Player.PlayerClass as player
-
 
 class Food:
     def __init__(self, name, des, restored_amount, value, id):

@@ -14,10 +14,12 @@ def fishing():
     smallfish = 0
     bigfish = 0
     crab = 0
+    keepgoing = False
     while True:
-        bait -= 1
-        print("It seems you have enough bait to last " + str(bait) + " casts.")
-        print()
+        if keepgoing:
+            bait -= 1
+            print("It seems you have enough bait to last " + str(bait) + " casts.")
+            print()
 
         # When you run out of bait
         if bait == 0:
@@ -25,6 +27,7 @@ def fishing():
             print()
             return "go back"
 
+        keepgoing = False
         ans = input("Throw your cast in the water?")
         print()
         ans.upper()
@@ -40,7 +43,6 @@ def fishing():
                 config.player.give_item(Item_Storage.oldshoe)
                 print()
                 oldshoe = 1
-                continue
 
             if item == 1 and oldshoe == 1:
                 print("Whole lot of nothing...")
@@ -53,7 +55,7 @@ def fishing():
                 config.player.give_item(Item_Storage.smallfish)
                 print()
                 smallfish = 1
-                continue
+
             if item == 2 and smallfish == 1:
                 print("Whole lot of nothing...")
 
@@ -65,8 +67,6 @@ def fishing():
                 config.player_gold.add_gold(amount)
                 config.player_gold.gold_count()
                 print()
-                continue
-
 
             # Big fish
             if item == 6:
@@ -75,7 +75,6 @@ def fishing():
                 config.player.give_item(Item_Storage.bigfish)
                 print()
                 bigfish = 1
-                continue
 
             if item == 6 and bigfish == 1:
                 print("Whole lot of nothing...")
@@ -87,7 +86,7 @@ def fishing():
                 config.player.give_item(Item_Storage.crab)
                 print()
                 crab = 1
-                continue
+
             if item == 7 and crab == 1:
                 print("Whole lot of nothing...")
                 print()
@@ -96,7 +95,8 @@ def fishing():
                 print("You fish up a heavy amount of seaweed.")
                 print("You throw it back over the pier.")
                 print()
-                continue
+
+            keepgoing = True
 
         elif util.containsAny(ans, n):
             print("You thank Doran and return the fishing pole.")
@@ -104,6 +104,6 @@ def fishing():
             print()
             return "go back"
         else:
-            print()
+            print("Invalid Command")
 
 fishing_room = Room(name="Fishing", des="", id="fishing_id", directions="", on_enter=fishing)

@@ -1,4 +1,4 @@
-from Avasia.Room.Room import *
+from Avasia.Room.Room import Room
 
 
 def hunter_path():

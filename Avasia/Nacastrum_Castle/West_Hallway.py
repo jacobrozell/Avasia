@@ -1,4 +1,4 @@
-from Avasia.Room.Room import *
+from Avasia.Room.Room import Room
 
 
 west_hallway = Room(name="West Castle Hallway",

@@ -1,4 +1,5 @@
-from Avasia.Room.Room import *
+from Avasia.Room.Room import Room
+from Avasia.Logic.util import talk
 
 
 def portal_logic():

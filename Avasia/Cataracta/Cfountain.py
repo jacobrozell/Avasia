@@ -1,6 +1,7 @@
-from Avasia.Room.Room import *
+from Avasia.Room.Room import Room
 from random import randint
-from Avasia.Logic.util import *
+from Avasia.Logic.util import containsAny, talk
+import Avasia.Logic.config as config
 
 
 def c_fountain_logic():
@@ -20,13 +21,13 @@ def c_fountain_logic():
             roll = randint(0, 1)
             print()
             if roll == 0:
-                config.player_gold -= 1
+                config.player_gold.subtract_gold(1)
                 print("You toss a gold piece into the water and it lands on tails.")
                 print("Nothing happens.")
                 print()
                 config.fountain = 1
             if roll == 1:
-                config.player_gold -= 1
+                config.player_gold.subtract_gold(1)
                 print("You toss a gold piece into the water and it lands on heads!")
                 print("Nothing happens.")
                 print()

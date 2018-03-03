@@ -1,4 +1,4 @@
-from Avasia.Logic.util import *
+from Avasia.Logic.util import containsAny
 import Avasia.Logic.config as config
 
 

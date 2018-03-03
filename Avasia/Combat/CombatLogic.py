@@ -1,7 +1,6 @@
-from Avasia.Logic.Attack_Storage import *
-from Avasia.Combat.Hunter_Combat import *
-from Avasia.Combat.Guardian_Combat import *
-from Avasia.Combat.Scout_Combat import *
+from Avasia.Combat.Hunter_Combat import hunter_combat
+from Avasia.Combat.Guardian_Combat import guardian_combat
+from Avasia.Combat.Scout_Combat import scout_combat
 import Avasia.Logic.config as config
 
 
