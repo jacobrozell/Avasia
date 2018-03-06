@@ -1,4 +1,3 @@
-from Avasia.Logic.util import *
 from random import randint
 from math import floor
 
@@ -144,28 +143,22 @@ class Player:
 
     def scout_levelUp(self):
         if self.player_level == 2 or self.player_level == 3:
-            self.maxAtk += 10
+            self.maxAtk += 5
             self.maxDef += 3
-            self.maxSpd += 2
-            self.maxHp += 5
-            self.maxLuck -= 1
-        elif self.player_level == 4:
+            self.maxSpd += 5
+            self.maxHp += 10
+            # self.maxLuck -= 1
+
+        elif self.player_level == 4 or self.player_level == 5:
             self.maxAtk += 10
             self.maxDef += 4
-            self.maxSpd += 3
+            self.maxSpd += 8
             self.maxHp += 10
-            self.maxLuck -= 2
-        elif self.player_level == 5:
-            self.maxAtk += 10
-            self.maxDef += 5
-            self.maxSpd += 4
-            self.maxHp += 15
-            self.maxLuck -= 2
         self.resetStats()
 
     def hunter_levelUp(self):
         if self.player_level == 2 or self.player_level == 3:
-            self.maxAtk += 10
+            self.maxAtk += 8
             self.maxDef += 3
             self.maxSpd += 2
             self.maxHp += 5
@@ -185,7 +178,28 @@ class Player:
         self.resetStats()
 
     def guardian_levelUp(self):
-        pass
+        if self.player_level == 2 or self.player_level == 3:
+            self.maxAtk += 5
+            self.maxDef += 3
+            self.maxSpd += 3
+            self.maxHp += 10
+            self.maxLuck -= 1
+
+        elif self.player_level == 4:
+            self.maxAtk += 8
+            self.maxDef += 4
+            self.maxSpd += 4
+            self.maxHp += 10
+            self.maxLuck -= 2
+
+        elif self.player_level == 5:
+            self.maxAtk += 10
+            self.maxDef += 5
+            self.maxSpd += 5
+            self.maxHp += 15
+            self.maxLuck -= 2
+
+        self.resetStats()
 
     # Getters and Setters
     
