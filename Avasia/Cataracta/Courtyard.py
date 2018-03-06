@@ -2,7 +2,7 @@ from Avasia.Room.Room import Room
 import Avasia.Logic.config as config
 from Avasia.Enemy.EnemyClass import Enemy
 from Avasia.Combat.CombatLogic import combat
-from Avasia.Logic.util import talk
+from Avasia.Logic.util import talk, containsAny
 
 
 def courtyard_logic():
@@ -24,39 +24,97 @@ def courtyard_logic():
     talk("Enough talk, it is time we hone your skills to fight when the time comes.")
     print()
     talk("We will begin training based of what your speciality is.")
+    print()
+
+    # Introduce Classes
+    talk("Hunters are known as Pridestalkers. They use the aspect of the Wolf.")
+    talk("Scouts are known as HSDISHDKSDSKSHAKSD. They use the aspect of the Fox.")
+    talk("Guardians are known as Blueguards. They use the aspect of the Bear.")
+    print()
     talk("I need Hunters with me; Scouts with Dentros; Guardians with Acustos.")
     talk("You know who you are.")
     print()
-    x = 1
-    while x == 1:
+    while True:
         hunter = ["HUNTER"]
         scout = ["SCOUT"]
         guardian = ["GUARDIAN"]
-        user_class = input("What class are you?") #we should have a explanation as to what class is what and stuff here.
+        user_class = input("What class are you? (Hunter, Scout, Guardian)")
         user_class = user_class.upper()
 
         if containsAny(user_class, hunter):
+            # Attack
             config.player.setAtk(20)
+            config.player.setMaxAtk(20)
+
+            # Defense
             config.player.setDef(5)
+            config.player.setMaxDef(5)
+
+            # Speed
             config.player.setSpeed(10)
-            config.player.setHp(65)
+            config.player.setMaxSpeed(10)
+
+            # Luck
+            config.player.setLuck(15)
+            config.player.setMaxLuck(15)
+
+            # Hp
+            config.player.setHp(80)
+            config.player.setMaxHp(80)
+
             config.player.setClass("hunter")
+            config.player.addForm("Wolf")
+
             break
 
         elif containsAny(user_class, scout):
-            config.player.setAtk(15)
-            config.player.setDef(10)
-            config.player.setSpeed(20)
-            config.player.setHp(50)
+            # Attack
+            config.player.setAtk(10)
+            config.player.setMaxAtk(10)
+
+            # Defense
+            config.player.setDef(5)
+            config.player.setMaxDef(5)
+
+            # Speed
+            config.player.setSpeed(25)
+            config.player.setMaxSpeed(25)
+
+            # Luck
+            config.player.setLuck(5)
+            config.player.setMaxLuck(5)
+
+            # Hp
+            config.player.setHp(75)
+            config.player.setMaxHp(75)
+
             config.player.setClass("scout")
+            config.player.addForm("Fox")
             break
 
         elif containsAny(user_class, guardian):
-            config.player.setAtk(15)
+            # Attack
+            config.player.setAtk(5)
+            config.player.setMaxAtk(5)
+
+            # Defense
             config.player.setDef(15)
-            config.player.setSpeed(5)
-            config.player.setHp(100)
+            config.player.setMaxDef(15)
+
+            # Speed
+            config.player.setSpeed(0)
+            config.player.setMaxSpeed(0)
+
+            # Luck
+            config.player.setLuck(10)
+            config.player.setMaxLuck(10)
+
+            # Hp
+            config.player.setHp(80)
+            config.player.setMaxHp(80)
+
             config.player.setClass("guardian")
+            config.player.addForm("Bear")
             break
 
         else:
@@ -97,8 +155,8 @@ def courtyard_logic():
             talk("Your marking is unique only to you, much like a fingerprint.")
             talk("Though we all appear slightly different, we will fight as brothers and sisters of Cataracta.")
             print()
-            talk("We will start with a simple attack called 'strike'.")
-            talk("Slash will do your attack stat on the target.")
+            talk("We will start with a simple attack called 'bite'.")
+            talk("'Bite' will just do your attack stat on the target.")
             talk("Keep in mind some enemies have a defense stat that will soften the blow of your attack.")
             talk("Try this attack out on this training dummy.")
             print()
@@ -114,16 +172,16 @@ def courtyard_logic():
                 print()
                 training_dummy.display_stats()
                 config.player.display_stats()
-                attacks = ["STRIKE"]
+                attacks = ["BITE"]
                 print()
                 print("Which attack do you want to use?")
                 ans = input(str(attacks))
                 print()
                 ans.upper()
-                slash = ["STRIKE"]
+                slash = ["BITE", "B"]
                 if containsAny(ans, slash):
                     training_dummy.take_hit(config.player.getAtk())
-                    print("You use strike!")
+                    print("You use BITE!")
                     print("The " + training_dummy.name + " took " + str(config.player.getAtk()) + " damage!")
                     print("The " + training_dummy.name + "'s defense softened the blow by " + str(training_dummy.defense) +"!")
                     print(training_dummy.name + " has " + str(training_dummy.hp) + " left!")
@@ -134,57 +192,10 @@ def courtyard_logic():
             print("You killed " + training_dummy.name + "!")
             print()
             talk("Nicely done!")
-            talk("As you can see 'strike' just simply does your attack stat on the target.")
+            talk("As you can see 'bite' just simply does your attack stat on the target.")
             talk("Not all attacks are this simple.")
-            talk("Take 'pounce' for example.")
-            talk("This attack hits the target for a reduced attack but lowers the enemies defense.")
-            talk("Let's try it out.")
             print()
-
-            td = Enemy(atk=0,
-                       defense=5,
-                       spd=0,
-                       hp=50,
-                       name="Training Dummy")
-
-            print("A " + td.name + " appears!")
-            while td.hp > 0:
-                print()
-                td.display_stats()
-                config.player.display_stats()
-                attacks = ["POUNCE"]
-                print()
-                print("Which attack do you want to use?")
-                ans = input(str(attacks))
-                print()
-                ans.upper()
-                pounce = ["POUNCE"]
-                if containsAny(ans, pounce):
-                    new_atk = config.player.getAtk() - 5
-                    print("You use pounce!")
-                    if td.defense > 0:
-                        td.defense -= 5
-                        print(td.name + " had his defense lowered to " + str(td.defense) + "!")
-                    elif td.defense == 0:
-                        print(td.name + " can't have his defense lowered anymore!")
-
-                    td.take_hit(config.player.getAtk() - 5)
-                    print("The " + td.name + " took " + str(new_atk) + " damage!")
-                    print(td.name + " has " + str(td.hp) + " left!")
-                    print()
-
-            # Add attacks to Attacks[]
-            config.player.add_attack("strike")
-            config.player.add_attack("pounce")
-            print()
-            print("You learned 'STRIKE and 'POUNCE'!")
-            print("'STRIKE' and 'POUNCE' were added to your attacks!")
-            print()
-            talk("Great job!")
-            talk("Remember, you can only have up to 4 attacks registered at one time.")
-            print()
-            print()
-            talk("Well, next we are going to...")
+            talk("For example, next we are going to...")
             print()
             break
 
@@ -218,7 +229,7 @@ def courtyard_logic():
             talk("Your marking is unique only to you, much like a fingerprint.")
             talk("Though we all appear slightly different, we will fight as brothers and sisters of Cataracta.")
             print()
-            talk("We will start with a simple attack called 'slash'.")
+            talk("We will start with a simple attack called 'claw'.")
             talk("Strike will do your attack stat on the target.")
             talk("Keep in mind some enemies have a defense stat that will soften the blow of your attack.")
             talk("Try this attack out on this training dummy.")
@@ -236,15 +247,15 @@ def courtyard_logic():
                 training_dummy.display_stats()
                 config.player.display_stats()
                 print()
-                attacks = ["SLASH"]
+                attacks = ["CLAW"]
                 print("Which attack do you want to use?")
                 ans = input(str(attacks))
                 print()
                 ans.upper()
-                strike = ["SLASH"]
+                strike = ["CLAW", "C"]
                 if containsAny(ans, strike):
                     training_dummy.take_hit(config.player.getAtk())
-                    print("You use slash!")
+                    print("You use claw!")
                     print("The " + training_dummy.name + " took " + str(config.player.getAtk()) + " damage!")
                     print("The " + training_dummy.name + "'s defense softened the blow by " + str(training_dummy.defense) +"!")
                     print(training_dummy.name + " has " + str(training_dummy.hp) + " left!")
@@ -255,58 +266,10 @@ def courtyard_logic():
             print("You killed " + training_dummy.name + "!")
             print()
             talk("Nicely done!")
-            talk("As you can see 'slash' just simply does your attack stat on the target.")
+            talk("As you can see 'claw' just simply does your attack stat on the target.")
             talk("Not all attacks are this simple.")
-            talk("Take 'claw' for example.")
-            talk("This attack hits the target for a reduced attack but lowers the enemies defense.")
-            talk("Let's try it out.")
             print()
-
-            td = Enemy(atk=0,
-                       defense=5,
-                       spd=0,
-                       hp=50,
-                       name="Training Dummy")
-
-            print("A " + td.name + " appears!")
-            print("The training dummy has " + str(td.hp)
-                    + " health and " + str(td.defense) + " defense!")
-            while td.hp > 0:
-                print()
-                td.display_stats()
-                config.player.display_stats()
-                print()
-                attacks = ["CLAW"]
-                print("Which attack do you want to use?")
-                ans = input(str(attacks))
-                print()
-                ans.upper()
-                pounce = ["CLAW"]
-                if containsAny(ans, pounce):
-                    new_atk = config.player.getAtk() - 5
-                    print("You use claw!")
-                    if td.defense > 0:
-                        td.defense -= 5
-                        print(td.name + " had his defense lowered to " + str(td.defense) + "!")
-                    elif td.defense == 0:
-                        print(td.name + " can't have his defense lowered anymore!")
-
-                    td.take_hit(config.player.getAtk() - 5)
-                    print("The " + td.name + " took " + str(new_atk) + " damage!")
-                    print()
-
-            # Add attacks to Attacks[]
-            config.player.add_attack("slash")
-            config.player.add_attack("claw")
-            print()
-            print("You learned 'SLASH' and 'CLAW'!")
-            print("'SLASH' and 'CLAW' were added to your attacks!")
-            print()
-            talk("Great job!")
-            talk("Remember, you can only have up to 4 attacks registered at one time.")
-            print()
-            print()
-            talk("Well, next we are going to...")
+            talk("For example, next we are going to...")
             print()
             break
 
@@ -343,7 +306,6 @@ def courtyard_logic():
             talk("Swipe will do your attack stat on the target.")
             talk("Keep in mind some enemies have a defense stat that will soften the blow of your attack.")
             talk("Try this attack out on this training dummy.")
-            print()
             training_dummy = Enemy(atk=0,
                                    defense=5,
                                    spd=0,
@@ -362,8 +324,8 @@ def courtyard_logic():
                 ans = input(str(attacks))
                 print()
                 ans.upper()
-                swipe = ["SWIPE"]
-                if containsAny(ans, swipe):
+                strike = ["SWIPE", "S"]
+                if containsAny(ans, strike):
                     training_dummy.take_hit(config.player.getAtk())
                     print("You use swipe!")
                     print("The " + training_dummy.name + " took " + str(config.player.getAtk()) + " damage!")
@@ -379,54 +341,8 @@ def courtyard_logic():
             talk("Nicely done!")
             talk("As you can see 'swipe' just simply does your attack stat on the target.")
             talk("Not all attacks are this simple.")
-            talk("Take 'bite' for example.")
-            talk("This attack hits the target for a reduced attack but lowers the enemies defense.")
-            talk("Let's try it out.")
             print()
-            td = Enemy(atk=0,
-                       defense=5,
-                       spd=0,
-                       hp=50,
-                       name="Training Dummy")
-
-            print("A " + td.name + " appears!")
-            print("The training dummy has " + str(td.hp)
-                  + " health and " + str(td.defense) + " defense!")
-            while td.hp > 0:
-                print()
-                td.display_stats()
-                config.player.display_stats()
-                print()
-                attacks = ["BITE"]
-                print("Which attack do you want to use?")
-                ans = input(str(attacks))
-                print()
-                ans.upper()
-                BITE = ["BITE"]
-                if containsAny(ans, BITE):
-                    new_atk = config.player.getAtk() - 5
-                    print("You use bite!")
-                    if td.defense > 0:
-                        td.defense -= 5
-                        print(td.name + " had his defense lowered to " + str(td.defense) + "!")
-                    elif td.defense == 0:
-                        print(td.name + " can't have his defense lowered anymore!")
-
-                    td.take_hit(config.player.getAtk() - 5)
-                    print("The " + td.name + " took " + str(new_atk) + " damage!")
-                    print(td.name + " has " + str(td.hp) + " left!")
-                    print()
-            config.player.add_attack("swipe")
-            config.player.add_attack("bite")
-            print()
-            print("You learned 'SWIPE' and 'BITE'!")
-            print("'SWIPE' and 'BITE' were added to your attacks!")
-            print()
-            talk("Great job!")
-            talk("Remember, you can only have up to 4 attacks registered at one time.")
-            print()
-            print()
-            talk("Well, next we are going to...")
+            talk("For example, next we are going to...")
             print()
             break
 
@@ -471,21 +387,22 @@ def cataracta_battle():
     print("An Agromanian approaches you, with his weapon drawn, ready to strike you down.")
     print()
 
-    # Always set new stats for enemy before combat!!!!
+    # Always set stats for enemy before combat!!!!
     config.enemy.setStats(nameIn="Agromanian Grunt",
                           atkIn=15,
                           defIn=5,
                           hpIn=60,
-                          spdIn=9)
-    # Done!!!
-    combat()
+                          spdIn=9,
+                          text="The " + config.enemy.getName() + " lays his mace into the side of your head.")
+    bool = combat()
+    if bool is False:
+        while bool is False:
+            if bool is False:
+                bool = combat()
 
     print()
 
-    config.player.hp = config.player.maxhp
-    # Need level stat and exp Stat - Jacob 10-26-17
-    print("You gain 1000 exp points!")
-    print("You grow to level 2!")
+    config.player.setHp(config.player.getMaxHp())
     print()
     # --------------------------------------------------------------------
     print("All around you Agromanian's fall to their death.")
@@ -504,8 +421,13 @@ def cataracta_battle():
                           atkIn=15,
                           defIn=10,
                           hpIn=90,
-                          spdIn=7)
-    combat()
+                          spdIn=7,
+                          text="The " + config.enemy.getName() + " lays his mace into the side of your head.")
+    bool = combat()
+    if bool is False:
+        while bool is False:
+            if bool is False:
+                bool = combat()
     # Add Story
     print()
     print("With another foe slain, you looked around at the battle raging.")
@@ -545,7 +467,7 @@ def cataracta_battle():
     print("The Agromanians must have killed everyone in the castle before teleporting to the courtyard.")
     print("If not, allies from Nacastrum and Aylova alike would have swarmed the castle.")
     print()
-    print("You decide that you need to send word of Cataracta's fall to the Keafden.")
+    print("You decide that you need to send word of Cataracta's fall to the Kaefden.")
     print("The quickest way to the Kaefden Capital, Aylova, is to take the portal in Nacastrum.")
     print("And the quickest way to Nacastrum is through the portal that links the cities.")
     print()

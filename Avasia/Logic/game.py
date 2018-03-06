@@ -80,6 +80,7 @@ def mainloop():
             print()
             config.player.printplayerinventory()
             print()
+            continue
 
         # Eat food / drink potion:
         elif util.containsAny(command, eat):
@@ -90,7 +91,8 @@ def mainloop():
                 print()
 
                 # Get input for which item_id the user wants to eat/drink
-                itemToBeEaten = input(str(config.player.printplayerinventory()))
+                config.player.printplayerinventory()
+                itemToBeEaten = input()
 
                 # Search for item_id and RETURN THE ITEM ITSELF and set it to item_object
                 item_object = config.player.return_item(itemToBeEaten)

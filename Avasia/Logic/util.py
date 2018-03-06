@@ -48,9 +48,10 @@ def intro():
     print(">>>" + config.player.getName() + "'s House<<<")
     print()
     print()
-    print("Today is the day you join Cataracta's Legion."
-          "\nTo join, you must head to the Legion's courtyard."
-          "\nYou collect your belongings and leave your home with a sense of pride.")
+    print("Today is the day you join Cataracta's Legion.")
+    print("To join, you must head to the Legion's courtyard.")
+    print("You collect your belongings and leave your home with a sense of pride.")
+    print("\nType 'help' any time for a list of commands!")
     config.player_gold.add_gold(100)
     config.player.give_item(item.potion)
     print()

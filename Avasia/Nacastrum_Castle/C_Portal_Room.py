@@ -19,7 +19,7 @@ def portal_logic():
     # Add some options here
     # Maybe you can find a potion or some shit
 
-    print("To the east is a door that appears to lead into a hallway.")
+    print("To the EAST is a door that appears to lead into a hallway.")
 
 c_portal_room = Room(des="",
                      directions={"E": "west_hallway"},
