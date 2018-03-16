@@ -30,7 +30,7 @@ class Enemy:
         output += str(self.name) + ": HP: " + str(self.hp) + ", Atk: " + str(self.atk) + ", Def: " + str(self.defense)
         print(output)
 
-    def setStats(self, nameIn, atkIn, defIn, hpIn, spdIn, text):
+    def setStats(self, nameIn, atkIn, defIn, hpIn, spdIn, text=""):
         self.name = nameIn
 
         # Attack

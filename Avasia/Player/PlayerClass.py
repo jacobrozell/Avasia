@@ -107,7 +107,7 @@ class Player:
         self.luck = self.maxLuck
         self.defense = self.maxDef
 
-    def comabtExp(self):
+    def combatExp(self):
         if self.player_level <= 3:
             amt = (self.player_level * 50)
         else:

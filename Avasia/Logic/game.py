@@ -7,7 +7,7 @@
 #
 # --------------------------------
 
-# Rooms
+# Rooms - imports all rooms
 from Avasia.Logic.Room_Storage import *
 
 # Util
@@ -124,13 +124,14 @@ def mainloop():
             print()
 
 
-# To make a new room,
+# To make a new room:
 # 1. you need to register it here,
 # 2. add the import to Room_Storage
 # 3. make the room,
 # 4. and make sure you set the path in the directions in the room that leads to it.
 
 
+# Cataracta
 register_area(southwest_c)
 register_area(althalos_house)
 register_area(southeast_c)
@@ -144,8 +145,12 @@ register_area(hunter_path)
 register_area(west_cataracta)
 register_area(nGate)
 register_area(fishing_room)
+
+# Nacastrum Castle
 register_area(c_portal_room)
 register_area(west_hallway)
+register_area(n_library)
+register_area(throne_room)
 # -------------------------------------------------------------------------------
 
 

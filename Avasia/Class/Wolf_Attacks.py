@@ -10,7 +10,6 @@ from math import floor
 # 4. Raise Stat Move
 
 
-
 # Standard attack stat
 def bite():
     bool = config.player.checkHit(config.player.getLuck())
@@ -38,6 +37,7 @@ def wound():
         print()
         print("You missed!")
         print()
+        return False
     else:
         turns = randint(1, 4)
         print()
@@ -48,9 +48,9 @@ def wound():
 
 
 # Additional Logic for wound() attack
-def wound_enemy():
+def wound_enemy(time):
     print()
-    print("The " + config.enemy.getName() + " is still wounded!")
+    print("The " + config.enemy.getName() + " is still wounded for another " + str(time) + " rounds!")
     print("The " + config.enemy.getName() + " took " + str(floor((config.player.getAtk() * .75))) + " damage!")
     amt = floor((config.player.getAtk() * .75))
     config.enemy.take_hit(amt)
@@ -83,14 +83,15 @@ def stun_enemy():
 
 
 def scheme():
-    bool = config.player.checkHit(config.player.getLuck() + 5)
+    bool = config.player.checkHit(config.player.getLuck() + 3)
     if bool is False:
         print()
-        print("You missed!")
+        print("Scheme failed!")
         print()
 
     else:
         print()
         print("You look for weaknesses in the " + config.enemy.getName() + ".")
-        print("Your attack has increased.")
+        print("Your attack has increased.\n")
         config.player.setAtk(config.player.getAtk() + 5)
+

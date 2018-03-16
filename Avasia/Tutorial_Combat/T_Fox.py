@@ -13,6 +13,8 @@ def choose_attack():
     focusvar = ["FOCUS"]
     executevar = ["EXECUTE"]
     fatalityvar = ["FATALITY"]
+    breakvar = ["QUIT"]
+    helpvar = ["HELP"]
 
     if containsAny(attack, clawvar):
         return attack
@@ -29,22 +31,14 @@ def choose_attack():
     elif containsAny(attack, fatalityvar):
         return attack
 
+    elif containsAny(attack, breakvar):
+        return "quit"
+    
+    elif containsAny(attack, helpvar):
+        return "help"
+
     else:
         return False
-
-
-def enemy_attack():
-    print()
-    if config.enemy.getAtk() <= config.player.getDef():
-        print(config.enemy.getName() + " attacks you!")
-        print("Your defense completely absorbs the blow!")
-        print()
-    else:
-        amt = config.enemy.getAtk() - config.player.getDef()
-        config.player.take_hit(amt)
-        print(config.enemy.getName() + " hits you for " + str(amt) + " !")
-        print("Your defense softens the blow by " + str(config.player.getDef()) + "!")
-        print()
 
 
 def player_attack(attack):
@@ -81,41 +75,41 @@ def Fox_Combat():
     config.enemy.display_stats()
     config.player.display_stats()
     print()
-    while config.enemy.getHp() > 0:
 
-        # Player dies ------------------------------------------------------
-        if config.player.getHp() <= 0:
-            config.enemy.killPlayer()
-            quit()
+    while True:
 
-        # Enemy dies -------------------------------------------------------
-        elif config.enemy.getHp() <= 0:
-            print(config.enemy.getName() + " was defeated!")
+        # Player (Fox) ALWAYS attacks first
+
+        # Player Attacks
+        attack = choose_attack()
+        if attack is False:
+            print("Attack not found.")
+
+        elif attack == "quit":
             break
+
+        elif attack == "help":
+            print("\nClaw simply does your attack stat on the enemy.")
+            print("Focus increases your chance of hitting the enemy.")
+            print("Execute will one shot the enemy, if and only if it hits.")
+            print("Fatality will kill an enemy automatically that is near death.\n")
+            continue
+
         else:
+            player_attack(attack)
 
-            # Player (Fox) ALWAYS attacks first
-
-            # Player Attacks
-            attack = choose_attack()
-            if attack is False:
-                print("Attack not found.")
-            else:
-                player_attack(attack)
-
-            # Enemy Attack
             if config.enemy.getHp() <= 0:
-                break
-            else:
-                enemy_attack()
+                print("\nTraining dummy has been reset.\n")
+                config.enemy.setHp(1000)
 
-            # Display stats
-            print()
-            config.enemy.display_stats()
-            config.player.display_stats()
-            print()
+        # Display stats
+        print()
+        config.enemy.display_stats()
+        config.player.display_stats()
+        print()
+
     print()
-    print("The " + config.enemy.getName() + " has been defeated!")
+    print("You quit fighting the training dummy.")
 
     # Always sets luck back to max at the end of combat.
     config.player.setLuck(config.player.getMaxLuck())

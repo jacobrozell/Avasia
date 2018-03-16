@@ -1,8 +1,10 @@
 import Avasia.Logic.config as config
 from Avasia.Logic.util import containsAny
-from Avasia.Combat.Bear_Combat import Bear_Combat
-from Avasia.Combat.Fox_Combat import Fox_Combat
-from Avasia.Combat.Wolf_Combat import Wolf_Combat
+
+# Set new links
+from Avasia.Tutorial_Combat.T_Wolf import Wolf_Combat
+from Avasia.Tutorial_Combat.T_Bear import Bear_Combat
+from Avasia.Tutorial_Combat.T_Fox import Fox_Combat
 
 
 def combat():
@@ -18,7 +20,6 @@ def combat():
     if containsAny(form, bear):
         if config.player.searchForm("bear") is True:
             Bear_Combat()
-            config.player.combatExp()
         else:
             print("You don't know that form!")
             print()
@@ -27,7 +28,6 @@ def combat():
     elif containsAny(form, fox):
         if config.player.searchForm("fox") is True:
             Fox_Combat()
-            config.player.combatExp()
         else:
             print("You don't know that form!")
             print()
@@ -36,7 +36,6 @@ def combat():
     elif containsAny(form, wolf):
         if config.player.searchForm("wolf") is True:
             Wolf_Combat()
-            config.player.combatExp()
         else:
             print("You don't know that form!")
             print()

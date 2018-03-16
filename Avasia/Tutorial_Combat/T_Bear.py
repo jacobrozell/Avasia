@@ -7,20 +7,6 @@ tempMaxAtk = config.player.getMaxAtk()
 tempMaxDef = config.player.getMaxDef()
 
 
-def enemy_attack():
-    print()
-    if config.enemy.getAtk() <= config.player.getDef():
-        print(config.enemy.getName() + " attacks you!")
-        print("Your defense completely absorbs the blow!")
-        print()
-    else:
-        amt = config.enemy.getAtk() - config.player.getDef()
-        config.player.take_hit(amt)
-        print(config.enemy.getName() + " hits you for " + str(amt) + " !")
-        print("Your defense softens the blow by " + str(config.player.getDef()) + "!")
-        print()
-
-
 def choose_attack():
     global attack
     print("Choose an attack!")
@@ -32,6 +18,8 @@ def choose_attack():
     storevar = ["STORE"]
     roarvar = ["ROAR"]
     guardvar = ["GUARD"]
+    breakvar = ["QUIT"]
+    helpvar = ["HELP"]
 
     if containsAny(attack, swipevar):
         return attack
@@ -47,6 +35,12 @@ def choose_attack():
     # Third Attack
     elif containsAny(attack, guardvar):
         return attack
+
+    elif containsAny(attack, breakvar):
+        return "quit"
+
+    elif containsAny(attack, helpvar):
+        return "help"
 
     else:
         return False
@@ -114,50 +108,49 @@ def Bear_Combat():
     config.enemy.display_stats()
     config.player.display_stats()
     print()
-    while config.enemy.getHp() > 0:
+    while True:
 
-        # Multiple deaths form a list. Choose random -----------------------
-        if config.player.getHp() <= 0:
-            config.enemy.killPlayer()
-            quit()
+        double -= 1
+        attack = choose_attack()
 
-        # ------------------------------------------------------------------
-        elif config.enemy.getHp() <= 0:
-            print(config.enemy.getName() + " was defeated!")
+        if attack is False:
+            print("Attack not found")
+            continue
+
+        elif attack == "quit":
             break
 
+        elif attack == "help":
+            print("\nSwipe simply does your attack stat on the target.")
+            print("Store lowers your defense to 0, and doubles your attack stat for one turn.")
+            print("Roar lowers your defense by 5, and raises your attack by 5.")
+            print("Guard raises your defense by 5.\n")
+            continue
+
+        # Player Attacks
+        bool = player_attack(attack)
+        if bool is False:
+            print("Attack not found")
+            continue
+
+        if double == 0:
+            config.player.setAtk(tempMaxAtk)
+            config.player.setDef(tempMaxDef)
+            config.player.setLuck(config.player.getMaxLuck())
+            storeActive = False
+            print("Store wore off.")
+            print()
         else:
-
             double -= 1
-            # Enemy Attack (ALWAYS FIRST)
-            attack = choose_attack()
-            if attack is False:
-                print("Attack not found")
-                continue
 
-            # Player Attacks
-            bool = player_attack(attack)
-            if bool is False:
-                print("Attack not found")
-                continue
+        print()
+        config.enemy.display_stats()
+        config.player.display_stats()
+        print()
 
-            if double == 0:
-                config.player.setAtk(tempMaxAtk)
-                config.player.setDef(tempMaxDef)
-                config.player.setLuck(config.player.getMaxLuck())
-                storeActive = False
-                print("Store wore off.")
-                print()
-            else:
-                double -= 1
-
-            print()
-            config.enemy.display_stats()
-            config.player.display_stats()
-            print()
     print()
     config.player.setAtk(config.player.getMaxAtk())
     config.player.setDef(config.player.getMaxDef())
-    print("The " + config.enemy.getName() + " has been defeated!")
+    print("You quit fighting the training dummy.")
     print()
 

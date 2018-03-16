@@ -84,7 +84,8 @@ def player_attack(attack):
         else:
             turns_wounded = wound()
             if turns_wounded is False:
-                return "false"
+                turns_wounded = -1
+                enemy_wounded = False
             else:
                 enemy_wounded = True
 
@@ -154,6 +155,9 @@ def Wolf_Combat():
 
     print("You transform into your wolf form.")
     print()
+    config.enemy.display_stats()
+    config.player.display_stats()
+    print()
 
     while config.enemy.getHp() > 0:
 
@@ -188,14 +192,8 @@ def Wolf_Combat():
                 player_first()
 
             # Check conditionals
-            if enemy_wounded is True:
-                wound_enemy()
-                turns_wounded = turns_wounded - 1
 
-            elif enemy_stunned is True:
-                turns_stunned = turns_stunned - 1
-
-            elif turns_wounded == 0:
+            if turns_wounded == 0:
                 enemy_wounded = False
                 print(config.enemy.getName() + " is no longer wounded!")
                 turns_wounded = -1
@@ -204,6 +202,13 @@ def Wolf_Combat():
                 enemy_stunned = False
                 print(config.enemy.getName() + " is no longer stunned!")
                 turns_stunned = -1
+
+            elif enemy_wounded is True:
+                wound_enemy(turns_wounded)
+                turns_wounded = turns_wounded - 1
+
+            elif enemy_stunned is True:
+                turns_stunned -= 1
 
             # Display stats
             print()

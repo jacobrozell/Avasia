@@ -81,3 +81,5 @@ def guard():
         print("Defense increased!")
         config.player.setDef(config.player.getDef() + 5)
         print()
+
+

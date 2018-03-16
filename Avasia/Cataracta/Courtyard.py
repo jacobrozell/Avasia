@@ -3,6 +3,7 @@ import Avasia.Logic.config as config
 from Avasia.Enemy.EnemyClass import Enemy
 from Avasia.Combat.CombatLogic import combat
 from Avasia.Logic.util import talk, containsAny
+from Avasia.Tutorial_Combat import T_Combat
 
 
 def courtyard_logic():
@@ -13,7 +14,7 @@ def courtyard_logic():
     print("One of the men speaks out in a loud booming voice.")
     print()
     talk("Greetings, men and women, welcome.")
-    talk("My name is Cellious, I am the leader of the Pridestalkers, commonly known as the hunters.")
+    talk("My name is Cellious, I am the leader of the Packstalkers, commonly known as the hunters.")
     talk("You are all here because Cataracta needs an army.")
     talk("I'm sure word has gotten around.")
     talk("A group of former Agromanians have fled Krothgar and turned against their people for the greater good.")
@@ -27,9 +28,9 @@ def courtyard_logic():
     print()
 
     # Introduce Classes
-    talk("Hunters are known as Pridestalkers. They use the aspect of the Wolf.")
-    talk("Scouts are known as HSDISHDKSDSKSHAKSD. They use the aspect of the Fox.")
-    talk("Guardians are known as Blueguards. They use the aspect of the Bear.")
+    talk("Hunters are known as the Packstalkers. They use the aspect of the Wolf.")
+    talk("Scouts are known as the Skulks of Cataracta. They use the aspect of the Fox.")
+    talk("Guardians are known as the Varatho Guardians. They use the aspect of the Bear.")
     print()
     talk("I need Hunters with me; Scouts with Dentros; Guardians with Acustos.")
     talk("You know who you are.")
@@ -130,72 +131,70 @@ def courtyard_logic():
             print(">>>Hunter Training<<<")
             print()
             print()
+            print("You follow the tall man wearing the pelts and skulls of beasts he has presumably slain.")
             talk("My name is Cellious.")
-            talk("I will be teaching you all about combat and attacks special to our class.")
+            talk("I will help you hone your skills under the aspect of the wolf.")
             print()
-            talk("First begin by going into your wolf form.")
+            talk("First, you must let yourself go.")
+            talk("You must shed yourself of your human mantle and assume the form you hold in you.")
             print()
             while True:
                 ans = input("Type 'wolf form' to turn into a wolf.")
                 print()
                 w = ["WOLF FORM", "SHAPESHIFT", "WOLF"]
                 if containsAny(ans, w):
-                    print("You feel the blood pumping throughout your body.")
-                    print("Every cell is your body is awaiting your command.")
-                    print("As you cast Wolf Form, they listen.")
-                    print("Your blood runs hot and magic energy courses through every fiber of your being.")
-                    print("You, as with all the others in your group, are now wolves.")
+                    print("You focus your mind and search your soul for the spirit Cellious spoke of.")
+                    print("Your blood runs hot, you can feel and hear your heart pounding in your chest.")
+                    print("Every fiber of your being begins to shift your Druidic form into one of a vicious creature.")
+                    print("Your spine cracks and your ears shift upward.")
+                    print("Your nose changes form and your jaw extends as your teeth begin to protrude from your mouth.")
+                    print("Finally, your body comes to a pause and your mind calms.")
+                    print()
+                    print("You, as with all the others in your group, are now Wolves.")
                     print()
                     break
                 else:
-                    print("Harness your power and try again!")
+                    print("You make an attempt to shift, but fail to do so.")
+                    talk("Focus and search your soul! Try again!")
                     print()
-            talk("Look around at your fellow hunters.")
-            talk("Notice all of you have different markings or fangs.")
-            talk("Your marking is unique only to you, much like a fingerprint.")
-            talk("Though we all appear slightly different, we will fight as brothers and sisters of Cataracta.")
+
+            print("Cellious laughs and looks around with a prideful grin.")
+            talk("Take a look around at your fellow Packstalkers.")
+            talk("Notice all of you have different markings and fangs.")
+            talk("Your marks are unique only to you and you alone.")
+            talk("Though we appear different to one another, we hunt as one.")
             print()
-            talk("We will start with a simple attack called 'bite'.")
-            talk("'Bite' will just do your attack stat on the target.")
+            talk("You now walk as a lion amongst sheep.")
+            talk("All creatures will fear your bloodthirsty form as you stride toward your prey.")
+            talk("Now to the good part.")
+            print()
+            talk("Pay attention. This part is important.")
+            print()
+            talk("Bite simply does your attack stat on the target.")
+            talk("Wound will wound your enemy for 1 to 4 turns, for 75% of your attack stat.")
+            talk("Stun stuns your enemy for 1 to 3 turns.")
+            talk("Scheme increases your attack by 5.")
+            print()
             talk("Keep in mind some enemies have a defense stat that will soften the blow of your attack.")
-            talk("Try this attack out on this training dummy.")
+            talk("Practice for as long as you want on this training dummy.")
             print()
-            training_dummy = Enemy(atk=0,
-                                   defense=5,
-                                   spd=0,
-                                   hp=50,
-                                   name="Training Dummy")
-
-            print("A " + training_dummy.name + " appears!")
-
-            while training_dummy.hp > 0:
-                print()
-                training_dummy.display_stats()
-                config.player.display_stats()
-                attacks = ["BITE"]
-                print()
-                print("Which attack do you want to use?")
-                ans = input(str(attacks))
-                print()
-                ans.upper()
-                slash = ["BITE", "B"]
-                if containsAny(ans, slash):
-                    training_dummy.take_hit(config.player.getAtk())
-                    print("You use BITE!")
-                    print("The " + training_dummy.name + " took " + str(config.player.getAtk()) + " damage!")
-                    print("The " + training_dummy.name + "'s defense softened the blow by " + str(training_dummy.defense) +"!")
-                    print(training_dummy.name + " has " + str(training_dummy.hp) + " left!")
-                    print()
-                if training_dummy.hp <= 0:
-                    break
-
-            print("You killed " + training_dummy.name + "!")
+            print("Type 'help' for information of the attacks.")
+            print("Type 'quit' to end the combat.")
             print()
-            talk("Nicely done!")
-            talk("As you can see 'bite' just simply does your attack stat on the target.")
-            talk("Not all attacks are this simple.")
+            config.enemy.setStats(nameIn="Training Dummy",
+                                  atkIn=0,
+                                  defIn=5,
+                                  hpIn=1000,
+                                  spdIn=0)
+
+            T_Combat.combat()
+
+            talk("Good.")
+            talk("As you can see, a good strategy can lead to devastating attacks.")
+            talk("You must learn to use all of your skills in unison.")
             print()
-            talk("For example, next we are going to...")
+            talk("For example, next we are goi-")
+            print("Cellious is interrupted by a flash of bright light followed by a cascade of darkness.")
             print()
             break
 
@@ -204,72 +203,69 @@ def courtyard_logic():
             print(">>>Scout Training<<<")
             print()
             print()
+            print("You follow the older man carrying a staff and await further instruction.")
             talk("My name is Dentros.")
-            talk("I will be teaching you all about combat and attacks special to our class.")
+            talk("I will teach you how to properly carry yourself in your frail form.")
+            talk("We may not be as intimidating as Packstalkers or as large as the Varatho Guardians, "
+                 "but we can strike just as hard.")
             print()
-            talk("Let's begin by turning into our fox forms.")
+            talk("Let us begin by transforming into our proper form.")
+            talk("You must allow yourself to be free of your Druid form and become one with those who roam these woods.")
             print()
             while True:
                 ans = input("Type 'fox form' to turn into a fox.")
                 print()
                 w = ["FOX FORM", "SHAPESHIFT", "FOX"]
                 if containsAny(ans, w):
-                    print("You feel the blood pumping throughout your body.")
-                    print("Every cell is your body is awaiting your command.")
-                    print("As you cast Fox Form, they listen.")
-                    print("Your blood runs hot and magic energy courses through every fiber of your being.")
-                    print("You, as with all the others in your group, are now foxes.")
+                    print("As you search for the aspect of the fox hiding inside you, you feel your body begin to heat.")
+                    print("Your mind, body, and soul become one.")
+                    print("Your spine cracks and your ears shift upward.")
+                    print("Your nose changes form and your jaw extends as your teeth begin to sharpen.")
+                    print("Finally, your body comes to a pause and your mind calms.")
                     print()
+                    print("You, along with the others in your group, are now Fox.")
                     break
                 else:
-                    print("Harness your power and try again!")
+                    print("You make an attempt to shift, but fail to do so.")
+                    talk("It's okay. Relax yourself and try again.")
                     print()
-            talk("Look around at your fellow scouts.")
-            talk("Notice all of you have different markings.")
-            talk("Your marking is unique only to you, much like a fingerprint.")
-            talk("Though we all appear slightly different, we will fight as brothers and sisters of Cataracta.")
+            talk("Well done!")
+            talk("Look at those around you.")
+            talk("Notice the differences between each of you.")
+            talk("Your markings are unique to you and only you.")
+            talk("Though we all appear different, we all must communicate and work together.")
+            talk("The information we can gather may be the difference between life or death for our people.")
+            talk("But scouting isn't the only thing we are good for.")
+            talk("There are times when we must strike our enemies or be prepared to defend ourselves.")
             print()
-            talk("We will start with a simple attack called 'claw'.")
-            talk("Strike will do your attack stat on the target.")
-            talk("Keep in mind some enemies have a defense stat that will soften the blow of your attack.")
-            talk("Try this attack out on this training dummy.")
+            talk("Pay attention. This part is vital to your survival.")
             print()
-            training_dummy = Enemy(atk=0,
-                                   defense=5,
-                                   spd=0,
-                                   hp=50,
-                                   name="Training Dummy")
-            print("A " + training_dummy.name + " appears!")
-            print("The training dummy has " + str(training_dummy.hp) + " health and " + str(
-                training_dummy.defense) + " defense!")
-            while training_dummy.hp > 0:
-                print()
-                training_dummy.display_stats()
-                config.player.display_stats()
-                print()
-                attacks = ["CLAW"]
-                print("Which attack do you want to use?")
-                ans = input(str(attacks))
-                print()
-                ans.upper()
-                strike = ["CLAW", "C"]
-                if containsAny(ans, strike):
-                    training_dummy.take_hit(config.player.getAtk())
-                    print("You use claw!")
-                    print("The " + training_dummy.name + " took " + str(config.player.getAtk()) + " damage!")
-                    print("The " + training_dummy.name + "'s defense softened the blow by " + str(training_dummy.defense) +"!")
-                    print(training_dummy.name + " has " + str(training_dummy.hp) + " left!")
-                    print()
-                if training_dummy.hp <= 0:
-                    break
+            print("Claw simply does your attack stat on the enemy.")
+            print("Focus increases your chance of hitting the enemy.")
+            print("Execute will one shot the enemy, if and only if it hits.")
+            print("Fatality will kill an enemy automatically that is near death.\n")
 
-            print("You killed " + training_dummy.name + "!")
+            talk("Keep in mind some enemies have a defense stat that will soften the blow of your attack.")
+            talk("Practice for as long as you want on this training dummy.")
+            print()
+            print("Type 'help' for information of the attacks.")
+            print("Type 'quit' to end the combat.")
+            print()
+            config.enemy.setStats(nameIn="Training Dummy",
+                                  atkIn=0,
+                                  defIn=5,
+                                  hpIn=1000,
+                                  spdIn=0)
+
+            T_Combat.combat()
+
             print()
             talk("Nicely done!")
-            talk("As you can see 'claw' just simply does your attack stat on the target.")
-            talk("Not all attacks are this simple.")
+            talk("As you can see, focusing and exploiting weaknesses in your enemy is what the Skulks are all about.")
+            talk("To work effectively, you must use all your abilities in unison.")
             print()
-            talk("For example, next we are going to...")
+            talk("For example, next we are goi-")
+            print("Dentros is interrupted by a flash of bright light followed by a cascade of darkness.")
             print()
             break
 
@@ -278,71 +274,66 @@ def courtyard_logic():
             print(">>>Guardian Training<<<")
             print()
             print()
-            print(""" "My name is Acustos." """)
-            print(""" "I will be teaching you all about combat and attacks special to our class." """)
-            print(""" "First begin by going into your bear form." """)
+            talk("You follow the large Druidic woman who is plated in metals and blue crystals.")
+            talk("My name is Acustos.")
+            talk("I will teach you all that you must know to defend our people.")
+            talk("Our role in protecting our kind is one of the most important.")
+            talk("Should something or someone threaten our home, we are the first and last line of defense.")
             print()
             while True:
                 ans = input("Type 'bear form' to turn into a bear.")
                 print()
                 w = ["BEAR FORM", "SHAPESHIFT", "BEAR"]
                 if containsAny(ans, w):
-                    print("You feel the blood pumping throughout your body.")
-                    print("Every cell is your body is awaiting your command.")
-                    print("As you cast Bear Form, they listen.")
-                    print("Your blood runs hot and magic energy courses through every fiber of your being.")
-                    print("You, as with all the others in your group, are now bears.")
+                    print("You take a deep breath and focus your mind on the Aspect of the Bear.")
+                    print("The blood rushing through your body pushes outward, forcing your body to grow.")
+                    print("Your spine cracks and your ears round off and shrink.")
+                    print("Your nose changes form and your jaw extends as your teeth begin to sharpen.")
+                    print("Your body becomes covered in rough fur and your hands become claws.")
+                    print("Finally, your body comes to a pause and your mind calms.")
                     print()
+                    print("You, along with the others in your group, are now Bears.")
                     break
                 else:
-                    print("Harness your power and try again!")
+                    print("You make an attempt to shift, but fail to do so.")
+                    talk("When the time comes, you must be able to transform at will and without fail! Try again!")
                     print()
-            talk("Look around at your fellow guardians.")
-            talk("Notice all of you have different markings or fangs.")
-            talk("Your marking is unique only to you, much like a fingerprint.")
-            talk("Though we all appear slightly different, we will fight as brothers and sisters of Cataracta.")
+            talk("Great work, Guardians!")
+            talk("Now, look around you.")
+            talk("Notice that all of you appear different to each other.")
+            talk("Your markings and build are unique to you and only you.")
+            talk("Even though we look different, we must stand as one against the forces that seek to tear us apart.")
+            talk("But your stature alone will not save you.")
+            talk("You must learn to fight!")
             print()
-            talk("We will start with a simple attack called 'Swipe'.")
-            talk("Swipe will do your attack stat on the target.")
+            talk("This part may be the difference in survival and death.")
+            print()
+            talk("Swipe simply does your attack stat on the target.")
+            talk("Store lowers your defense to 0, and doubles your attack stat for one turn.")
+            talk("Roar lowers your defense by 5, and raises your attack by 5.")
+            talk("Guard raises your defense by 5.")
+            print()
             talk("Keep in mind some enemies have a defense stat that will soften the blow of your attack.")
-            talk("Try this attack out on this training dummy.")
-            training_dummy = Enemy(atk=0,
-                                   defense=5,
-                                   spd=0,
-                                   hp=50,
-                                   name="Training Dummy")
-            print("A " + training_dummy.name + " appears!")
-            print("The training dummy has " + str(training_dummy.hp) + " health and " + str(
-                training_dummy.defense) + " defense!")
-            while training_dummy.hp > 0:
-                print()
-                training_dummy.display_stats()
-                config.player.display_stats()
-                print()
-                attacks = ["SWIPE"]
-                print("Which attack do you want to use?")
-                ans = input(str(attacks))
-                print()
-                ans.upper()
-                strike = ["SWIPE", "S"]
-                if containsAny(ans, strike):
-                    training_dummy.take_hit(config.player.getAtk())
-                    print("You use swipe!")
-                    print("The " + training_dummy.name + " took " + str(config.player.getAtk()) + " damage!")
-                    print("The " + training_dummy.name + "'s defense softened the blow by " + str(
-                        training_dummy.defense) + "!")
-                    print(training_dummy.name + " has " + str(training_dummy.hp) + " left!")
-                    print()
-                if training_dummy.hp <= 0:
-                    break
+            talk("Practice for as long as you want on a training dummy.")
+            print()
+            print("Type 'help' for information of the attacks.")
+            print("Type 'quit' to end the combat.")
+            print()
+            config.enemy.setStats(nameIn="Training Dummy",
+                                  atkIn=0,
+                                  defIn=5,
+                                  hpIn=1000,
+                                  spdIn=0)
 
-            print("You killed " + training_dummy.name + "!")
+            T_Combat.combat()
+
             print()
             talk("Nicely done!")
-            talk("As you can see 'swipe' just simply does your attack stat on the target.")
-            talk("Not all attacks are this simple.")
+            talk("You must use everything you can to defend our people.")
+            talk("There are many abilities you possess that can turn the tide of battle.")
             print()
-            talk("For example, next we are going to...")
+            talk("For example, next we are goi-")
+            print("Acustos is interrupted by a flash of bright light followed by a cascade of darkness.")
             print()
             break
 
@@ -352,38 +343,46 @@ def courtyard_logic():
 
 
 def cataracta_battle():
-    print()
-    print("Suddenly, a bright light surrounds the entire training courtyard."
-          "\nHundreds of tall, muscular, barbaric men appear armed with axes, maces, and swords.")
-    print()
+    print("Before anyone can respond to the sudden change of scenery, a dark portal forms.")
+    print("Almost instantaneously, hundreds of burly men charge from the portal.")
+    print("You immediately realize that these are Agromanians.")
 
     if config.player.getClass() == "guardian":
-        print("Acustos shouts above the chaos.")
-        talk("Guardians, training is over!")
-        talk("It's time to show these Agromanian bastards who they're messing with!")
+        print("As the slaughter of your people begins, Acustos shouts above the chaos.")
+        talk("Varatho Guardians, training is over!")
+        talk("Your time has come, hold your ground!")
         print()
     elif config.player.getClass() == "scout":
-        print("Dentros shouts above the chaos.")
-        talk("Scouts, training is over!")
-        talk("It's time to show these Agromanian bastards who they're messing with!")
+        print("As the slaughter of your people begins, Dentros shouts above the chaos.")
+        talk("Skulks, training is over!")
+        talk("Use what you've learned and defend yourselves!")
         print()
 
     elif config.player.getClass() == "hunter":
-        print("Cellious shouts above the chaos.")
-        talk("Hunters, training is over!")
-        talk("It's time to show these Agromanian bastards who they're messing with!")
+        print("As the slaughter of your people begins, Cellious shouts above the chaos.")
+        talk("Packstalkers, training is over!")
+        talk("Shows these cowards what you're made of!")
         print()
 
-    print("One character stands out from the crowd.")
-    print("He stands tall and proud with a long staff in his left hand.")
-    print("A scar crosses his left eye, down to his chin.")
-    print("The man is dressed in black and purple robes.")
-    print("As fighting breaks out all around you, the man levitates up and calls in a dark whisper "
-          "that seems to stop the very movement of time.")
-    talk("People of Cataracta. Join us or die.")
+    print("One character stands out from the hoard of Agromanians pouring from the portal.")
+    print("He stands tall and proud, holding a staff formed of grey wood and purple stones in his left hand.")
+    print("A scar crosses his left eye, and continues down to his chin.")
+    print("He is dressed in black and purple robes, unlike the Agromanian.")
+    print("As he makes his way across the courtyard, he points the tip of his staff toward your group.")
+    print("The end of the staff begins to glow and a blast of dark purple energy is launched in your direction.")
     print()
-    print("Many shouts of protests exit from your fellow druids.")
-    print("The man laughs in such a way that sends shivers down your spine.")
+    print("You manage to jump out of the way before it arrives, but some of your group aren't as lucky.")
+    print("The magic burns clean through a few of your group members and you watch as their bodies fall to the ground.")
+    print()
+    print("The man's skill in magic shows beyond doubt that he is Vashirr, the mage you've heard stories about.")
+    print("Vashirr pauses for a moment and then begins to speak in a rough voice.")
+    print()
+    talk("Druid! Your opposition has forced my hand.")
+    talk("Know that Vashirr has brought an end to your twisted kind.")
+    print()
+    print("Shouts of defiance rage from the Cataractan people.")
+    talk("Your weak attempts to defend yourselves only delay the inevitable.")
+    print()
     print("An Agromanian approaches you, with his weapon drawn, ready to strike you down.")
     print()
 
@@ -405,24 +404,19 @@ def cataracta_battle():
     config.player.setHp(config.player.getMaxHp())
     print()
     # --------------------------------------------------------------------
-    print("All around you Agromanian's fall to their death.")
-    print("Cataractan Hunters, Scouts, and Guardians all stand exhausted from the battles that just raged.")
-    print("Another bright light, penetrates from above you.")
-    print("Countless more Agromanians appear from the mage's dark magic.")
-    print("The mage chuckles with a careless whisper.")
+    print("As the battle continues, weak Agromanian's fall to their death.")
+    print("The people of Cataracta seem to be easily taking Vashirr's army down.")
+    print("But as you take one Agromanian down, three more take its place.")
     print()
-    print(""" "Last chance." """)
-    print()
-    print("You find yourself shouting protests along with all of your fellow Cataractan people.")
-    print("This is your purpose. To serve Kaefden. You serve your hometown.")
-    print("You will fight or die.")
+    print("The dark portal continues to spew out Agromanian warriors like a waterfall.")
+    print("Before you can even think about what is going on around you, another Agromanian charges toward you.")
     print()
     config.enemy.setStats(nameIn="Agromanian Warrior",
                           atkIn=15,
                           defIn=10,
                           hpIn=90,
                           spdIn=7,
-                          text="The " + config.enemy.getName() + " lays his mace into the side of your head.")
+                          text="The " + config.enemy.getName() + " plows his sword into your chest.")
     bool = combat()
     if bool is False:
         while bool is False:
@@ -430,56 +424,74 @@ def cataracta_battle():
                 bool = combat()
     # Add Story
     print()
-    print("With another foe slain, you looked around at the battle raging.")
-
-    print("Except there was no battle raging...")
-    print("Cataractan allies lie dead all around you.")
-    print("Swords, axes, and spears alike all glimmer in the sunlight.")
-    print("You are utterly surrounded.\n")
-    print("The man in the purple robes chuckles maliciously.")
-    talk("Stand down, warriors.")
-    print("He walks slowly over to you.\n")
-    talk("Go tell your precious king that the Cataractan Army has failed. Before it even began.")
-    talk("Tell him that Vashirr sent you.")
-    print("Vashirr ushers an order to an Agromanian.")
-    print("As the Agromanian approaches you, you try to stand and fight, but something is holding you back.")
-    print("Vashirr smiles as you figure out that he is muttering a holding spell.")
-    print("The agromanian roars as he smacks you with the handle of his axe.")
+    print("With another foe slain, you look around you to find the next target.")
+    print("But you quickly realize that all of the fighting has come to a stand still.")
+    print()
+    print("You gaze upon the countless dead Cataractan lying on the ground in pools of blood.")
+    print("Your people have swiftly become outmatched by the Agromanian's sheer numbers.")
+    print("Completely surrounded, you know that there is nothing you can do to stop the onslaught that has occured,")
+    print("But you will die fighting.")
+    print()
+    print("Just as the hundreds of Agromanian begin to charge toward you, Vashirr calls for them to hault.")
+    print("The Agromanian stop like well-trained pets and await their orders.")
+    print()
+    talk("You there.")
+    print("Vashirr levitates up into the air to get past the barbarians surrounding you and places himself opposite you.")
+    print("Just as he walks in close proximity to you, you attempt to jump at him.")
+    print("Unfortunately, you only get a short distance before he blast you with his staff, causing you to be paralyzed.")
+    print()
+    talk("Compose yourself, druid. Today, you live.")
+    talk("I do, however, have a task for you.")
+    talk("I want you to bring a message to the King Kaefden IV.")
+    talk("Tell him that the Legions of Cataracta have fallen and that King Kimious has shared his people's fate.")
+    talk("Tell him of the horrors his ignorance have brought to your people.")
+    talk("Tell him that I am coming.")
+    print()
+    print("Vashirr turns around and gestures at his men before walking through his portal.")
+    print("They all roar and turn towards all the homes and buildings in Cataracta.")
+    print("Cataractan bodies are thrown into the Varatho River.")
+    print("Houses are burned to the ground")
+    print("The keep is being destroyed and defiled.")
+    print("You are powerless to stop it.")
+    print()
+    print("One of the Agromanian trudges to you and smashes your head with the hilt of his axe.")
+    print("You are knocked out cold.")
     print("------------------------------------------------------------------------------------------------")
     print()
     print()
     print()
-    print("You stumble up off the ground and immediately smell blood and smoke. ")
+    print("Time passes and you awaken alone in the same place you were before.")
+    print("You stumble up off the ground and immediately smell burning fires. ")
     print("You look to the Cataractan castle. Now in flames and rubble.")
     print("The entire city is in ashes.")
     print()
-    print("You feel a feeling of sorrow and pulsing anger.")
-    print("You start walking, mostly out of instinct.")
-    # add imagery
-    print("After a while, you find yourself at the ruined gates of the once Great Cataractan Castle.")
-    print("You walk the anula filled hallway, to the throne room.")
-    print("King Kimious lies dead in the floor.")
+    print("You feel a rush of despair and anger.")
+    print("Without a soul in sight, you start walking, mostly out of instinct.")
+    print("You head from the courtyard into the ruined gates of the once beautiful Cataractan Castle.")
+    print("The blue crystals that line the hallway, called Anula, are completely shattered and in disrepair.")
+    print("You make it to the throne room and find King Kimious dead on the floor, surrounded by his most trusted guards.")
     print()
-    talk("What hope is there against a force such as this?")
+    print(" ""What hope is there against a force such as this?""" + "You think to yourself.")
     print()
-    print("You suddenly remember the portal to Nacastrum.")
-    print("After Nacastrum was betrayed by it's king, Vashirr, portals were added in the major cities for quick access.")
-    print("The Agromanians must have killed everyone in the castle before teleporting to the courtyard.")
-    print("If not, allies from Nacastrum and Aylova alike would have swarmed the castle.")
+    print("You pass a room that emanates a faint glow.")
+    print("As you walk into the room, you are greeted with a large stone circle with runes on the ground.")
+    print("At the center is a silver ring with the same runes, perpendicular to the ground.")
+    print("You realise that this is one of the teleporters that were made by the Mages when the people of Avasia united long ago.")
+    print("Called 'Rings of Malkos', these portals were installed in every major city to allow easy and quick access from place to place.")
     print()
-    print("You decide that you need to send word of Cataracta's fall to the Kaefden.")
-    print("The quickest way to the Kaefden Capital, Aylova, is to take the portal in Nacastrum.")
-    print("And the quickest way to Nacastrum is through the portal that links the cities.")
+    print("On the ground near the center of the ring is a golden staff")
+    print("This staff is the key to activating the portal.")
+    print("It appears as though the Agromanians had removed it from its holding place to stop forces from Aylova from coming to help.")
     print()
-    print("You walk through the blood stained halls and find the portal room.")
-    print("The portal is a 8 ft spherical void in the center of the room.")
-    print("It radiates blue and red light that bounce off the stone walls.")
+    print("Realizing that even though you'd be doing what Vashirr wants, you must warn the people of Kaefden before they succumb to the same fate.")
+    print("You quickly grab the staff and slam it down into its holding place.")
+    print("All of the runes lining the ground and Ring of Malkos burst to life with a radiant glow.")
     print()
-    print("You will avenge your city.")
-    print("You will avenge your brethren.")
-    print("Your journey truly begins at this exact moment.")
-    print("You step through the portal.")
+    print("With your home destroyed and your people slain, you enter the portal.")
+    print()
+    print("Hopefully King Kaefden will know what to do.")
+    print("Your journey starts here.")
+    print()
 
 
 courtyard = Room(name="Courtyard", des="", id="courtyard", directions="", on_enter=courtyard_logic)
-
