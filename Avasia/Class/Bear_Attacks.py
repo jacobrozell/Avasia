@@ -36,6 +36,7 @@ def store():
         print()
         print("Store failed!")
         print()
+        return False
     else:
         print()
         print("You let your defense completely down and focus on exploiting " + config.enemy.getName() + "'s weaknesses.")

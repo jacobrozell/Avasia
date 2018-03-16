@@ -7,7 +7,7 @@ from Avasia.Tutorial_Combat.T_Bear import Bear_Combat
 from Avasia.Tutorial_Combat.T_Fox import Fox_Combat
 
 
-def combat():
+def T_combat():
     print("An " + config.enemy.getName() + " appeared!")
     print("Which form would you like to shift into for this battle?")
     config.player.printForms()

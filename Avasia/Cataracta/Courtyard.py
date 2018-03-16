@@ -187,7 +187,11 @@ def courtyard_logic():
                                   hpIn=1000,
                                   spdIn=0)
 
-            T_Combat.combat()
+            bool = T_Combat.T_combat()
+            if bool is False:
+                while bool is False:
+                    if bool is False:
+                        bool = T_Combat.T_combat()
 
             talk("Good.")
             talk("As you can see, a good strategy can lead to devastating attacks.")
@@ -257,7 +261,11 @@ def courtyard_logic():
                                   hpIn=1000,
                                   spdIn=0)
 
-            T_Combat.combat()
+            bool = T_Combat.T_combat()
+            if bool is False:
+                while bool is False:
+                    if bool is False:
+                        bool = T_Combat.T_combat()
 
             print()
             talk("Nicely done!")
@@ -325,7 +333,11 @@ def courtyard_logic():
                                   hpIn=1000,
                                   spdIn=0)
 
-            T_Combat.combat()
+            bool = T_Combat.T_combat()
+            if bool is False:
+                while bool is False:
+                    if bool is False:
+                        bool = T_Combat.T_combat()
 
             print()
             talk("Nicely done!")

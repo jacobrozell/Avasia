@@ -78,16 +78,18 @@ def player_attack(attack):
         else:
             # Store is now active == True
             storeActive = store()
+            if storeActive is False:
+                return "false"
+            else:
+                # Lower defense and take full enemy hit
+                config.player.setDef(0)
 
-            # Lower defense and take full enemy hit
-            config.player.setDef(0)
+                # Double attack for next turn
+                config.player.setAtk(config.player.getAtk() * 2)
+                double = 2
 
-            # Double attack for next turn
-            config.player.setAtk(config.player.getAtk() * 2)
-            double = 2
-
-            # Set luck to 1 so the attack will guarantee to hit
-            config.player.setLuck(1)
+                # Set luck to 1 so the attack will guarantee to hit
+                config.player.setLuck(1)
 
     # Second Attack
     elif containsAny(attack, roarvar):
@@ -98,6 +100,7 @@ def player_attack(attack):
     # Third Attack
     elif containsAny(attack, guardvar):
         guard()
+        tempMaxDef = config.player.getDef()
 
     else:
         return False
@@ -114,6 +117,10 @@ def Bear_Combat():
     config.enemy.display_stats()
     config.player.display_stats()
     print()
+
+    tempMaxAtk = config.player.getMaxAtk()
+    tempMaxDef = config.player.getMaxDef()
+
     while config.enemy.getHp() > 0:
 
         # Multiple deaths form a list. Choose random -----------------------
@@ -132,13 +139,21 @@ def Bear_Combat():
             # Enemy Attack (ALWAYS FIRST)
             attack = choose_attack()
             if attack is False:
-                print("Attack not found")
+                print("Attack not found\n")
+                config.enemy.display_stats()
+                config.player.display_stats()
+                print()
                 continue
+
+            enemy_attack()
 
             # Player Attacks
             bool = player_attack(attack)
             if bool is False:
-                print("Attack not found")
+                print("Attack not found\n")
+                config.enemy.display_stats()
+                config.player.display_stats()
+                print()
                 continue
 
             if double == 0:
@@ -148,6 +163,7 @@ def Bear_Combat():
                 storeActive = False
                 print("Store wore off.")
                 print()
+                double = -1
             else:
                 double -= 1
 
@@ -160,4 +176,3 @@ def Bear_Combat():
     config.player.setDef(config.player.getMaxDef())
     print("The " + config.enemy.getName() + " has been defeated!")
     print()
-
