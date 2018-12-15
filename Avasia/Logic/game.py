@@ -8,11 +8,11 @@
 # --------------------------------
 
 # Rooms - imports all rooms
-from Avasia.Logic.Room_Storage import *
+import Logic.Room_Storage
 
 # Util
-import Avasia.Logic.util as util
-import Avasia.Logic.config as config
+import Logic.util as util
+import Logic.config as config
 # ----------------------------------------------------------------
 
 

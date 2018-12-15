@@ -1,8 +1,8 @@
-import Avasia.Logic.config as config
-from Avasia.Logic.util import containsAny
-from Avasia.Combat.Bear_Combat import Bear_Combat
-from Avasia.Combat.Fox_Combat import Fox_Combat
-from Avasia.Combat.Wolf_Combat import Wolf_Combat
+import Logic.config as config
+from Logic.util import containsAny
+from Combat.Bear_Combat import Bear_Combat
+from Combat.Fox_Combat import Fox_Combat
+from Combat.Wolf_Combat import Wolf_Combat
 
 
 def combat():

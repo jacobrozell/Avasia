@@ -1,5 +1,5 @@
-from Avasia.Logic.util import containsAny
-import Avasia.Logic.config as config
+from Logic.util import containsAny
+import Logic.config as config
 
 
 class Room:

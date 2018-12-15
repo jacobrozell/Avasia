@@ -1,6 +1,6 @@
-from Avasia.Room.Room import Room
-from Avasia.Logic.util import talk, containsAny
-import Avasia.Logic.config as config
+from Room.Room import Room
+from Logic.util import talk, containsAny
+import Logic.config as config
 
 
 def library_logic():

@@ -1,9 +1,9 @@
-from Avasia.Room.Room import Room
-import Avasia.Logic.config as config
-from Avasia.Enemy.EnemyClass import Enemy
-from Avasia.Combat.CombatLogic import combat
-from Avasia.Logic.util import talk, containsAny
-from Avasia.Tutorial_Combat import T_Combat
+from Room.Room import Room
+import Logic.config as config
+from Enemy.EnemyClass import Enemy
+from Combat.CombatLogic import combat
+from Logic.util import talk, containsAny
+from Tutorial_Combat import T_Combat
 
 
 def courtyard_logic():

@@ -1,6 +1,6 @@
-from Avasia.Player.PlayerClass import Player
-from Avasia.Enemy.EnemyClass import Enemy
-from Avasia.Items.Gold import Gold
+from Player.PlayerClass import Player
+from Enemy.EnemyClass import Enemy
+from Items.Gold import Gold
 
 
 # Variables to keep track of

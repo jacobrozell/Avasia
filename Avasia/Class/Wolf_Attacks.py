@@ -1,4 +1,4 @@
-import Avasia.Logic.config as config
+import Logic.config as config
 from random import randint
 from math import floor
 

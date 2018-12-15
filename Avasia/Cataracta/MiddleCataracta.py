@@ -1,4 +1,4 @@
-from Avasia.Room.Room import Room
+from Room.Room import Room
 
 
 middle_c = Room(name="Middle Cataracta",

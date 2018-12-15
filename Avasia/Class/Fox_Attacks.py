@@ -1,4 +1,4 @@
-import Avasia.Logic.config as config
+import Logic.config as config
 from math import floor
 
 # Fox

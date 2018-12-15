@@ -1,5 +1,5 @@
-from Avasia.Logic.util import containsAny
-from Avasia.Class.Bear_Attacks import *
+from Logic.util import containsAny
+from Class.Bear_Attacks import *
 double = 0
 storeActive = False
 attack = ""

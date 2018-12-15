@@ -1,7 +1,7 @@
-from Avasia.Room.Room import Room
+from Room.Room import Room
 from random import randint
-from Avasia.Logic.util import containsAny, talk
-import Avasia.Logic.config as config
+from Logic.util import containsAny, talk
+import Logic.config as config
 
 
 def c_fountain_logic():

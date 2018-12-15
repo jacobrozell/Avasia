@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e6df5eee-95c7-49cd-b9ef-7b5a958e3ef5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Cataracta/AlthalosHouse.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/AlthalosHouse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cataracta/Cfountain.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/Cfountain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cataracta/Courtyard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/Courtyard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cataracta/Cpier.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/Cpier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cataracta/Fishing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/Fishing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cataracta/HunterPath.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/HunterPath.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cataracta/MiddleCataracta.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/MiddleCataracta.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cataracta/Ngate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/Ngate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cataracta/NorthC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/NorthC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cataracta/Southeast.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/Southeast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cataracta/Southwest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/Southwest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cataracta/UlricsBlacksmith.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/UlricsBlacksmith.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cataracta/West.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/West.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Class/Bear_Attacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/Class/Bear_Attacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Class/Fox_Attacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/Class/Fox_Attacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Class/Guardian_Attacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/Class/Guardian_Attacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Class/Hunter_Attacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/Class/Hunter_Attacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Class/Scout_Attacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/Class/Scout_Attacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Class/Wolf_Attacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/Class/Wolf_Attacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Combat/Bear_Combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Combat/Bear_Combat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Combat/CombatLogic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Combat/CombatLogic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Combat/Fox_Combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Combat/Fox_Combat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Combat/Guardian_Combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Combat/Guardian_Combat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Combat/Hunter_Combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Combat/Hunter_Combat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Combat/Scout_Combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Combat/Scout_Combat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Combat/Wolf_Combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Combat/Wolf_Combat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Items/Food.py" beforeDir="false" afterPath="$PROJECT_DIR$/Items/Food.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/Attack_Storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/Attack_Storage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/Item_Storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/Item_Storage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/Room_Storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/Room_Storage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/C_Portal_Room.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/C_Portal_Room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/Library.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/Library.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/Throne_Room.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/Throne_Room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/West_Hallway.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/West_Hallway.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nacastrum_Castle/C_Portal_Room.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nacastrum_Castle/West_Hallway.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Room/Room.py" beforeDir="false" afterPath="$PROJECT_DIR$/Room/Room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shop/Shop.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shop/Shop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tutorial_Combat/T_Bear.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tutorial_Combat/T_Bear.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tutorial_Combat/T_Combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tutorial_Combat/T_Combat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tutorial_Combat/T_Fox.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tutorial_Combat/T_Fox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tutorial_Combat/T_Wolf.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tutorial_Combat/T_Wolf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="361646237">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="50" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="50" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="116" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="116" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tutorial_Combat/T_Bear.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-43">
+              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tutorial_Combat/T_Combat.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tutorial_Combat/T_Fox.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-28">
+              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Shop/Shop.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/Throne_Room.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Avasia.</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Logic/Room_Storage.py" />
+        <option value="$PROJECT_DIR$/Logic/game.py" />
+        <option value="$PROJECT_DIR$/Logic/config.py" />
+        <option value="$PROJECT_DIR$/Logic/Attack_Storage.py" />
+        <option value="$PROJECT_DIR$/Logic/util.py" />
+        <option value="$PROJECT_DIR$/Logic/Item_Storage.py" />
+        <option value="$PROJECT_DIR$/Cataracta/AlthalosHouse.py" />
+        <option value="$PROJECT_DIR$/Cataracta/Cfountain.py" />
+        <option value="$PROJECT_DIR$/Cataracta/Courtyard.py" />
+        <option value="$PROJECT_DIR$/Cataracta/Cpier.py" />
+        <option value="$PROJECT_DIR$/Cataracta/Fishing.py" />
+        <option value="$PROJECT_DIR$/Cataracta/HunterPath.py" />
+        <option value="$PROJECT_DIR$/Cataracta/MiddleCataracta.py" />
+        <option value="$PROJECT_DIR$/Cataracta/Ngate.py" />
+        <option value="$PROJECT_DIR$/Cataracta/NorthC.py" />
+        <option value="$PROJECT_DIR$/Cataracta/Southeast.py" />
+        <option value="$PROJECT_DIR$/Cataracta/Southwest.py" />
+        <option value="$PROJECT_DIR$/Cataracta/UlricsBlacksmith.py" />
+        <option value="$PROJECT_DIR$/Cataracta/West.py" />
+        <option value="$PROJECT_DIR$/Class/Bear_Attacks.py" />
+        <option value="$PROJECT_DIR$/Class/Fox_Attacks.py" />
+        <option value="$PROJECT_DIR$/Class/Guardian_Attacks.py" />
+        <option value="$PROJECT_DIR$/Class/Scout_Attacks.py" />
+        <option value="$PROJECT_DIR$/Class/Hunter_Attacks.py" />
+        <option value="$PROJECT_DIR$/Class/Wolf_Attacks.py" />
+        <option value="$PROJECT_DIR$/Combat/Bear_Combat.py" />
+        <option value="$PROJECT_DIR$/Combat/CombatLogic.py" />
+        <option value="$PROJECT_DIR$/Combat/Fox_Combat.py" />
+        <option value="$PROJECT_DIR$/Combat/Guardian_Combat.py" />
+        <option value="$PROJECT_DIR$/Combat/Hunter_Combat.py" />
+        <option value="$PROJECT_DIR$/Combat/Scout_Combat.py" />
+        <option value="$PROJECT_DIR$/Combat/Wolf_Combat.py" />
+        <option value="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/C_Portal_Room.py" />
+        <option value="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/Library.py" />
+        <option value="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/Throne_Room.py" />
+        <option value="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/West_Hallway.py" />
+        <option value="$PROJECT_DIR$/Room/Room.py" />
+        <option value="$PROJECT_DIR$/Shop/Shop.py" />
+        <option value="$PROJECT_DIR$/Player/PlayerClass.py" />
+        <option value="$PROJECT_DIR$/Items/Food.py" />
+        <option value="$PROJECT_DIR$/Tutorial_Combat/T_Bear.py" />
+        <option value="$PROJECT_DIR$/Tutorial_Combat/T_Combat.py" />
+        <option value="$PROJECT_DIR$/Tutorial_Combat/T_Fox.py" />
+        <option value="$PROJECT_DIR$/Tutorial_Combat/T_Wolf.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="170" />
+    <option name="y" value="23" />
+    <option name="width" value="1278" />
+    <option name="height" value="1329" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+              <item name="Cataracta" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+              <item name="Class" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+              <item name="Combat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+              <item name="Enemy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+              <item name="Items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+              <item name="Logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+              <item name="Nacastrum" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+              <item name="Nacastrum" type="462c0819:PsiDirectoryNode" />
+              <item name="Nacastrum_Castle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+              <item name="Player" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+              <item name="Room" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+              <item name="Shop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Avasia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avasia" type="462c0819:PsiDirectoryNode" />
+              <item name="Tutorial_Combat" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e6df5eee-95c7-49cd-b9ef-7b5a958e3ef5" name="Default Changelist" comment="" />
+      <created>1544903260676</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544903260676</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="170" y="23" width="1278" height="1329" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980111" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24980111" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Logic/Room_Storage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#13#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <element signature="e#263#288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/Attack_Storage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/Item_Storage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/AlthalosHouse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/Cfountain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/Courtyard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/Cpier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/Fishing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/HunterPath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/MiddleCataracta.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/Ngate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/NorthC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/Southeast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/Southwest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/UlricsBlacksmith.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cataracta/West.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Class/Bear_Attacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Class/Fox_Attacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Class/Guardian_Attacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Class/Scout_Attacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Class/Hunter_Attacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Class/Wolf_Attacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Combat/Bear_Combat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-43">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Combat/CombatLogic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Combat/Fox_Combat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Combat/Guardian_Combat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Combat/Hunter_Combat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Combat/Scout_Combat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Combat/Wolf_Combat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Enemy/EnemyClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Items/Junk.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Items/Weapon.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Nacastrum_Castle/C_Portal_Room.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/C_Portal_Room.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Room/Room.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/West_Hallway.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/Throne_Room.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Shop/Shop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Items/Gold.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Items/Food.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tutorial_Combat/T_Bear.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-43">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tutorial_Combat/T_Combat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tutorial_Combat/T_Wolf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-910">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/Library.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player/PlayerClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tutorial_Combat/T_Fox.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,8 +1,8 @@
-import Avasia.Logic.util as util
-import Avasia.Logic.config as config
-import Avasia.Logic.Item_Storage as Item_Storage
+import Logic.util as util
+import Logic.config as config
+import Logic.Item_Storage as Item_Storage
 from random import randint
-from Avasia.Room.Room import Room
+from Room.Room import Room
 
 
 def fishing():

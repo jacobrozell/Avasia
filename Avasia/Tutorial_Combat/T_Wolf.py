@@ -1,6 +1,6 @@
-from Avasia.Class.Wolf_Attacks import *
-from Avasia.Logic.util import containsAny
-import Avasia.Logic.config as config
+from Class.Wolf_Attacks import *
+from Logic.util import containsAny
+import Logic.config as config
 enemy_wounded = False
 enemy_stunned = False
 turns_wounded = -1

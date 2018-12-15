@@ -1,7 +1,7 @@
-from Avasia.Room.Room import Room
-from Avasia.Logic.util import talk
-from Avasia.Logic.util import containsAny
-import Avasia.Logic.config as config
+from Room.Room import Room
+from Logic.util import talk
+from Logic.util import containsAny
+import Logic.config as config
 
 
 def portal_logic():

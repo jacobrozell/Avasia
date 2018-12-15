@@ -1,6 +1,6 @@
-from Avasia.Class.Fox_Attacks import *
-from Avasia.Logic.util import containsAny
-import Avasia.Logic.config as config
+from Class.Fox_Attacks import *
+from Logic.util import containsAny
+import Logic.config as config
 
 
 def choose_attack():

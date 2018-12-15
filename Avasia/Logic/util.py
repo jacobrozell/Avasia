@@ -1,5 +1,5 @@
-import Avasia.Logic.config as config
-import Avasia.Logic.Item_Storage as item
+import Logic.config as config
+import Logic.Item_Storage as item
 
 
 def containsAny(string, options):

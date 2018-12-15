@@ -1,4 +1,8 @@
-def shop():
+from Logic.util import containsAny
+from Logic.Item_Storage import *
+
+
+def shop(player):
 
     # Inventory is wrong
     print()
@@ -22,7 +26,7 @@ def shop():
             if player.inventory == rustysword.name:
                 print("You already have that item!")
                 print()
-            elif player_gold.value < 10:
+            elif player. < 10:
                 print()
                 print("You don't have enough money!")
                 print()

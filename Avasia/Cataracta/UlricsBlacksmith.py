@@ -1,5 +1,5 @@
-from Avasia.Room.Room import Room
-import Avasia.Logic.config as config
+from Room.Room import Room
+import Logic.config as config
 
 
 def ulric_logic():

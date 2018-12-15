@@ -1,4 +1,4 @@
-import Avasia.Logic.config as config
+import Logic.config as config
 
 # Bear
 # Theme: Slow, powerful.  Take hits and unleash them back in full force.

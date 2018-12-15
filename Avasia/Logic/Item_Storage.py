@@ -1,5 +1,5 @@
-from Avasia.Items.Food import *
-from Avasia.Items.Junk import *
+from Items.Food import *
+from Items.Junk import *
 
 # ------------------------Items----------------------------
 

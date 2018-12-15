@@ -1,5 +1,5 @@
-from Avasia.Room.Room import Room
-from Avasia.Logic.util import talk, config
+from Room.Room import Room
+from Logic.util import talk, config
 
 
 def alt_house_logic():

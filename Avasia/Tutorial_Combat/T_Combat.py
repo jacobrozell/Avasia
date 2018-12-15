@@ -1,10 +1,10 @@
-import Avasia.Logic.config as config
-from Avasia.Logic.util import containsAny
+import Logic.config as config
+from Logic.util import containsAny
 
 # Set new links
-from Avasia.Tutorial_Combat.T_Wolf import Wolf_Combat
-from Avasia.Tutorial_Combat.T_Bear import Bear_Combat
-from Avasia.Tutorial_Combat.T_Fox import Fox_Combat
+from Tutorial_Combat.T_Wolf import Wolf_Combat
+from Tutorial_Combat.T_Bear import Bear_Combat
+from Tutorial_Combat.T_Fox import Fox_Combat
 
 
 def T_combat():
