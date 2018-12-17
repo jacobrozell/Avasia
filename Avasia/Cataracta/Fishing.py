@@ -24,8 +24,11 @@ def fishing():
         # When you run out of bait
         if bait == 0:
             print("You ran out of bait!")
+            print("You thank Doran and return the fishing pole.")
+            print("You leave the pier.")
             print()
-            return "go back"
+            config.current_room_id = "southeast_c"
+            return "reload"
 
         keepgoing = False
         ans = input("Throw your cast in the water?")
@@ -44,23 +47,23 @@ def fishing():
                 print()
                 oldshoe = 1
 
-            if item == 1 and oldshoe == 1:
+            elif item == 1 and oldshoe == 1:
                 print("Whole lot of nothing...")
                 print()
 
             # Small Fish
-            if item == 2:
+            elif item == 2:
                 print("You fish up a " + Item_Storage.smallfish.name + "!")
                 Item_Storage.smallfish.print_stats()
                 config.player.give_item(Item_Storage.smallfish)
                 print()
                 smallfish = 1
 
-            if item == 2 and smallfish == 1:
+            elif item == 2 and smallfish == 1:
                 print("Whole lot of nothing...")
 
             # Money Purse
-            if item == 3 or item == 4 or item == 5:
+            elif item == 3 or item == 4 or item == 5:
                 print("You fish up a Soggy-Money Purse!")
                 amount = randint(1, 30)
                 print("You add " + str(amount) + " gold to your backpack!")
@@ -69,29 +72,29 @@ def fishing():
                 print()
 
             # Big fish
-            if item == 6:
+            elif item == 6:
                 print("You fish up a " + Item_Storage.bigfish.name + "!")
                 Item_Storage.bigfish.print_stats()
                 config.player.give_item(Item_Storage.bigfish)
                 print()
                 bigfish = 1
 
-            if item == 6 and bigfish == 1:
+            elif item == 6 and bigfish == 1:
                 print("Whole lot of nothing...")
                 print()
 
-            if item == 7:
+            elif item == 7:
                 print("You fish up a " + Item_Storage.crab.name + "!")
                 Item_Storage.crab.print_stats()
                 config.player.give_item(Item_Storage.crab)
                 print()
                 crab = 1
 
-            if item == 7 and crab == 1:
+            elif item == 7 and crab == 1:
                 print("Whole lot of nothing...")
                 print()
             # Catch Nothing
-            if item == 8 or item == 9 or item == 10:
+            elif item == 8 or item == 9 or item == 10:
                 print("You fish up a heavy amount of seaweed.")
                 print("You throw it back over the pier.")
                 print()
@@ -102,8 +105,10 @@ def fishing():
             print("You thank Doran and return the fishing pole.")
             print("You leave the pier.")
             print()
-            return "go back"
+            config.current_room_id = "southeast_c"
+            return "reload"
         else:
             print("Invalid Command")
+
 
 fishing_room = Room(name="Fishing", des="", id="fishing_id", directions="", on_enter=fishing)

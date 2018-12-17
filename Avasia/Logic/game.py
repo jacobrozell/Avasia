@@ -8,7 +8,7 @@
 # --------------------------------
 
 # Rooms - imports all rooms
-import Logic.Room_Storage
+import Logic.Room_Storage as room
 
 # Util
 import Logic.util as util
@@ -132,25 +132,25 @@ def mainloop():
 
 
 # Cataracta
-register_area(southwest_c)
-register_area(althalos_house)
-register_area(southeast_c)
-register_area(ulric_house)
-register_area(c_pier)
-register_area(middle_c)
-register_area(c_fountain)
-register_area(north_c)
-register_area(courtyard)
-register_area(hunter_path)
-register_area(west_cataracta)
-register_area(nGate)
-register_area(fishing_room)
+register_area(room.southwest_c)
+register_area(room.althalos_house)
+register_area(room.southeast_c)
+register_area(room.ulric_house)
+register_area(room.c_pier)
+register_area(room.middle_c)
+register_area(room.c_fountain)
+register_area(room.north_c)
+register_area(room.courtyard)
+register_area(room.hunter_path)
+register_area(room.west_cataracta)
+register_area(room.nGate)
+register_area(room.fishing_room)
 
 # Nacastrum Castle
-register_area(c_portal_room)
-register_area(west_hallway)
-register_area(n_library)
-register_area(throne_room)
+register_area(room.c_portal_room)
+register_area(room.west_hallway)
+register_area(room.n_library)
+register_area(room.throne_room)
 # -------------------------------------------------------------------------------
 
 

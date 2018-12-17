@@ -9,17 +9,21 @@ def pier_logic():
     print("The hut reeks of fish and bait.")
     print("Various fishing poles line the walls in all shapes, sizes, and colors.")
     print()
-    print(
-        "Doran, who appears to be the owner, hears you enter and calls from a back room with a rough, agitated voice.")
-    talk("Oi! Whatya be doin' in my hut?")
-    print()
-    print("You explain that you saw the pier and wanted to take a closer look.")
-    print()
-    print(" ""Hmm.."" Doran hums before responding. ""I don't allow many people to come visit."" ")
-    talk("To many of these landfolk don't have any appreciation for the river or my pier.")
-    while True:
+
+    if config.doran == 0:
+        print("Doran, who appears to be the owner, hears you enter and calls from a back room with a rough, agitated voice.")
+        talk("Oi! Whatya be doin' in my hut?")
+        print()
+        print("You explain that you saw the pier and wanted to take a closer look.")
+        print()
+        talk("Hmm.. Doran hums before responding. I don't allow many people to come visit.")
+        talk("To many of these landfolk don't have any appreciation for the river or my pier.")
         talk("Perhaps for a few gold, you can take a look. Think of it as insurance.")
         talk("I'll even let you borrow a fishing rod and some bait.")
+        config.doran = 1
+    elif config.doran == 1:
+        talk("Welcome back! You here to fish or just stand there?")
+    while True:
         talk("What do ye say? 15 gold?")
         ans = input()
         print()
@@ -49,7 +53,7 @@ def pier_logic():
                 print("Doran hands you an old fishing rod and some bait then points you towards the door to the pier.")
                 print()
                 config.current_room_id = "fishing_id"
-                config.ulric = 2
+                config.ulric = 0
                 return "reload"
         elif containsAny(ans, no):
             print()

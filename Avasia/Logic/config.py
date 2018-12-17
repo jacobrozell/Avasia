@@ -7,6 +7,7 @@ from Items.Gold import Gold
 current_room_id = ""
 fountain = 0
 ulric = 0
+doran = 0
 varrustysword = 0
 varbrokenaxe = 0
 courtyard = 0
