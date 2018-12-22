@@ -5,20 +5,26 @@ import Logic.config as config
 
 
 def portal_logic():
-    ventFound = 0
+    ventFound = False
     c_portal_room.print_name()
-    print("You stand in a room glimmering in red and blue light.")
-    print("You look behind you and see the source of the light.")
-    print("The Cataractan portal lies before you.")
-    print("You look away in sadness.")
 
-    talk("It's time to serve my people.")
+    if config.portalRoom:
+        print("You unlock the door to the portal room.\n")
+        print()
+        print("There is not really a reason to go back in there, but at least it's unlocked now.")
+        return "go back"
 
-    print("\nYou look around the room.")
-    print("It appears as this portal is rarely used, given by the condition of the room.")
-    print("You're surprised such a portal isn't guarded more carefully.")
-    print()
-    print("To the EAST is a door that appears to lead into a hallway.")
+    if config.portalRoom is False:
+        print("You stand in a room glimmering in red and blue light.")
+        print("You look behind you and see the source of the light.")
+        print("The Cataractan portal lies before you.")
+        print("You look away in sadness.")
+        talk("It's time to serve my people.")
+        print("\nYou look around the room.")
+        print("It appears as this portal is rarely used, given by the condition of the room.")
+        print("You're surprised such a portal isn't guarded more carefully.")
+        print()
+        print("To the EAST is a door that appears to lead into a hallway.")
 
     while True:
         ans = input("What do you want to do?")
@@ -35,7 +41,7 @@ def portal_logic():
             print("Old mage books stack along the western wall.")
             print("You see some sort of vent on the ceiling of the northern wall.")
             print()
-            ventFound = 1
+            ventFound = True
             continue
 
         elif containsAny(ans, east):
@@ -47,9 +53,7 @@ def portal_logic():
             continue
 
         elif containsAny(ans, vent):
-            if ventFound == 0:
-                pass
-            else:
+            if ventFound is True:
                 if config.player.getClass() == "scout" or config.player.getClass() == "hunter":
                     print("It seems you are a little too short to reach the vent.")
                     print()
@@ -61,6 +65,7 @@ def portal_logic():
                     print("It appears to be some sort of library.")
                     print("You easily lift the vent up and drop down into the library.")
                     print()
+                    config.portalRoom = True
                     config.current_room_id = "n_library"
                     return "reload"
 
@@ -72,11 +77,12 @@ def portal_logic():
             print("It appears to be some sort of library.")
             print("You easily lift the vent up and drop down into the library.")
             print()
+            config.portalRoom = True
             config.current_room_id = "n_library"
             return "reload"
 
         elif containsAny(ans, take):
-            if ventFound == 0:
+            if ventFound is False:
                 pass
             else:
                 print("You shouldn't take any of the books.")

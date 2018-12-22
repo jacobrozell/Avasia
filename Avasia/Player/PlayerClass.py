@@ -43,6 +43,7 @@ class Player:
 
         # Exp
         self.exp = 0
+        self.questDialogue = False
 
         # LevelUp Points
         self.levels = {2: 100, 3: 500, 4: 1500, 5: 5000, 6: 7500, 7: 10000, 8: 15000}
@@ -128,8 +129,14 @@ class Player:
             self.levelUp()
 
     def questExp(self, amt):
+        if self.questDialogue is False:
+            print("\nYou can occasionally get bonus exp from doing hidden or uncommon choices.")
+            print("The more uncommon, the more bonus experience.")
+            self.questDialogue = True
+
         self.exp += amt
-        print("You gain " + str(amt) + " exp!")
+        print("\nYou gain " + str(amt) + " exp!")
+        print("You now have " + str(self.exp) + " exp!")
         if self.exp >= self.levels[self.player_level + 1]:
             self.levelUp()
 

@@ -18,7 +18,7 @@ def alt_house_logic():
     print()
     talk("Take care, son. And, good luck!")
     print("\nYou thank Althalos and leave with a smile.\n")
-    return "go back"  # return
+    return "go back"
 
 
 althalos_house = Room(name="Althalos' House", des="", id="althalos_house", directions="", on_enter=alt_house_logic)

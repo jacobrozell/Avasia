@@ -11,6 +11,7 @@ varrustysword = False
 varbrokenaxe = False
 courtyard = False
 returnfish = False
+portalRoom = False
 
 # enemy stats
 # -------------------------
