@@ -78,33 +78,33 @@ def mainloop():
         # Print the players inventory
         elif util.containsAny(command, inventory):
             print()
-            config.player.printplayerinventory()
+            config.player.printPlayerInventory()
             print()
             continue
 
         # Eat food / drink potion:
         elif util.containsAny(command, eat):
 
-            if config.player.hp < config.player.maxhp:
+            if config.player.getHp() < config.player.getMaxHp():
 
                 print("What item do you want to eat/drink?")
                 print()
 
                 # Get input for which item_id the user wants to eat/drink
-                config.player.printplayerinventory()
+                config.player.printPlayerInventory()
                 itemToBeEaten = input()
 
                 # Search for item_id and RETURN THE ITEM ITSELF and set it to item_object
                 item_object = config.player.return_item(itemToBeEaten)
 
                 # If the Item wasn't actually found:
-                if item_object == "false":
+                if item_object is False:
                     print("Item not found!")
                     print()
                     continue
 
                 # We found the object but let's check and make sure the user isn't trying to eat gold or some shit
-                if item_object.type == "edible":
+                if item_object.typeID == "food":
                     config.player.eat_food(item_object.getAmt())
                     print("Health restored by " + str(item_object.getAmt()) + "!")
                     config.player.display_stats()

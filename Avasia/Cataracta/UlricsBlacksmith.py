@@ -1,9 +1,10 @@
 from Room.Room import Room
 import Logic.config as config
+from Logic.util import talk
 
 
 def ulric_logic():
-    if config.ulric == 0:
+    if config.ulric is False:
         ulric_house.print_name()
         print(
             "You go south to Ulric's Blacksmith, a small building, with clutters of metal and materials everywhere.")
@@ -22,16 +23,17 @@ def ulric_logic():
               "\n"
               """\n"Now go bother my brother Doran at the pier." """
               "\n")
-        config.ulric = 1
+        config.ulric = True
         return "go back"
     else:
         print()
         print(">>>Ulric's House<<<")
         print()
         print()
-        print(""" "Go bother my brother. I need to get back to work." """)
+        talk("Go bother my brother. I need to get back to work.")
         print()
         return "go back"
+
 
 ulric_house = Room(name="Ulric's House", des="", id="ulric_house", directions="", on_enter=ulric_logic)
 

@@ -9,15 +9,15 @@ def containsAny(string, options):
     return False
 
 
-def talk(message):
-    print("\"" + message + "\"")
+def talk(talkMessage, message=None):
+    if message is None:
+        print("\"" + str(talkMessage) + "\"")
+    else:
+        print("\"" + str(talkMessage) + "\"" + " " + str(message))
 
 
 def intro():
-    print()
-    print("---------Avasia: Sword of Courage---------")
-    print()
-    print()
+    print("\n---------Avasia: Sword of Courage---------\n\n")
     print("It has been 7 years since Vashirr, the old king of Nacastrum, betrayed Avasia."
           "\nThe Agromanians, a vicious people of the northwest, have remained idle since their attack on Oceandale."
           "\nNacastrum, the city of the Mage, is still being rebuilt under the diligent leadership of its new king."
@@ -27,9 +27,7 @@ def intro():
           "\nCataracta has formed a pact with the people of Aylova to join the fight when the time comes."
           "\nTh leader of Cataracta is drafting an army for the upcoming war and you have decided to volunteer."
           "\nThis is where your story begins..."
-          "\n")
-    print("\n"
-          "\n")
+          "\n\n\n")
     while True:
         name = input("What is your name?")
         if name == "":
@@ -52,7 +50,7 @@ def intro():
     print("To join, you must head to the Legion's courtyard.")
     print("You collect your belongings and leave your home with a sense of pride.")
     print("\nType 'help' any time for a list of commands!")
-    config.player_gold.add_gold(100)
+    config.player.addGold(100)
     config.player.give_item(item.potion)
     print()
     config.current_room_id = "southwest_c"

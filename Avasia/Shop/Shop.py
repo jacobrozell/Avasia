@@ -1,9 +1,8 @@
 from Logic.util import containsAny
-from Logic.Item_Storage import *
-
+import Logic.Item_Storage as item
 
 def shop(player):
-
+    return
     # Inventory is wrong
     print()
     print("Welcome to my shop!")
@@ -16,8 +15,8 @@ def shop(player):
             print("You have nothing to sell.")
             # if item in inventory... Add value to gold_count... Del item from player.inventory
     if containsAny(ans, buy):
-        rustysword.roll_for_stats_common()
-        availible_items = {rustysword.name: 10}
+        item.rustysword.roll_for_stats_common()
+        availible_items = {item.rustysword.name: 10}
         print()
         print("Here is what I have to sell: " + str(availible_items))
         purchase = input("What do you want to purchase?")
@@ -26,7 +25,7 @@ def shop(player):
             if player.inventory == rustysword.name:
                 print("You already have that item!")
                 print()
-            elif player. < 10:
+            elif player.getGold() < 10:
                 print()
                 print("You don't have enough money!")
                 print()
@@ -35,7 +34,7 @@ def shop(player):
                 print()
                 print("You purchased " + str(rustysword.name) + "!")
                 player.printplayerinventory()
-                player_gold.value -= 10
+                player.subtractGold(10)
                 return
     else:
         print()

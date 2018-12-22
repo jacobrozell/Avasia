@@ -10,32 +10,20 @@ def fishing():
     print("You see the rippling water surrounding you.")
     print("You feel the cool breeze of you the wind over the water.")
     bait = randint(4, 7)
-    oldshoe = 0
-    smallfish = 0
-    bigfish = 0
-    crab = 0
-    keepgoing = False
-    while True:
-        if keepgoing:
-            bait -= 1
-            print("It seems you have enough bait to last " + str(bait) + " casts.")
-            print()
+    oldshoe = False
+    smallfish = False
+    bigfish = False
+    crab = False
+    keepGoing = True
 
-        # When you run out of bait
-        if bait == 0:
-            print("You ran out of bait!")
-            print("You thank Doran and return the fishing pole.")
-            print("You leave the pier.")
-            print()
-            config.current_room_id = "southeast_c"
-            return "reload"
-
-        keepgoing = False
+    while keepGoing:
+        keepGoing = False
         ans = input("Throw your cast in the water?")
         print()
         ans.upper()
         y = ["YES", "Y"]
         n = ["NO", "N"]
+
         if util.containsAny(ans, y):
             item = randint(1, 10)
 
@@ -45,9 +33,9 @@ def fishing():
                 Item_Storage.oldshoe.print_stats()
                 config.player.give_item(Item_Storage.oldshoe)
                 print()
-                oldshoe = 1
+                oldshoe = True
 
-            elif item == 1 and oldshoe == 1:
+            elif item == 1 and oldshoe:
                 print("Whole lot of nothing...")
                 print()
 
@@ -57,18 +45,18 @@ def fishing():
                 Item_Storage.smallfish.print_stats()
                 config.player.give_item(Item_Storage.smallfish)
                 print()
-                smallfish = 1
+                smallfish = True
 
-            elif item == 2 and smallfish == 1:
+            elif item == 2 and smallfish:
                 print("Whole lot of nothing...")
 
             # Money Purse
             elif item == 3 or item == 4 or item == 5:
                 print("You fish up a Soggy-Money Purse!")
-                amount = randint(1, 30)
+                amount = randint(1, 20)
                 print("You add " + str(amount) + " gold to your backpack!")
-                config.player_gold.add_gold(amount)
-                config.player_gold.gold_count()
+                config.player.addGold(amount)
+                config.player.printGold()
                 print()
 
             # Big fish
@@ -77,29 +65,40 @@ def fishing():
                 Item_Storage.bigfish.print_stats()
                 config.player.give_item(Item_Storage.bigfish)
                 print()
-                bigfish = 1
+                bigfish = True
 
-            elif item == 6 and bigfish == 1:
-                print("Whole lot of nothing...")
-                print()
+            elif item == 6 and bigfish:
+                print("Whole lot of nothing...\n")
 
             elif item == 7:
                 print("You fish up a " + Item_Storage.crab.name + "!")
                 Item_Storage.crab.print_stats()
                 config.player.give_item(Item_Storage.crab)
                 print()
-                crab = 1
+                crab = True
 
-            elif item == 7 and crab == 1:
+            elif item == 7 and crab:
                 print("Whole lot of nothing...")
                 print()
+
             # Catch Nothing
             elif item == 8 or item == 9 or item == 10:
                 print("You fish up a heavy amount of seaweed.")
                 print("You throw it back over the pier.")
                 print()
 
-            keepgoing = True
+            bait -= 1
+            # When you run out of bait
+            if bait == 0:
+                print("You ran out of bait!")
+                print("You thank Doran and return the fishing pole.")
+                print("You leave the pier.")
+                print()
+                config.current_room_id = "southeast_c"
+                return "reload"
+            else:
+                print("It seems you have enough bait to last " + str(bait) + " casts.\n")
+                keepGoing = True
 
         elif util.containsAny(ans, n):
             print("You thank Doran and return the fishing pole.")
@@ -107,8 +106,6 @@ def fishing():
             print()
             config.current_room_id = "southeast_c"
             return "reload"
-        else:
-            print("Invalid Command")
 
 
 fishing_room = Room(name="Fishing", des="", id="fishing_id", directions="", on_enter=fishing)

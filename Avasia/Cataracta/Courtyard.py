@@ -1,6 +1,5 @@
 from Room.Room import Room
 import Logic.config as config
-from Enemy.EnemyClass import Enemy
 from Combat.CombatLogic import combat
 from Logic.util import talk, containsAny
 from Tutorial_Combat import T_Combat
@@ -99,8 +98,8 @@ def courtyard_logic():
             config.player.setMaxAtk(5)
 
             # Defense
-            config.player.setDef(15)
-            config.player.setMaxDef(15)
+            config.player.setDef(5)
+            config.player.setMaxDef(5)
 
             # Speed
             config.player.setSpeed(0)
@@ -468,10 +467,7 @@ def cataracta_battle():
     print()
     print("One of the Agromanian trudges to you and smashes your head with the hilt of his axe.")
     print("You are knocked out cold.")
-    print("------------------------------------------------------------------------------------------------")
-    print()
-    print()
-    print()
+    print("------------------------------------------------------------------------------------------------\n\n\n")
     print("Time passes and you awaken alone in the same place you were before.")
     print("You stumble up off the ground and immediately smell burning fires. ")
     print("You look to the Cataractan castle. Now in flames and rubble.")
@@ -483,8 +479,7 @@ def cataracta_battle():
     print("The blue crystals that line the hallway, called Anula, are completely shattered and in disrepair.")
     print("You make it to the throne room and find King Kimious dead on the floor, surrounded by his most trusted guards.")
     print()
-    print(" ""What hope is there against a force such as this?""" + "You think to yourself.")
-    print()
+    talk("What hope is there against a force such as this?", "You think to yourself.\n")
     print("You pass a room that emanates a faint glow.")
     print("As you walk into the room, you are greeted with a large stone circle with runes on the ground.")
     print("At the center is a silver ring with the same runes, perpendicular to the ground.")
@@ -501,7 +496,7 @@ def cataracta_battle():
     print()
     print("With your home destroyed and your people slain, you enter the portal.")
     print()
-    print("Hopefully King Kaefden will know what to do.")
+    print("Hopefully, King Kaefden will know what to do.")
     print("Your journey starts here.")
     print()
 

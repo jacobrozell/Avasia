@@ -3,7 +3,7 @@ from math import floor
 
 
 class Player:
-    def __init__(self, atk, spd, hp, luck, defense, name, class_id):
+    def __init__(self, atk, spd, hp, luck, defense, name, gold, class_id):
         self.name = name
 
         # Attack
@@ -26,8 +26,12 @@ class Player:
         self.luck = luck
         self.maxLuck = 0
 
-        # Inventory
-        self.printinventory = {}
+        # Gold
+        self.gold = gold
+        self.maxGold = 1000
+
+        # Inventory (Inventory associates item with item.typeID) (printInventory is just used for a UI standpoint)
+        self.printInventory = {}
         self.inventory = {}
         
         # Class/ Forms
@@ -48,20 +52,22 @@ class Player:
             if string.replace(" ", "").lower() == item.id:
                 return item
             else:
-                return "false"
+                return False
 
     def give_item(self, item):
 
-        self.inventory[item] = item.id
+        self.inventory[item] = item.typeID
 
-        if item.type == "edible":
-            self.printinventory[item.name] = "Restored Amount = " + str(item.restored_amount)
+        if item.typeID == "food":
+            self.printInventory[item.name] = "Restored Amount = " + str(item.restored_amount)
 
-        elif item.type == "junk":
-            self.printinventory[item.name] = "Value: " + str(item.value) + "; " + str(item.des)
+        elif item.typeID == "junk":
+            self.printInventory[item.name] = "Value: " + str(item.value) + "; " + str(item.des)
 
-    def printplayerinventory(self):
-        print("Inventory: " + str(self.printinventory).replace("'", "").replace("{}", ""))
+    def printPlayerInventory(self):
+        print("Inventory: ")
+        for item in self.printInventory:
+            print(str(item.replace("'", "").replace("{}", "")))
 
     def take_hit(self, damage):
         self.hp -= damage
@@ -274,6 +280,25 @@ class Player:
 
     def setMaxLuck(self, maxLuckIn):
         self.maxLuck = maxLuckIn
+
+    # Gold
+
+    def getGold(self):
+        return self.gold
+
+    def getMaxGold(self):
+        return self.maxGold
+
+    def subtractGold(self, goldIn):
+        self.gold -= goldIn
+        if self.gold < 0:
+            self.gold = 0
+
+    def addGold(self, goldIn):
+        self.gold += goldIn
+
+    def printGold(self):
+        print("You have " + str(self.gold) + " gold.")
 
     # Exp
     def setExp(self, expIn):

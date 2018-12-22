@@ -28,10 +28,10 @@ def choose_attack():
     print("Attacks: " + str(attacks).replace("[]", "").replace("'", ""))
     attack = input()
     attack = attack.upper()
-    swipevar = ["SWIPE"]
-    storevar = ["STORE"]
-    roarvar = ["ROAR"]
-    guardvar = ["GUARD"]
+    swipevar = ["SWIPE", "1"]
+    storevar = ["STORE", "2"]
+    roarvar = ["ROAR", "3"]
+    guardvar = ["GUARD", "4"]
 
     if containsAny(attack, swipevar):
         return attack

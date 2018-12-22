@@ -7,4 +7,5 @@ def hunter_path():
     print()
     return "go back"
 
+
 hunter_path = Room(name="", des="", id="hunter_path", directions="", on_enter=hunter_path)

@@ -1,3 +1,4 @@
-from Class.Hunter_Attacks import *
-from Class.Guardian_Attacks import *
-from Class.Scout_Attacks import *
+from Class.Fox_Attacks import *
+from Class.Bear_Attacks import *
+from Class.Wolf_Attacks import *
+

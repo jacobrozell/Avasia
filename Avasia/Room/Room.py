@@ -13,20 +13,14 @@ class Room:
     def event(self):
         # This is a linking room
         if self.on_enter is None:
-            print()
-            print(">>>" + self.name + "<<<")
-            print()
-            print()
+            print("\n>>>" + self.name + "<<<\n\n")
             print(self.des)
         else:
             # Logic Room
             return self.on_enter()
 
     def print_name(self):
-        print()
-        print(">>>" + self.name + "<<<")
-        print()
-        print()
+        print("\n>>>" + self.name + "<<<\n\n")
 
     def direction(self, command):
         north = ["NORTH"]

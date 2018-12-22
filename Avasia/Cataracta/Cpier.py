@@ -10,7 +10,7 @@ def pier_logic():
     print("Various fishing poles line the walls in all shapes, sizes, and colors.")
     print()
 
-    if config.doran == 0:
+    if config.doran is False:
         print("Doran, who appears to be the owner, hears you enter and calls from a back room with a rough, agitated voice.")
         talk("Oi! Whatya be doin' in my hut?")
         print()
@@ -20,8 +20,8 @@ def pier_logic():
         talk("To many of these landfolk don't have any appreciation for the river or my pier.")
         talk("Perhaps for a few gold, you can take a look. Think of it as insurance.")
         talk("I'll even let you borrow a fishing rod and some bait.")
-        config.doran = 1
-    elif config.doran == 1:
+        config.doran = True
+    elif config.doran is True:
         talk("Welcome back! You here to fish or just stand there?")
     while True:
         talk("What do ye say? 15 gold?")
@@ -31,17 +31,17 @@ def pier_logic():
         yes = ["YES"]
         no = ["NO", "LEAVE"]
         if containsAny(ans, yes):
-            if config.ulric == 0:
+            if config.ulric is False:
                 print("You pay Doran 15 gold.")
-                config.player_gold.subtract_gold(15)
-                config.player_gold.gold_count()
+                config.player.subtractGold(15)
+                config.player.printGold()
                 print("He hands you an old fishing rod and some bait then points toward the door to the pier.")
                 print()
                 talk("Becareful not to fall in the river.")
                 talk("Varatho ain't a kind beast to those who swim her rapids.")
                 config.current_room_id = "fishing_id"
                 return "reload"
-            if config.ulric == 1:
+            if config.ulric:
                 print("You explain to Doran that his brother, Ulric, sent you.")
                 print()
                 talk("Ay', you spoke to Ulric, did ye?")
@@ -53,7 +53,7 @@ def pier_logic():
                 print("Doran hands you an old fishing rod and some bait then points you towards the door to the pier.")
                 print()
                 config.current_room_id = "fishing_id"
-                config.ulric = 0
+                config.ulric = False
                 return "reload"
         elif containsAny(ans, no):
             print()
@@ -65,7 +65,7 @@ def pier_logic():
             config.current_room_id = "southeast_c"
             return "reload"
         else:
-            print("I don't understand")
+            talk("Simple yes or no, boy.")
 
 
 c_pier = Room(name="Doran's Pier", des="", id="c_pier", directions="", on_enter=pier_logic)

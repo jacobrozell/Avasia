@@ -1,17 +1,16 @@
 from Player.PlayerClass import Player
 from Enemy.EnemyClass import Enemy
-from Items.Gold import Gold
 
 
 # Variables to keep track of
 current_room_id = ""
-fountain = 0
-ulric = 0
-doran = 0
-varrustysword = 0
-varbrokenaxe = 0
-courtyard = 0
-returnfish = 0
+fountain = False
+ulric = False
+doran = False
+varrustysword = False
+varbrokenaxe = False
+courtyard = False
+returnfish = False
 
 # enemy stats
 # -------------------------
@@ -31,10 +30,6 @@ player = Player(name="",
                 luck=0,
                 defense=0,
                 spd=0,
+                gold=0,
                 class_id="")
 
-
-# ------------------------Gold----------------------------
-player_gold = Gold(name="Gold",
-                   des="Shiny gold coins.",
-                   value=0)
