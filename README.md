@@ -2,10 +2,13 @@
 
 ## Setting up Avasia #2:
 1. Install Python3.
+```terminal
+brew install python3
+```
 2. Install colorama for python3.
-``terminal
+```terminal
 python3 -m pip install colorama
-``
+```
 3. Clone this repo.
 4. Run game.py.
 
