@@ -1,6 +1,9 @@
 # Avasia #2 : Untitled
 
-
-Clone project.
-Open the project in your Python 3 IDE.
-Choose the second Avasia directory when you open the project.
+First, install Python33.
+Second, install colorama for python3.
+``terminal
+python3 -m pip install colorama
+``
+Third, clone this repo.
+Fourth, run game.py.
