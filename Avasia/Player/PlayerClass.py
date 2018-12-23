@@ -1,5 +1,6 @@
 from random import randint
 from math import floor
+import Logic.config as config
 
 
 class Player:
@@ -214,8 +215,7 @@ class Player:
 
         self.resetStats()
 
-    # Getters and Setters
-    
+    # ------Getters and Setters-----
     # Name
     def setName(self, namein):
         self.name = namein
@@ -289,7 +289,6 @@ class Player:
         self.maxLuck = maxLuckIn
 
     # Gold
-
     def getGold(self):
         return self.gold
 
@@ -320,3 +319,41 @@ class Player:
 
     def getClass(self):
         return self.class_id
+
+    # Level
+    def getLevel(self):
+        return self.player_level
+
+    def setLevel(self, levelIn):
+        self.player_level = levelIn
+
+    # Get all --Used for save
+    def getAllStats(self):
+        return {"name": self.getName(),
+                "class": self.getClass(),
+                "gold": self.getGold(),
+                "atk": self.getAtk(),
+                "def": self.getDef(),
+                "speed": self.getSpeed(),
+                "luck": self.getLuck(),
+                "hp": self.getHp(),
+                "level": self.getLevel(),
+                "exp": self.getExp(),
+                # "inventory": self.inventory,
+                "printInventory": self.printInventory,
+                "maxAtk": self.getMaxAtk(),
+                "maxDef": self.getMaxDef(),
+                "maxSpeed": self.getMaxSpeed(),
+                "maxLuck": self.getMaxLuck(),
+                "maxHp": self.getMaxHp(),
+                "currentRoom": config.current_room_id,
+                "fountain": config.fountain,
+                "ulric": config.ulric,
+                "doran": config.doran,
+                "rustySword": config.varrustysword,
+                "brokenAxe": config.varbrokenaxe,
+                "courtyard": config.courtyard,
+                "returnFish": config.returnfish,
+                "portalRoom": config.portalRoom}
+
+

@@ -35,8 +35,7 @@ def pier_logic():
                 print("You pay Doran 15 gold.")
                 config.player.subtractGold(15)
                 config.player.printGold()
-                print("He hands you an old fishing rod and some bait then points toward the door to the pier.")
-                print()
+                print("He hands you an old fishing rod and some bait then points toward the door to the pier.\n")
                 talk("Becareful not to fall in the river.")
                 talk("Varatho ain't a kind beast to those who swim her rapids.")
                 config.current_room_id = "fishing_id"

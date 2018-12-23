@@ -2,6 +2,8 @@ from Class.Wolf_Attacks import *
 from Logic.util import containsAny
 import Logic.config as config
 from random import randrange
+import Logic.save_game as save
+
 enemy_wounded = False
 enemy_stunned = False
 turns_wounded = -1
@@ -165,10 +167,21 @@ def Wolf_Combat():
         tempplayerspeed = randrange(config.player.getSpeed(), config.player.getSpeed() * 2)
         tempespeed = randrange(config.enemy.getSpeed(), config.enemy.getSpeed() * 2)
 
-        # Multiple deaths form a list. Choose random -----------------------
+        # Player dies ------------------------------------------------------
         if config.player.getHp() <= 0:
             config.enemy.killPlayer()
-            quit()
+
+            while True:
+                ans = input("Would you like to start at the last save?")
+                if containsAny(ans, "yes"):
+                    save.loadParameters()
+                    break
+                elif containsAny(ans, "no"):
+                    print("Thank you for playing!")
+                    quit()
+                else:
+                    pass
+                break
 
         # ------------------------------------------------------------------
         elif config.enemy.getHp() <= 0:

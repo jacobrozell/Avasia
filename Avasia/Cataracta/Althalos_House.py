@@ -4,7 +4,7 @@ from Logic.util import talk, config
 
 def alt_house_logic():
     althalos_house.print_name()
-    print("\nYou approach Althalos' shop.")
+    print("You approach Althalos' shop.")
     print(
         "\nThe sight of the " + """ "Althalos' Wares" """ + "sign sparks past memories of the eccentric shopkeeper.\n")
     print("\nYou enter and immediately notice the shop is completely absent of people, yet overstocked in goods.")

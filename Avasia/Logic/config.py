@@ -1,5 +1,6 @@
 from Player.PlayerClass import Player
 from Enemy.EnemyClass import Enemy
+import colorama as c
 
 
 # Variables to keep track of
@@ -34,3 +35,8 @@ player = Player(name="",
                 gold=0,
                 class_id="")
 
+# Colors
+base_color = str(c.Fore.LIGHTBLUE_EX)
+talk_color = str(c.Fore.CYAN)
+die_color = str(c.Fore.RED)
+room_color = str(c.Fore.BLACK)

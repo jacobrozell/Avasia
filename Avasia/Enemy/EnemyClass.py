@@ -1,3 +1,6 @@
+import Logic.config as config
+
+
 class Enemy:
     def __init__(self, atk, defense, spd, hp, name):
 
@@ -31,6 +34,7 @@ class Enemy:
         print(output)
 
     def setStats(self, nameIn, atkIn, defIn, hpIn, spdIn, text=""):
+
         self.name = nameIn
 
         # Attack
@@ -50,13 +54,14 @@ class Enemy:
         self.maxDef = defIn
 
         # Kill player text
+
         self.text = text
 
     def killPlayer(self):
-        print(self.text + "\nYou have died.")
+        print(config.die_color, self.text + "\nYou have died.\n")
+        print(config.base_color)
 
     # Getters and Setters
-
     # Name
     def setName(self, namein):
         self.name = namein
@@ -116,3 +121,6 @@ class Enemy:
 
     def getMaxSpeed(self):
         return self.maxSpd
+
+    def setText(self, text):
+        self.text = text

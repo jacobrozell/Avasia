@@ -1,6 +1,7 @@
 from Class.Fox_Attacks import *
 from Logic.util import containsAny
 import Logic.config as config
+import Logic.save_game as save
 
 
 def choose_attack():
@@ -86,7 +87,18 @@ def Fox_Combat():
         # Player dies ------------------------------------------------------
         if config.player.getHp() <= 0:
             config.enemy.killPlayer()
-            quit()
+
+            while True:
+                ans = input("Would you like to start at the last save?")
+                if containsAny(ans, "yes"):
+                    save.loadParameters()
+                    break
+                elif containsAny(ans, "no"):
+                    print("Thank you for playing!")
+                    quit()
+                else:
+                    pass
+                break
 
         # Enemy dies -------------------------------------------------------
         elif config.enemy.getHp() <= 0:

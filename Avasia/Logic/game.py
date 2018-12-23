@@ -13,6 +13,9 @@ import Logic.Room_Storage as room
 # Util
 import Logic.util as util
 import Logic.config as config
+
+# Save
+import Logic.save_game as save
 # ----------------------------------------------------------------
 
 
@@ -34,9 +37,12 @@ def register_area(room):
 # Where the magic truly happens:
 def mainloop():
     inventory = ["INVENTORY"]
-    all_commands = ["INVENTORY", "EAT", "DRINK"]
+    all_commands = ["INVENTORY", "EAT", "DRINK", "QUIT"]
     eat = ["EAT", "DRINK"]
     help = ["HELP", "COMMANDS"]
+    quitCommand = ["QUIT", "EXIT"]
+    saveCommand = ["SAVE"]
+    loadCommand = ["LOAD"]
     current_room = None
 
     while True:
@@ -115,6 +121,22 @@ def mainloop():
                 print()
                 print("Health is full!")
                 print()
+
+        elif util.containsAny(command, quitCommand):
+            # Save file
+            save.saveParameters()
+
+            print("\nYour game has been saved!\n"
+                  "Thank you for playing!\n\n"
+                  "-------------------------------------------------------------------------")
+            quit()
+
+        elif util.containsAny(command, saveCommand):
+            save.saveParameters()
+            print("\nYour game has been saved!\n")
+
+        elif util.containsAny(command, loadCommand):
+            save.loadParameters()
 
         else:
 

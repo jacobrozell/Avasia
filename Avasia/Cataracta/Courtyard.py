@@ -1,11 +1,13 @@
 from Room.Room import Room
 import Logic.config as config
-from Combat.CombatLogic import combat
+from Combat.Combat_Logic import combat
 from Logic.util import talk, containsAny
 from Tutorial_Combat import T_Combat
+import Logic.save_game as save
 
 
 def courtyard_logic():
+    save.saveParameters()
     courtyard.print_name()
     print("You make your way to the Cataractan Legion's courtyard to begin your training.")
     print("A large group of people are standing around three men who seem to be giving a speech.")
@@ -402,8 +404,9 @@ def cataracta_battle():
                           atkIn=15,
                           defIn=5,
                           hpIn=60,
-                          spdIn=9,
-                          text="The " + config.enemy.getName() + " lays his mace into the side of your head.")
+                          spdIn=9)
+    config.enemy.setText("The " + config.enemy.getName() + " lays his mace into the side of your head.")
+
     bool = combat()
     if bool is False:
         while bool is False:
@@ -433,7 +436,6 @@ def cataracta_battle():
         while bool is False:
             if bool is False:
                 bool = combat()
-    # Add Story
     print()
     print("With another foe slain, you look around you to find the next target.")
     print("But you quickly realize that all of the fighting has come to a stand still.")

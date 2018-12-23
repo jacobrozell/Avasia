@@ -1,5 +1,7 @@
 from Logic.util import containsAny
 from Class.Bear_Attacks import *
+import Logic.save_game as save
+
 double = 0
 storeActive = False
 attack = ""
@@ -123,10 +125,20 @@ def Bear_Combat():
 
     while config.enemy.getHp() > 0:
 
-        # Multiple deaths form a list. Choose random -----------------------
+        # Player dies ------------------------------------------------------
         if config.player.getHp() <= 0:
             config.enemy.killPlayer()
-            quit()
+
+            while True:
+                ans = input("\nWould you like to start at the last save?\n")
+                if containsAny(ans, "yes"):
+                    save.loadParameters()
+                    return
+                elif containsAny(ans, "no"):
+                    print("Thank you for playing!")
+                    quit()
+                else:
+                    pass
 
         # ------------------------------------------------------------------
         elif config.enemy.getHp() <= 0:
@@ -150,7 +162,7 @@ def Bear_Combat():
             # Player Attacks
             bool = player_attack(attack)
             if bool is False:
-                print("Attack not found\n")
+                print("\nAttack not found\n")
                 config.enemy.display_stats()
                 config.player.display_stats()
                 print()
