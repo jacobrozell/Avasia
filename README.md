@@ -12,4 +12,4 @@ python3 -m pip install colorama
 3. Clone this repo.
 4. Run game.py.
 
-### Enjoy the game
+### Enjoy the game!
