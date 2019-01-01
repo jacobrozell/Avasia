@@ -5,53 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6df5eee-95c7-49cd-b9ef-7b5a958e3ef5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Avasia/.idea/Avasia.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/Althalos_House.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/C_North.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/C_Southeast.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/C_Southwest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/C_West.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/C_fountain.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/C_pier.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/Courtyard.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/Fishing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/Hunter_Path.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/Middle_Cataracta.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/N_gate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Cataracta/Ulrics_Blacksmith.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Class/Bear.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Class/Bear_Attacks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Class/Fox_Attacks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Class/Wolf_Attacks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Combat/Bear_Combat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Combat/Combat_Logic.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Combat/Fox_Combat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Combat/Wolf_Combat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Enemy/EnemyClass.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Items/Items.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Logic/Attack_Storage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Logic/Item_Storage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Logic/Room_Storage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Logic/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Logic/game.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Logic/save_game.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Logic/savefile.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Logic/util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Nacastrum/Nacastrum_Castle/C_Portal_Room.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Nacastrum/Nacastrum_Castle/Library.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Nacastrum/Nacastrum_Castle/Throne_Room.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Nacastrum/Nacastrum_Castle/West_Hallway.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Player/PlayerClass.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Room/Room.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Shop/Shop.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Tutorial_Combat/T_Bear.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Tutorial_Combat/T_Combat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Tutorial_Combat/T_Fox.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Avasia/Tutorial_Combat/T_Wolf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/kkk.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,20 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tutorial_Combat/T_Bear.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
               <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/kkk.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -804,17 +749,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tutorial_Combat/T_Bear.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Nacastrum/Nacastrum_Castle/kkk.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tutorial_Combat/T_Bear.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
         </state>
       </provider>
     </entry>
