@@ -37,7 +37,7 @@ def register_area(room):
 # Where the magic truly happens:
 def mainloop():
     inventory = ["INVENTORY"]
-    all_commands = ["INVENTORY", "EAT", "DRINK", "QUIT"]
+    all_commands = ["INVENTORY", "EAT", "DRINK", "QUIT", "SAVE"]
     eat = ["EAT", "DRINK"]
     help = ["HELP", "COMMANDS"]
     quitCommand = ["QUIT", "EXIT"]

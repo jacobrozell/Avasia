@@ -14,8 +14,7 @@ def alt_house_logic():
     talk("Most would wait to be drafted, but not you!")
     print("\nThe man looks at you with a look you can only guess is pride.\n")
     talk("Listen. I wish I had something to give you, but business hasn't been so good lately.")
-    talk("If you ever need anything, you know exactly where to find me!")
-    print()
+    talk("If you ever need anything, you know exactly where to find me!", "")
     talk("Take care, son. And, good luck!")
     print("\nYou thank Althalos and leave with a smile.\n")
     return "go back"

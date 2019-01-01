@@ -40,3 +40,4 @@ base_color = str(c.Fore.LIGHTBLUE_EX)
 talk_color = str(c.Fore.CYAN)
 die_color = str(c.Fore.RED)
 room_color = str(c.Fore.BLACK)
+
