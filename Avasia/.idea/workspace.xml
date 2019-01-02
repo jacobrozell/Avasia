@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6df5eee-95c7-49cd-b9ef-7b5a958e3ef5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cataracta/AlthalosHouse.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/Althalos_House.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cataracta/Cfountain.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/C_fountain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cataracta/Courtyard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/Courtyard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cataracta/Cpier.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/C_pier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cataracta/HunterPath.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/Hunter_Path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cataracta/MiddleCataracta.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/Middle_Cataracta.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cataracta/Ngate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/N_gate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cataracta/NorthC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/C_North.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cataracta/Southeast.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/C_Southeast.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cataracta/Southwest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/C_Southwest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cataracta/UlricsBlacksmith.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/Ulrics_Blacksmith.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cataracta/West.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cataracta/C_West.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Combat/Bear_Combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Combat/Bear_Combat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Combat/CombatLogic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Combat/Combat_Logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Combat/Fox_Combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Combat/Fox_Combat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Combat/Wolf_Combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Combat/Wolf_Combat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enemy/EnemyClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/EnemyClass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/Room_Storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/Room_Storage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player/PlayerClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player/PlayerClass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Room/Room.py" beforeDir="false" afterPath="$PROJECT_DIR$/Room/Room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/savefile.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/savefile.pickle" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +17,7 @@
     <session id="361646237">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.13" value="1" />
@@ -50,15 +27,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="pickle" value="4" />
-          <entry key="py" value="205" />
+          <entry key="pickle" value="5" />
+          <entry key="py" value="208" />
           <entry key="savefile" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="205" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Python" value="208" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -78,32 +55,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Room/Room.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-                <marker date="1545557344000" expanded="true" signature="815:821" ph="..." />
-                <marker date="1545557344000" expanded="true" signature="816:821" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Logic/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Combat/Bear_Combat.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -118,13 +69,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Class/Bear_Attacks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
-              <caret line="86" lean-forward="true" selection-end-line="86" />
+            <state relative-caret-position="765">
+              <caret line="51" column="15" lean-forward="true" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Items/Items.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+              <folding>
+                <marker date="1545463259000" expanded="true" signature="11:450" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Class/Bear.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
@@ -174,19 +137,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Cataracta/C_Southwest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Logic/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-83">
-              <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
+            <state relative-caret-position="303">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
               <folding>
                 <element signature="e#262#295#0" expanded="true" />
                 <element signature="e#2477#2581#0" />
@@ -199,13 +153,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Logic/util.py">
+        <entry file="file://$PROJECT_DIR$/Logic/savefile.pickle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="979">
-              <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+            <state>
+              <caret column="22" selection-start-column="15" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logic/save_game.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
-                <marker date="1545557399000" expanded="true" signature="506:508" ph="..." />
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Player/PlayerClass.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="783">
+              <caret line="342" column="54" selection-start-line="342" selection-start-column="54" selection-end-line="342" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1545553177000" expanded="true" signature="7788:7822" ph="..." />
+                <marker date="1545553177000" expanded="true" signature="7842:7903" ph="..." />
+                <marker date="1545553177000" expanded="true" signature="8243:8285" ph="..." />
               </folding>
             </state>
           </provider>
@@ -288,7 +265,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="55" />
     <option name="y" value="23" />
     <option name="width" value="1353" />
@@ -462,7 +439,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983023" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4155214" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.15763944" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5311237" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -476,20 +453,20 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24980111" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="3" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.123670734" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32983023" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37518248" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5311237" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -536,13 +513,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Combat/Guardian_Combat.py" />
     <entry file="file://$PROJECT_DIR$/Combat/Scout_Combat.py" />
-    <entry file="file://$PROJECT_DIR$/Items/Items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="59" lean-forward="true" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Cataracta/Middle_Cataracta.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -639,32 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Player/PlayerClass.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5044">
-          <caret line="342" column="54" selection-start-line="342" selection-start-column="54" selection-end-line="342" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <marker date="1545553177000" expanded="true" signature="7788:7822" ph="..." />
-            <marker date="1545553177000" expanded="true" signature="7842:7903" ph="..." />
-            <marker date="1545553177000" expanded="true" signature="8243:8285" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Logic/savefile.pickle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Logic/save_game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -806,27 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Logic/game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-83">
-          <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
-          <folding>
-            <element signature="e#262#295#0" expanded="true" />
-            <element signature="e#2477#2581#0" />
-            <element signature="e#2684#2781#0" />
-            <element signature="e#2876#4069#0" />
-            <element signature="e#4136#4393#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Class/Bear_Attacks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="86" lean-forward="true" selection-end-line="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Combat/Fox_Combat.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -866,6 +789,67 @@
             <element signature="e#3955#5249#0" />
             <element signature="e#5275#7695#0" />
             <marker date="1545558246000" expanded="true" signature="111:116" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="e#262#295#0" expanded="true" />
+            <element signature="e#2477#2581#0" />
+            <element signature="e#2684#2781#0" />
+            <element signature="e#2876#4069#0" />
+            <element signature="e#4136#4393#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/savefile.pickle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/save_game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player/PlayerClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="342" column="54" selection-start-line="342" selection-start-column="54" selection-end-line="342" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1545553177000" expanded="true" signature="7788:7822" ph="..." />
+            <marker date="1545553177000" expanded="true" signature="7842:7903" ph="..." />
+            <marker date="1545553177000" expanded="true" signature="8243:8285" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Class/Bear_Attacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="15" lean-forward="true" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Items/Items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <marker date="1545463259000" expanded="true" signature="11:450" ph="..." />
           </folding>
         </state>
       </provider>
