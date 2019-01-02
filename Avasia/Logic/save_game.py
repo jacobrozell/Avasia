@@ -1,6 +1,7 @@
 import pickle
 import Logic.config as config
 import os
+import Logic.util as util
 
 
 def is_non_zero_file(fpath):
@@ -58,6 +59,9 @@ def loadParameters():
     config.player.printInventory = all_stats["printInventory"]
     # config.player.inventory = all_stats["inventory"]
 
+    config.player.trophies = all_stats["trophies"]
+    config.player.trophyCount = all_stats["trophyCount"]
+
     # ---------------Config Variables---------------
 
     config.current_room_id = all_stats["currentRoom"]
@@ -69,5 +73,25 @@ def loadParameters():
     config.courtyard = all_stats["courtyard"]
     config.returnfish = all_stats["returnFish"]
     config.portalRoom = all_stats["portalRoom"]
-
     return True
+
+
+def viewSave():
+    global saveGameFound
+    global all_stats
+
+    pickle_in = open("savefile.pickle", "rb")
+    all_stats = pickle.load(pickle_in)
+
+    print("\nFound a save file...")
+    print("Name: " + str(all_stats["name"]))
+    print("Level: " + str(all_stats["level"]))
+    print("Trophies: " + str(all_stats["trophyCount"]))
+
+    ans = input("\nDo you want to load this save?")
+
+    while True:
+        if util.containsAny(ans.upper(), ["YES", "Y"]):
+            return True
+        else:
+            return False

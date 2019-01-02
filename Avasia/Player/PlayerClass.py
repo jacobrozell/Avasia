@@ -49,6 +49,15 @@ class Player:
         # LevelUp Points
         self.levels = {2: 100, 3: 500, 4: 1500, 5: 5000, 6: 7500, 7: 10000, 8: 15000}
 
+        # Achievements
+        self.trophies = {"startedAdventure": {"name": "Started the Adventure", "value": False},
+                         "fished": {"name": "Gone Fishin'", "value": False},
+                         "brother": {"name": "Brotherly Love", "value": False}
+                         }
+
+        self.trophyCount = 0
+        self.maxTrophyCount = len(self.trophies)
+
     def return_item(self, string):
         for item in self.inventory:
             if string.replace(" ", "").lower() == item.id:
@@ -67,9 +76,12 @@ class Player:
             self.printInventory[item.name] = "Value: " + str(item.value) + "; " + str(item.des)
 
     def printPlayerInventory(self):
-        print("Inventory: ")
+        count = 0
         for item in self.printInventory:
-            print(str(item.replace("'", "").replace("{}", "")))
+            count += 1
+            print("Inventory " + str(count) + ": "
+                  + str(item.replace("'", "").replace("{}", ""))
+                  + ", " + str(self.printInventory[item]))
 
     def take_hit(self, damage):
         self.hp -= damage
@@ -215,6 +227,27 @@ class Player:
 
         self.resetStats()
 
+    def unlockedTrophy(self, id):
+        if id in self.trophies:
+            trophyObject = self.trophies[id]
+            trophyObject["value"] = True
+
+            print(config.trophy_color, end='')
+            print("Trophy unlocked: " + str(trophyObject["name"]) + "!")
+
+            self.trophyCount += 1
+
+            print("\nYou have found " + str(self.trophyCount) + " trophy out of " + str(self.maxTrophyCount) + "!")
+            print(config.base_color, end='')
+
+    def printObtaintedTrophies(self):
+        print(config.trophy_color, end='')
+        print("\n---Current Trophies---")
+        for _, value in self.trophies.items():
+            if value["value"] is True:
+                print(value["name"])
+        print(config.base_color, end='')
+
     # ------Getters and Setters-----
     # Name
     def setName(self, namein):
@@ -354,6 +387,8 @@ class Player:
                 "brokenAxe": config.varbrokenaxe,
                 "courtyard": config.courtyard,
                 "returnFish": config.returnfish,
-                "portalRoom": config.portalRoom}
+                "portalRoom": config.portalRoom,
+                "trophies": self.trophies,
+                "trophyCount": self.trophyCount}
 
 

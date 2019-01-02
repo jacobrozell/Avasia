@@ -92,8 +92,9 @@ def fishing():
             if bait == 0:
                 print("You ran out of bait!")
                 print("You thank Doran and return the fishing pole.")
-                print("You leave the pier.")
-                print()
+                print("You leave the pier.\n")
+                if config.player.trophies["fished"]["value"] is False:
+                    config.player.unlockedTrophy("fished")
                 config.current_room_id = "southeast_c"
                 return "reload"
             else:
@@ -102,8 +103,7 @@ def fishing():
 
         elif util.containsAny(ans, n):
             print("You thank Doran and return the fishing pole.")
-            print("You leave the pier.")
-            print()
+            print("You leave the pier.\n")
             config.current_room_id = "southeast_c"
             return "reload"
 

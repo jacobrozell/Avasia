@@ -31,8 +31,12 @@ def intro():
     while decision is False:
         ans = input("Would you like to load or start a new game?")
         if containsAny(ans, load):
-            save.loadParameters()
-            decision = True
+            willLoadGame = save.viewSave()
+            if willLoadGame:
+                save.loadParameters()
+                decision = True
+            else:
+                decision = False
         else:
             decision = True
             print("\n---------Avasia: Sword of Courage---------\n\n")
@@ -64,14 +68,15 @@ def intro():
                         break
             print()
             print()
-            print(config.room_color, ">>>" + config.player.getName() + "'s House<<<")
+            print(config.room_color)
+            print(">>>" + config.player.getName() + "'s House<<<")
             print(config.base_color)
             print()
             print("Today is the day you join Cataracta's Legion.")
             print("To join, you must head to the Legion's courtyard.")
             print("You collect your belongings and leave your home with a sense of pride.")
-            print("\nType 'help' any time for a list of commands!")
+            print("\nType 'help' any time for a list of commands!\n")
             config.player.addGold(100)
             config.player.give_item(item.potion)
-            print()
+            config.player.unlockedTrophy("startedAdventure")
             config.current_room_id = "southwest_c"

@@ -37,12 +37,13 @@ def register_area(room):
 # Where the magic truly happens:
 def mainloop():
     inventory = ["INVENTORY"]
-    all_commands = ["INVENTORY", "EAT", "DRINK", "QUIT"]
+    all_commands = ["INVENTORY", "EAT", "DRINK", "SAVE", "QUIT", "TROPHY"]
     eat = ["EAT", "DRINK"]
     help = ["HELP", "COMMANDS"]
     quitCommand = ["QUIT", "EXIT"]
     saveCommand = ["SAVE"]
     loadCommand = ["LOAD"]
+    trophyCommand = ["TROPHY", "TROPHIES", "ACHIEVEMENTS", "ACHIEVEMENT"]
     current_room = None
 
     while True:
@@ -137,6 +138,9 @@ def mainloop():
 
         elif util.containsAny(command, loadCommand):
             save.loadParameters()
+
+        elif util.containsAny(command, trophyCommand):
+            config.player.printObtaintedTrophies()
 
         else:
 

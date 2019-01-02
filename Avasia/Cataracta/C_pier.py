@@ -49,8 +49,8 @@ def pier_logic():
                 talk("I'm sure he told you that I'd let you borrow a fishing pole to fish for a bit.")
                 talk("Fine, here. Go ahead. Just make sure you're kind to the river and don't ruin my pier!")
                 print()
-                print("Doran hands you an old fishing rod and some bait then points you towards the door to the pier.")
-                print()
+                print("Doran hands you an old fishing rod and some bait then points you towards the door to the pier.\n")
+                config.player.unlockedTrophy("brother")
                 config.current_room_id = "fishing_id"
                 config.ulric = False
                 return "reload"
