@@ -242,7 +242,7 @@ class Player:
 
     def printObtaintedTrophies(self):
         print(config.trophy_color, end='')
-        print("\n---Current Trophies---")
+        print("\n---Current Trophies (" + str(self.trophyCount) + "/" + str(self.maxTrophyCount) + ")---")
         for _, value in self.trophies.items():
             if value["value"] is True:
                 print(value["name"])

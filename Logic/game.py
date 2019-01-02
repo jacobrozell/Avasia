@@ -38,7 +38,6 @@ def register_area(room):
 def mainloop():
     inventory = ["INVENTORY"]
     all_commands = ["INVENTORY", "EAT", "DRINK", "SAVE", "QUIT", "TROPHY"]
-    all_commands = ["INVENTORY", "EAT", "DRINK", "QUIT", "SAVE"]
     eat = ["EAT", "DRINK"]
     help = ["HELP", "COMMANDS"]
     quitCommand = ["QUIT", "EXIT"]
