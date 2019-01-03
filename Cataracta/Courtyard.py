@@ -1,8 +1,6 @@
 from Room.Room import Room
 import Logic.config as config
-from Combat.Combat_Logic import combat
 from Logic.util import talk, containsAny
-from Tutorial_Combat import T_Combat
 import Logic.save_game as save
 
 
@@ -167,32 +165,11 @@ def courtyard_logic():
             print()
             talk("You now walk as a lion amongst sheep.")
             talk("All creatures will fear your bloodthirsty form as you stride toward your prey.")
-            talk("Now to the good part.")
             print()
-            talk("Pay attention. This part is important.")
-            print()
-            talk("Bite simply does your attack stat on the target.")
-            talk("Wound will wound your enemy for 1 to 4 turns, for 75% of your attack stat.")
-            talk("Stun stuns your enemy for 1 to 3 turns.")
-            talk("Scheme increases your attack by 5.")
-            print()
-            talk("Keep in mind some enemies have a defense stat that will soften the blow of your attack.")
-            talk("Practice for as long as you want on this training dummy.")
-            print()
-            print("Type 'help' for information of the attacks.")
-            print("Type 'quit' to end the combat.")
-            print()
-            config.enemy.setStats(nameIn="Training Dummy",
-                                  atkIn=0,
-                                  defIn=5,
-                                  hpIn=1000,
-                                  spdIn=0)
+            talk("Now to the good part. Let's try some friendly duels.")
 
-            bool = T_Combat.T_combat()
-            if bool is False:
-                while bool is False:
-                    if bool is False:
-                        bool = T_Combat.T_combat()
+            # IMPLEMENT DUELS HERE AGAINST ANOTHER WOLF
+            print("\n\nNEED TO IMPLEMENT\n\n")
 
             talk("Good.")
             talk("As you can see, a good strategy can lead to devastating attacks.")
@@ -238,37 +215,15 @@ def courtyard_logic():
             talk("Look at those around you.")
             talk("Notice the differences between each of you.")
             talk("Your markings are unique to you and only you.")
-            talk("Though we all appear different, we all must communicate and work together.")
+            talk("Though we all appear different, we all must communicate and work together.", "\n")
             talk("The information we can gather may be the difference between life or death for our people.")
             talk("But scouting isn't the only thing we are good for.")
-            talk("There are times when we must strike our enemies or be prepared to defend ourselves.")
-            print()
-            talk("Pay attention. This part is vital to your survival.")
-            print()
-            print("Claw simply does your attack stat on the enemy.")
-            print("Focus increases your chance of hitting the enemy.")
-            print("Execute will one shot the enemy, if and only if it hits.")
-            print("Fatality will kill an enemy automatically that is near death.\n")
+            talk("There are times when we must strike our enemies or be prepared to defend ourselves.", "\n")
+            talk("Now to the good part. Let's try some friendly duels.")
 
-            talk("Keep in mind some enemies have a defense stat that will soften the blow of your attack.")
-            talk("Practice for as long as you want on this training dummy.")
-            print()
-            print("Type 'help' for information of the attacks.")
-            print("Type 'quit' to end the combat.")
-            print()
-            config.enemy.setStats(nameIn="Training Dummy",
-                                  atkIn=0,
-                                  defIn=5,
-                                  hpIn=1000,
-                                  spdIn=0)
+            # IMPLEMENT DUELS HERE AGAINST ANOTHER FOX
+            print("\n\nNEED TO IMPLEMENT\n\n")
 
-            bool = T_Combat.T_combat()
-            if bool is False:
-                while bool is False:
-                    if bool is False:
-                        bool = T_Combat.T_combat()
-
-            print()
             talk("Nicely done!")
             talk("As you can see, focusing and exploiting weaknesses in your enemy is what the Skulks are all about.")
             talk("To work effectively, you must use all your abilities in unison.")
@@ -311,36 +266,14 @@ def courtyard_logic():
             talk("Now, look around you.")
             talk("Notice that all of you appear different to each other.")
             talk("Your markings and build are unique to you and only you.")
-            talk("Even though we look different, we must stand as one against the forces that seek to tear us apart.")
+            talk("Even though we look different, we must stand as one against the forces that seek to tear us apart.", "\n")
             talk("But your stature alone will not save you.")
-            talk("You must learn to fight!")
-            print()
-            talk("This part may be the difference in survival and death.")
-            print()
-            talk("Swipe simply does your attack stat on the target.")
-            talk("Store lowers your defense to 0, and doubles your attack stat for one turn.")
-            talk("Roar lowers your defense by 5, and raises your attack by 5.")
-            talk("Guard raises your defense by 5.")
-            print()
-            talk("Keep in mind some enemies have a defense stat that will soften the blow of your attack.")
-            talk("Practice for as long as you want on a training dummy.")
-            print()
-            print("Type 'help' for information of the attacks.")
-            print("Type 'quit' to end the combat.")
-            print()
-            config.enemy.setStats(nameIn="Training Dummy",
-                                  atkIn=0,
-                                  defIn=5,
-                                  hpIn=1000,
-                                  spdIn=0)
+            talk("You must learn to fight!", "\n")
+            talk("Now to the good part. Let's try some duels.")
 
-            bool = T_Combat.T_combat()
-            if bool is False:
-                while bool is False:
-                    if bool is False:
-                        bool = T_Combat.T_combat()
+            # IMPLEMENT DUELS HERE AGAINST ANOTHER BEAR
+            print("\n\nNEED TO IMPLEMENT\n\n")
 
-            print()
             talk("Nicely done!")
             talk("You must use everything you can to defend our people.")
             talk("There are many abilities you possess that can turn the tide of battle.")
@@ -407,14 +340,7 @@ def cataracta_battle():
                           spdIn=9)
     config.enemy.setText("The " + config.enemy.getName() + " lays his mace into the side of your head.")
 
-    bool = combat()
-    if bool is False:
-        while bool is False:
-            if bool is False:
-                bool = combat()
-
-    print()
-
+    print("\n\nNEED TO IMPLEMENT\n\n")
     config.player.setHp(config.player.getMaxHp())
     print()
     # --------------------------------------------------------------------
@@ -429,13 +355,11 @@ def cataracta_battle():
                           atkIn=15,
                           defIn=10,
                           hpIn=90,
-                          spdIn=7,
-                          text="The " + config.enemy.getName() + " plows his sword into your chest.")
-    bool = combat()
-    if bool is False:
-        while bool is False:
-            if bool is False:
-                bool = combat()
+                          spdIn=7)
+    config.enemy.setText("The " + config.enemy.getName() + " plows his sword into your chest.")
+
+    print("\n\nNEED TO IMPLEMENT\n\n")
+
     print()
     print("With another foe slain, you look around you to find the next target.")
     print("But you quickly realize that all of the fighting has come to a stand still.")

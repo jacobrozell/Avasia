@@ -20,7 +20,6 @@ def talk(talkMessage, message=None):
 
 
 def intro():
-
     from colorama import init
     init()
     print(config.base_color, end='')
@@ -66,10 +65,8 @@ def intro():
                     if containsAny(ans, yes):
                         config.player.setName(name.title())
                         break
-            print()
-            print()
             print(config.room_color)
-            print(">>>" + config.player.getName() + "'s House<<<")
+            print("\n\n>>>" + config.player.getName() + "'s House<<<")
             print(config.base_color)
             print()
             print("Today is the day you join Cataracta's Legion.")

@@ -54,7 +54,6 @@ class Enemy:
         self.maxDef = defIn
 
         # Kill player text
-
         self.text = text
 
     def killPlayer(self):
