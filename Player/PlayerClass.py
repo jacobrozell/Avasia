@@ -59,7 +59,6 @@ class Player:
                          "fished": {"name": "Gone Fishin'", "value": False},
                          "brother": {"name": "Brotherly Love", "value": False}
                          }
-
         self.trophyCount = 0
         self.maxTrophyCount = len(self.trophies)
 

@@ -1,7 +1,7 @@
 from Room.Room import Room
 import Logic.config as config
 from Logic.util import talk, containsAny
-import Logic.save_game as save
+import Logic.Save as save
 
 
 def courtyard_logic():

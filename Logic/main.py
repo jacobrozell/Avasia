@@ -15,7 +15,7 @@ import Logic.util as util
 import Logic.config as config
 
 # Save
-import Logic.save_game as save
+import Logic.Save as save
 # ----------------------------------------------------------------
 
 
@@ -94,7 +94,7 @@ def mainloop():
 
             if config.player.get_hp() < config.player.get_max_hp():
 
-                print("What item do you want to eat/drink?")
+                print("What item do you want to use?")
                 print()
 
                 # Get input for which item_id the user wants to eat/drink

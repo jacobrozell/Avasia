@@ -1,6 +1,6 @@
 import Logic.config as config
 import Logic.Item_Storage as item
-import Logic.save_game as save
+import Logic.Save as save
 
 
 def containsAny(string, options):
@@ -25,7 +25,7 @@ def intro():
     print(config.base_color, end='')
 
     decision = False
-    print("\nWelcome to Avaisa: Sword of Courage!\n")
+    print("\nWelcome to Avasia: Sword of Courage!\n")
     load = ["LOAD"]
     while decision is False:
         ans = input("Would you like to load or start a new game?")
@@ -39,17 +39,16 @@ def intro():
         else:
             decision = True
             print("\n---------Avasia: Sword of Courage---------\n\n")
-            print("It has been 7 years since Vashirr, the old king of Nacastrum, betrayed Avasia."
-                  "\nThe Agromanians, a vicious people of the northwest, have remained idle since their attack "
-                  "on Oceandale."
+            print("It has been six months since the Agromanian's, a viscious people of the northwest, attack on Oceandale."
                   "\nNacastrum, the city of the Mage, is still being rebuilt under the diligent leadership of "
                   "its new king."
-                  "\nRecently, news was brought to King Kaefden IV that Vashirr is teaching Agromanians magic."
+                  "\nRecently, news was brought to King Kaefden IV that Vashirr, the traitor ex-king of Nacastrum."
+                  " is teaching the Agromanians magic."
                   "\nWith this knowledge, King Kaefden IV has begun to recruit an army to march on the Agromanians "
                   "before they have a chance to muster."
                   "\n\nYou are a druid living in the peaceful city of Cataracta."
                   "\nCataracta has formed a pact with the people of Aylova to join the fight when the time comes."
-                  "\nTh leader of Cataracta is drafting an army for the upcoming war and you have decided to volunteer."
+                  "\nTh leader of Cataracta is drafting an army and you have decided to volunteer."
                   "\nThis is where your story begins..."
                   "\n\n\n")
             while True:

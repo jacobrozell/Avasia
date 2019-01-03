@@ -95,7 +95,7 @@ def fishing():
                 print("You thank Doran and return the fishing pole.")
                 print("You leave the pier.\n")
                 if config.player.trophies["fished"]["value"] is False:
-                    config.player.unlockedTrophy("fished")
+                    config.player.unlocked_trophy("fished")
                 config.current_room_id = "southeast_c"
                 return "reload"
             else:
