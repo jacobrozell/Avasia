@@ -55,8 +55,8 @@ def fishing():
                 print("You fish up a Soggy-Money Purse!")
                 amount = randint(1, 20)
                 print("You add " + str(amount) + " gold to your backpack!")
-                config.player.addGold(amount)
-                config.player.printGold()
+                config.player.add_gold(amount)
+                config.player.print_gold()
                 print()
 
             # Big fish
@@ -70,6 +70,7 @@ def fishing():
             elif item == 6 and bigfish:
                 print("Whole lot of nothing...\n")
 
+            # Crab
             elif item == 7:
                 print("You fish up a " + Item_Storage.crab.name + "!")
                 Item_Storage.crab.print_stats()

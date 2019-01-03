@@ -2,8 +2,9 @@ import Logic.config as config
 
 
 class Enemy:
-    def __init__(self, atk, defense, spd, hp, name):
+    def __init__(self, atk, defense, speed, hp, name):
 
+        # Name
         self.name = name
 
         # Attack
@@ -11,8 +12,8 @@ class Enemy:
         self.maxAtk = atk
 
         # Speed
-        self.spd = spd
-        self.maxSpd = spd
+        self.speed = speed
+        self.maxSpeed = speed
 
         # Hp
         self.hp = hp
@@ -28,98 +29,102 @@ class Enemy:
     def take_hit(self, damage):
         self.hp -= damage
 
+    def did_appear(self):
+        print("A" + str(self.name) + " appeared!\n")
+
     def display_stats(self):
         output = ""
         output += str(self.name) + ": HP: " + str(self.hp) + ", Atk: " + str(self.atk) + ", Def: " + str(self.defense)
         print(output)
 
-    def setStats(self, nameIn, atkIn, defIn, hpIn, spdIn, text=""):
+    def set_stats(self, name, atk, defense, hp, speed, text=""):
 
-        self.name = nameIn
+        # Name
+        self.name = name
 
         # Attack
-        self.atk = atkIn
-        self.maxAtk = atkIn
+        self.atk = atk
+        self.maxAtk = atk
 
         # Speed
-        self.spd = spdIn
-        self.maxSpd = spdIn
+        self.speed = speed
+        self.maxSpeed = speed
 
         # Hp
-        self.hp = hpIn
-        self.maxHp = hpIn
+        self.hp = hp
+        self.maxHp = hp
 
         # Defense
-        self.defense = defIn
-        self.maxDef = defIn
+        self.defense = defense
+        self.maxDef = defense
 
         # Kill player text
         self.text = text
 
-    def killPlayer(self):
+    def kill_player(self):
         print(config.die_color, self.text + "\nYou have died.\n")
         print(config.base_color)
 
     # Getters and Setters
     # Name
-    def setName(self, namein):
-        self.name = namein
+    def set_name(self, name):
+        self.name = name
 
-    def getName(self):
+    def get_name(self):
         return self.name
 
     # Attack
-    def setAtk(self, atkin):
-        self.atk = atkin
+    def set_atk(self, atk):
+        self.atk = atk
 
-    def getAtk(self):
+    def get_atk(self):
         return self.atk
 
-    def getMaxAtk(self):
+    def get_max_atk(self):
         return self.maxAtk
 
-    def setMaxAtk(self, atkIn):
-        self.maxAtk = atkIn
+    def set_max_atk(self, atk):
+        self.maxAtk = atk
 
     # Hp
-    def setHp(self, hpin):
+    def set_hp(self, hpin):
         self.hp = hpin
         self.maxHp = hpin
 
-    def getHp(self):
+    def get_hp(self):
         return self.hp
 
-    def setMaxHp(self, hpIn):
-        self.maxHp = hpIn
+    def set_max_hp(self, hp):
+        self.maxHp = hp
 
-    def getMaxHp(self):
+    def get_max_hp(self):
         return self.maxHp
 
     # Defense
-    def setDef(self, defin):
-        self.defense = defin
+    def set_def(self, defense):
+        self.defense = defense
 
-    def getDef(self):
+    def get_def(self):
         return self.defense
 
-    def setMaxDef(self, defIn):
-        self.maxDef = defIn
+    def set_max_def(self, defense):
+        self.maxDef = defense
 
-    def getMaxDef(self):
+    def get_max_def(self):
         return self.maxDef
 
     # Speed
-    def setSpeed(self, int):
-        self.spd = int
+    def set_speed(self, speed):
+        self.speed = speed
 
-    def getSpeed(self):
-        return self.spd
+    def get_speed(self):
+        return self.speed
 
-    def setMaxSpeed(self, spdIn):
-        self.maxSpd = spdIn
+    def set_max_speed(self, speed):
+        self.maxSpeed = speed
 
-    def getMaxSpeed(self):
-        return self.maxSpd
+    def get_max_speed(self):
+        return self.maxSpeed
 
-    def setText(self, text):
+    def set_text(self, text):
         self.text = text

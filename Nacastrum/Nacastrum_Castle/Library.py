@@ -43,7 +43,7 @@ def library_logic():
             print("And eventually, you found your way into the role of Hunter, Guardian, or Scout.")
             print("Perhaps, in another life, you would have enjoyed reading.")
             print()
-            config.player.questExp(10)
+            config.player.give_quest_exp(config.player.smallQuestExp)
         else:
             print(str(ans) + " is not a valid command.")
 

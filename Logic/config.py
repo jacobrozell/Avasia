@@ -20,7 +20,7 @@ enemy = Enemy(name="",
               hp=0,
               atk=0,
               defense=0,
-              spd=0)
+              speed=0)
 
 
 # player stats

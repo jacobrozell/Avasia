@@ -9,7 +9,7 @@ def alt_house_logic():
         "\nThe sight of the " + """ "Althalos' Wares" """ + "sign sparks past memories of the eccentric shopkeeper.\n")
     print("\nYou enter and immediately notice the shop is completely absent of people, yet overstocked in goods.")
     print("\nDespite the lack of business, Althalos greets you kindly.\n")
-    talk("Ah, " + config.player.getName() + ", I hear you're joining the Cataractan Legion!")
+    talk("Ah, " + config.player.get_name() + ", I hear you're joining the Cataractan Legion!")
     talk("It's mighty brave of you to volunteer!")
     talk("Most would wait to be drafted, but not you!")
     print("\nThe man looks at you with a look you can only guess is pride.\n")

@@ -37,14 +37,19 @@ class Player:
         
         # Class/ Forms
         self.class_id = class_id
-        self.forms = []
+        self.hunterId = "hunter"
+        self.guardianId = "guardian"
+        self.scoutId = "scout"
 
         # Level
-        self.player_level = 1
+        self.playerLevel = 1
 
         # Exp
         self.exp = 0
         self.questDialogue = False
+        self.smallQuestExp = 15
+        self.mediumQuestExp = 50
+        self.largeQuestExp = 100
 
         # LevelUp Points
         self.levels = {2: 100, 3: 500, 4: 1500, 5: 5000, 6: 7500, 7: 10000, 8: 15000}
@@ -66,7 +71,6 @@ class Player:
                 return False
 
     def give_item(self, item):
-
         self.inventory[item] = item.typeID
 
         if item.typeID == "food":
@@ -75,7 +79,7 @@ class Player:
         elif item.typeID == "junk":
             self.printInventory[item.name] = "Value: " + str(item.value) + "; " + str(item.des)
 
-    def printPlayerInventory(self):
+    def print_player_inventory(self):
         count = 0
         for item in self.printInventory:
             count += 1
@@ -93,24 +97,12 @@ class Player:
 
     def display_stats(self):
         output = ""
-        output += str(self.getName()) + ": Hp: " + str(self.getHp()) + ", Atk: " + str(
-            self.getAtk()) + ", Def: " + str(self.getDef())
-        output += ", Class: " + str(self.getClass().title())
+        output += str(self.get_name()) + ": Hp: " + str(self.get_hp()) + ", Atk: " + str(
+            self.get_atk()) + ", Def: " + str(self.get_def())
+        output += ", Class: " + str(self.get_class().title())
         print(output)
 
-    def addForm(self, formString):
-        self.forms.append(formString)
-
-    def searchForm(self, formString):
-        for i in self.forms:
-            if i.lower() == formString:
-                return True
-        return False
-
-    def printForms(self):
-        print("Known Forms: " + str(self.forms).replace("'", "").replace("[", "").replace("]", ""))
-
-    def checkHit(self, player_luck):
+    def check_hit(self, player_luck):
         if player_luck == 0 or player_luck == 1:
             return True
         else:
@@ -120,28 +112,28 @@ class Player:
             else:
                 return False
 
-    def resetStats(self):
+    def reset_stats(self):
         self.atk = self.maxAtk
         self.spd = self.maxSpd
         self.hp = self.maxHp
         self.luck = self.maxLuck
         self.defense = self.maxDef
 
-    def combatExp(self):
-        if self.player_level <= 3:
-            amt = (self.player_level * 50)
+    def give_combat_exp(self):
+        if self.playerLevel <= 3:
+            amt = (self.playerLevel * 50)
         else:
-            amt = (self.player_level * 100)
+            amt = (self.playerLevel * 100)
 
         self.exp += amt
         print("You gain " + str(amt) + " exp!")
         print("You now have " + str(self.exp) + " exp!")
 
         # See how much exp is needed for the next level and if we have enough levelUp
-        if self.exp >= self.levels[self.player_level + 1]:
-            self.levelUp()
+        if self.exp >= self.levels[self.playerLevel + 1]:
+            self.level_up()
 
-    def questExp(self, amt):
+    def give_quest_exp(self, amt):
         if self.questDialogue is False:
             print("\nYou can occasionally get bonus exp from doing hidden or uncommon choices.")
             print("The more uncommon, the more bonus experience.")
@@ -150,84 +142,21 @@ class Player:
         self.exp += amt
         print("\nYou gain " + str(amt) + " exp!")
         print("You now have " + str(self.exp) + " exp!")
-        if self.exp >= self.levels[self.player_level + 1]:
-            self.levelUp()
+        if self.exp >= self.levels[self.playerLevel + 1]:
+            self.level_up()
 
-    def levelUp(self):
+    def level_up(self):
         # Conditionals for each class
-        self.player_level += 1
+        self.playerLevel += 1
         print("You leveled up!")
-        print("You are now level " + str(self.player_level) + "!")
-        if self.class_id == "scout":
-            self.scout_levelUp()
+        print("You are now level " + str(self.playerLevel) + "!")
+        self.maxAtk += 1
+        self.maxDef += 1
+        self.maxSpd += 1
+        self.maxHp += 1
+        self.reset_stats()
 
-        elif self.class_id == "hunter":
-            self.hunter_levelUp()
-
-        else:
-            self.guardian_levelUp()
-
-    def scout_levelUp(self):
-        if self.player_level == 2 or self.player_level == 3:
-            self.maxAtk += 5
-            self.maxDef += 3
-            self.maxSpd += 5
-            self.maxHp += 10
-            # self.maxLuck -= 1
-
-        elif self.player_level == 4 or self.player_level == 5:
-            self.maxAtk += 10
-            self.maxDef += 4
-            self.maxSpd += 8
-            self.maxHp += 10
-        self.resetStats()
-
-    def hunter_levelUp(self):
-        if self.player_level == 2 or self.player_level == 3:
-            self.maxAtk += 8
-            self.maxDef += 3
-            self.maxSpd += 2
-            self.maxHp += 5
-            self.maxLuck -= 1
-        elif self.player_level == 4:
-            self.maxAtk += 10
-            self.maxDef += 4
-            self.maxSpd += 3
-            self.maxHp += 10
-            self.maxLuck -= 2
-        elif self.player_level == 5:
-            self.maxAtk += 10
-            self.maxDef += 5
-            self.maxSpd += 4
-            self.maxHp += 15
-            self.maxLuck -= 2
-        self.resetStats()
-
-    def guardian_levelUp(self):
-        if self.player_level == 2 or self.player_level == 3:
-            self.maxAtk += 5
-            self.maxDef += 3
-            self.maxSpd += 3
-            self.maxHp += 10
-            self.maxLuck -= 1
-
-        elif self.player_level == 4:
-            self.maxAtk += 8
-            self.maxDef += 4
-            self.maxSpd += 4
-            self.maxHp += 10
-            self.maxLuck -= 2
-
-        elif self.player_level == 5:
-            self.maxAtk += 10
-            self.maxDef += 5
-            self.maxSpd += 5
-            self.maxHp += 15
-            self.maxLuck -= 2
-
-        self.resetStats()
-
-    def unlockedTrophy(self, id):
+    def unlocked_trophy(self, id):
         if id in self.trophies:
             trophyObject = self.trophies[id]
             trophyObject["value"] = True
@@ -240,7 +169,7 @@ class Player:
             print("\nYou have found " + str(self.trophyCount) + " trophy out of " + str(self.maxTrophyCount) + "!")
             print(config.base_color, end='')
 
-    def printObtaintedTrophies(self):
+    def print_obtained_trophies(self):
         print(config.trophy_color, end='')
         print("\n---Current Trophies (" + str(self.trophyCount) + "/" + str(self.maxTrophyCount) + ")---")
         for _, value in self.trophies.items():
@@ -250,135 +179,135 @@ class Player:
 
     # ------Getters and Setters-----
     # Name
-    def setName(self, namein):
+    def set_name(self, namein):
         self.name = namein
 
-    def getName(self):
+    def get_name(self):
         return self.name
     
     # Attack
-    def setAtk(self, atkin):
+    def set_atk(self, atkin):
         self.atk = atkin
 
-    def getAtk(self):
+    def get_atk(self):
         return self.atk
     
-    def getMaxAtk(self):
+    def get_max_atk(self):
         return self.maxAtk
 
-    def setMaxAtk(self, atkIn):
+    def set_max_atk(self, atkIn):
         self.maxAtk = atkIn
 
     # Hp
-    def setHp(self, hpin):
+    def set_hp(self, hpin):
         self.hp = hpin
 
-    def getHp(self):
+    def get_hp(self):
         return self.hp
     
-    def setMaxHp(self, hpIn):
+    def set_max_hp(self, hpIn):
         self.maxHp = hpIn
         
-    def getMaxHp(self):
+    def get_max_hp(self):
         return self.maxHp
 
     # Defense
-    def setDef(self, defin):
+    def set_def(self, defin):
         self.defense = defin
 
-    def getDef(self):
+    def get_def(self):
         return self.defense
     
-    def setMaxDef(self, defIn):
+    def set_max_def(self, defIn):
         self.maxDef = defIn
     
-    def getMaxDef(self):
+    def get_max_def(self):
         return self.maxDef
 
     # Speed
-    def setSpeed(self, int):
+    def set_speed(self, int):
         self.spd = int
 
-    def getSpeed(self):
+    def get_speed(self):
         return self.spd
 
-    def setMaxSpeed(self, spdIn):
+    def set_max_speed(self, spdIn):
         self.maxSpd = spdIn
         
-    def getMaxSpeed(self):
+    def get_max_speed(self):
         return self.maxSpd
     
     # Luck
-    def setLuck(self, luckIn):
+    def set_luck(self, luckIn):
         self.luck = luckIn
 
-    def getLuck(self):
+    def get_luck(self):
         return self.luck
 
-    def getMaxLuck(self):
+    def get_max_luck(self):
         return self.maxLuck
 
-    def setMaxLuck(self, maxLuckIn):
+    def set_max_luck(self, maxLuckIn):
         self.maxLuck = maxLuckIn
 
     # Gold
-    def getGold(self):
+    def get_gold(self):
         return self.gold
 
-    def getMaxGold(self):
+    def get_max_gold(self):
         return self.maxGold
 
-    def subtractGold(self, goldIn):
+    def subtract_gold(self, goldIn):
         self.gold -= goldIn
         if self.gold < 0:
             self.gold = 0
 
-    def addGold(self, goldIn):
+    def add_gold(self, goldIn):
         self.gold += goldIn
 
-    def printGold(self):
+    def print_gold(self):
         print("You have " + str(self.gold) + " gold.")
 
     # Exp
-    def setExp(self, expIn):
+    def set_exp(self, expIn):
         self.exp = expIn
 
-    def getExp(self):
+    def get_exp(self):
         return self.exp
 
     # Class
-    def setClass(self, string):
+    def set_class(self, string):
         self.class_id = string
 
-    def getClass(self):
+    def get_class(self):
         return self.class_id
 
     # Level
-    def getLevel(self):
-        return self.player_level
+    def get_level(self):
+        return self.playerLevel
 
-    def setLevel(self, levelIn):
-        self.player_level = levelIn
+    def set_level(self, levelIn):
+        self.playerLevel = levelIn
 
     # Get all --Used for save
-    def getAllStats(self):
-        return {"name": self.getName(),
-                "class": self.getClass(),
-                "gold": self.getGold(),
-                "atk": self.getAtk(),
-                "def": self.getDef(),
-                "speed": self.getSpeed(),
-                "luck": self.getLuck(),
-                "hp": self.getHp(),
-                "level": self.getLevel(),
-                "exp": self.getExp(),
+    def get_all_stats(self):
+        return {"name": self.get_name(),
+                "class": self.get_class(),
+                "gold": self.get_gold(),
+                "atk": self.get_atk(),
+                "def": self.get_def(),
+                "speed": self.get_speed(),
+                "luck": self.get_luck(),
+                "hp": self.get_hp(),
+                "level": self.get_level(),
+                "exp": self.get_exp(),
                 # "inventory": self.inventory,
                 "printInventory": self.printInventory,
-                "maxAtk": self.getMaxAtk(),
-                "maxDef": self.getMaxDef(),
-                "maxSpeed": self.getMaxSpeed(),
-                "maxLuck": self.getMaxLuck(),
-                "maxHp": self.getMaxHp(),
+                "maxAtk": self.get_max_atk(),
+                "maxDef": self.get_max_def(),
+                "maxSpeed": self.get_max_speed(),
+                "maxLuck": self.get_max_luck(),
+                "maxHp": self.get_max_hp(),
                 "currentRoom": config.current_room_id,
                 "fountain": config.fountain,
                 "ulric": config.ulric,

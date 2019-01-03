@@ -63,17 +63,17 @@ def intro():
                     ans = input("You can't change it once it's set.")
                     print()
                     if containsAny(ans, yes):
-                        config.player.setName(name.title())
+                        config.player.set_name(name.title())
                         break
             print(config.room_color)
-            print("\n\n>>>" + config.player.getName() + "'s House<<<")
+            print("\n\n>>>" + config.player.get_name() + "'s House<<<")
             print(config.base_color)
             print()
             print("Today is the day you join Cataracta's Legion.")
             print("To join, you must head to the Legion's courtyard.")
             print("You collect your belongings and leave your home with a sense of pride.")
             print("\nType 'help' any time for a list of commands!\n")
-            config.player.addGold(100)
+            config.player.add_gold(100)
             config.player.give_item(item.potion)
-            config.player.unlockedTrophy("startedAdventure")
+            config.player.unlocked_trophy("startedAdventure")
             config.current_room_id = "southwest_c"

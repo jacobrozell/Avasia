@@ -54,7 +54,7 @@ def portal_logic():
 
         elif containsAny(ans, vent):
             if ventFound is True:
-                if config.player.getClass() == "scout" or config.player.getClass() == "hunter":
+                if config.player.get_class() == "scout" or config.player.get_class() == "hunter":
                     print("It seems you are a little too short to reach the vent.")
                     print()
                 else:

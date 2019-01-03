@@ -85,20 +85,20 @@ def mainloop():
         # Print the players inventory
         elif util.containsAny(command, inventory):
             print()
-            config.player.printPlayerInventory()
+            config.player.print_player_inventory()
             print()
             continue
 
         # Eat food / drink potion:
         elif util.containsAny(command, eat):
 
-            if config.player.getHp() < config.player.getMaxHp():
+            if config.player.get_hp() < config.player.get_max_hp():
 
                 print("What item do you want to eat/drink?")
                 print()
 
                 # Get input for which item_id the user wants to eat/drink
-                config.player.printPlayerInventory()
+                config.player.print_player_inventory()
                 itemToBeEaten = input()
 
                 # Search for item_id and RETURN THE ITEM ITSELF and set it to item_object
@@ -140,7 +140,7 @@ def mainloop():
             save.loadParameters()
 
         elif util.containsAny(command, trophyCommand):
-            config.player.printObtaintedTrophies()
+            config.player.print_obtained_trophies()
 
         else:
 

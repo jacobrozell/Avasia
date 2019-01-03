@@ -14,7 +14,7 @@ saveGameFound = False
 def saveParameters():
     global all_stats
     global saveGameFound
-    all_stats = config.player.getAllStats()
+    all_stats = config.player.get_all_stats()
     print(str(all_stats))
 
     pickle_out = open("savefile.pickle", "wb")
@@ -31,30 +31,30 @@ def loadParameters():
     all_stats = pickle.load(pickle_in)
 
     # Set all of these parameters in config.
-    config.player.setName(all_stats["name"])
+    config.player.set_name(all_stats["name"])
 
-    config.player.addGold(all_stats["gold"])
+    config.player.add_gold(all_stats["gold"])
 
-    config.player.setAtk(all_stats["atk"])
-    config.player.setMaxAtk(all_stats["maxAtk"])
+    config.player.set_atk(all_stats["atk"])
+    config.player.set_max_atk(all_stats["maxAtk"])
 
-    config.player.setDef(all_stats["def"])
-    config.player.setMaxDef(all_stats["maxDef"])
+    config.player.set_def(all_stats["def"])
+    config.player.set_max_def(all_stats["maxDef"])
 
-    config.player.setSpeed(all_stats["speed"])
-    config.player.setMaxSpeed(all_stats["maxSpeed"])
+    config.player.set_speed(all_stats["speed"])
+    config.player.set_max_speed(all_stats["maxSpeed"])
 
-    config.player.setLuck(all_stats["luck"])
-    config.player.setMaxLuck(all_stats["maxLuck"])
+    config.player.set_luck(all_stats["luck"])
+    config.player.set_max_luck(all_stats["maxLuck"])
 
-    config.player.setHp(all_stats["hp"])
-    config.player.setMaxHp(all_stats["maxHp"])
+    config.player.set_hp(all_stats["hp"])
+    config.player.set_max_hp(all_stats["maxHp"])
 
-    config.player.setExp(all_stats["exp"])
+    config.player.set_exp(all_stats["exp"])
 
-    config.player.setLevel(all_stats["level"])
+    config.player.set_level(all_stats["level"])
 
-    config.player.setClass(all_stats["class"])
+    config.player.set_class(all_stats["class"])
 
     config.player.printInventory = all_stats["printInventory"]
     # config.player.inventory = all_stats["inventory"]

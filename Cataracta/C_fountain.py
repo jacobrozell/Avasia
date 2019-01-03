@@ -20,7 +20,7 @@ def c_fountain_logic():
         leave = ["LEAVE", "BACK", "RETURN", "WEST"]
         if containsAny(ans, coin) and config.fountain is False:
             roll = randint(0, 1)
-            config.player.subtractGold(1)
+            config.player.subtract_gold(1)
             if roll == 0:
                 print("\nYou toss a gold piece into the water and it lands on tails.")
                 print("Nothing happens.\n")

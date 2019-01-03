@@ -33,8 +33,8 @@ def pier_logic():
         if containsAny(ans, yes):
             if config.ulric is False:
                 print("You pay Doran 15 gold.")
-                config.player.subtractGold(15)
-                config.player.printGold()
+                config.player.subtract_gold(15)
+                config.player.print_gold()
                 print("He hands you an old fishing rod and some bait then points toward the door to the pier.\n")
                 talk("Becareful not to fall in the river.")
                 talk("Varatho ain't a kind beast to those who swim her rapids.")
@@ -50,7 +50,7 @@ def pier_logic():
                 talk("Fine, here. Go ahead. Just make sure you're kind to the river and don't ruin my pier!")
                 print()
                 print("Doran hands you an old fishing rod and some bait then points you towards the door to the pier.\n")
-                config.player.unlockedTrophy("brother")
+                config.player.unlocked_trophy("brother")
                 config.current_room_id = "fishing_id"
                 config.ulric = False
                 return "reload"

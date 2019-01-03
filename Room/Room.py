@@ -24,10 +24,6 @@ class Room:
         print(config.room_color, "\n>>>" + self.name + "<<<\n\n")
         print(config.base_color, end='')
 
-    def isOnEnterRoom(self):
-        if self.on_enter is not None:
-            return True
-
     def direction(self, command):
         north = ["NORTH"]
         east = ["EAST"]

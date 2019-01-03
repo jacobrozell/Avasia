@@ -43,77 +43,77 @@ def courtyard_logic():
 
         if containsAny(user_class, hunter):
             # Attack
-            config.player.setAtk(20)
-            config.player.setMaxAtk(20)
+            config.player.set_atk(20)
+            config.player.set_max_atk(20)
 
             # Defense
-            config.player.setDef(5)
-            config.player.setMaxDef(5)
+            config.player.set_def(5)
+            config.player.set_max_def(5)
 
             # Speed
-            config.player.setSpeed(10)
-            config.player.setMaxSpeed(10)
+            config.player.set_speed(10)
+            config.player.set_max_speed(10)
 
             # Luck
-            config.player.setLuck(15)
-            config.player.setMaxLuck(15)
+            config.player.set_luck(15)
+            config.player.set_max_luck(15)
 
             # Hp
-            config.player.setHp(80)
-            config.player.setMaxHp(80)
+            config.player.set_hp(80)
+            config.player.set_max_hp(80)
 
-            config.player.setClass("hunter")
+            config.player.set_class("hunter")
             config.player.addForm("Wolf")
 
             break
 
         elif containsAny(user_class, scout):
             # Attack
-            config.player.setAtk(10)
-            config.player.setMaxAtk(10)
+            config.player.set_atk(10)
+            config.player.set_max_atk(10)
 
             # Defense
-            config.player.setDef(5)
-            config.player.setMaxDef(5)
+            config.player.set_def(5)
+            config.player.set_max_def(5)
 
             # Speed
-            config.player.setSpeed(25)
-            config.player.setMaxSpeed(25)
+            config.player.set_speed(25)
+            config.player.set_max_speed(25)
 
             # Luck
-            config.player.setLuck(5)
-            config.player.setMaxLuck(5)
+            config.player.set_luck(5)
+            config.player.set_max_luck(5)
 
             # Hp
-            config.player.setHp(75)
-            config.player.setMaxHp(75)
+            config.player.set_hp(75)
+            config.player.set_max_hp(75)
 
-            config.player.setClass("scout")
+            config.player.set_class("scout")
             config.player.addForm("Fox")
             break
 
         elif containsAny(user_class, guardian):
             # Attack
-            config.player.setAtk(5)
-            config.player.setMaxAtk(5)
+            config.player.set_atk(5)
+            config.player.set_max_atk(5)
 
             # Defense
-            config.player.setDef(5)
-            config.player.setMaxDef(5)
+            config.player.set_def(5)
+            config.player.set_max_def(5)
 
             # Speed
-            config.player.setSpeed(0)
-            config.player.setMaxSpeed(0)
+            config.player.set_speed(0)
+            config.player.set_max_speed(0)
 
             # Luck
-            config.player.setLuck(10)
-            config.player.setMaxLuck(10)
+            config.player.set_luck(10)
+            config.player.set_max_luck(10)
 
             # Hp
-            config.player.setHp(80)
-            config.player.setMaxHp(80)
+            config.player.set_hp(80)
+            config.player.set_max_hp(80)
 
-            config.player.setClass("guardian")
+            config.player.set_class("guardian")
             config.player.addForm("Bear")
             break
 
@@ -125,7 +125,7 @@ def courtyard_logic():
         # Tutorial
         # ---------------------------------------
 
-        if config.player.getClass() == "hunter":  # wolf
+        if config.player.get_class() == config.player.hunterId:  # wolf
             print()
             print(">>>Hunter Training<<<")
             print()
@@ -180,7 +180,7 @@ def courtyard_logic():
             print()
             break
 
-        if config.player.getClass() == "scout":  # fox
+        if config.player.get_class() == config.player.scoutId:  # fox
             print()
             print(">>>Scout Training<<<")
             print()
@@ -233,7 +233,7 @@ def courtyard_logic():
             print()
             break
 
-        if config.player.getClass() == "guardian":  # bear
+        if config.player.get_class() == config.player.guardianId:  # bear
             print()
             print(">>>Guardian Training<<<")
             print()
@@ -293,18 +293,18 @@ def cataracta_battle():
     print("Almost instantaneously, hundreds of burly men charge from the portal.")
     print("You immediately realize that these are Agromanians.")
 
-    if config.player.getClass() == "guardian":
+    if config.player.get_class() == "guardian":
         print("As the slaughter of your people begins, Acustos shouts above the chaos.")
         talk("Varatho Guardians, training is over!")
         talk("Your time has come, hold your ground!")
         print()
-    elif config.player.getClass() == "scout":
+    elif config.player.get_class() == "scout":
         print("As the slaughter of your people begins, Dentros shouts above the chaos.")
         talk("Skulks, training is over!")
         talk("Use what you've learned and defend yourselves!")
         print()
 
-    elif config.player.getClass() == "hunter":
+    elif config.player.get_class() == "hunter":
         print("As the slaughter of your people begins, Cellious shouts above the chaos.")
         talk("Packstalkers, training is over!")
         talk("Shows these cowards what you're made of!")
@@ -338,10 +338,10 @@ def cataracta_battle():
                           defIn=5,
                           hpIn=60,
                           spdIn=9)
-    config.enemy.setText("The " + config.enemy.getName() + " lays his mace into the side of your head.")
+    config.enemy.set_text("The " + config.enemy.get_name() + " lays his mace into the side of your head.")
 
     print("\n\nNEED TO IMPLEMENT\n\n")
-    config.player.setHp(config.player.getMaxHp())
+    config.player.set_hp(config.player.get_max_hp())
     print()
     # --------------------------------------------------------------------
     print("As the battle continues, weak Agromanian's fall to their death.")
@@ -356,7 +356,7 @@ def cataracta_battle():
                           defIn=10,
                           hpIn=90,
                           spdIn=7)
-    config.enemy.setText("The " + config.enemy.getName() + " plows his sword into your chest.")
+    config.enemy.set_text("The " + config.enemy.get_name() + " plows his sword into your chest.")
 
     print("\n\nNEED TO IMPLEMENT\n\n")
 
