@@ -94,7 +94,7 @@ def mainloop():
 
             if config.player.getHp() < config.player.getMaxHp():
 
-                print("What item do you want to eat/drink?")
+                print("What item do you want to use?")
                 print()
 
                 # Get input for which item_id the user wants to eat/drink
