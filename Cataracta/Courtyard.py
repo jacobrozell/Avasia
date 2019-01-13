@@ -7,113 +7,82 @@ import Logic.Save as save
 def courtyard_logic():
     save.saveParameters()
     courtyard.print_name()
-    print("You make your way to the Cataractan Legion's courtyard to begin your training.")
-    print("A large group of people are standing around three men who seem to be giving a speech.")
-    print()
-    print("One of the men speaks out in a loud booming voice.")
-    print()
-    talk("Greetings, men and women, welcome.")
-    talk("My name is Cellious, I am the leader of the Packstalkers, commonly known as the hunters.")
-    talk("You are all here because Cataracta needs an army.")
-    talk("I'm sure word has gotten around.")
-    talk("A group of former Agromanians have fled Krothgar and turned against their people for the greater good.")
-    talk("They set aside their differences and they warned the people of Aylova.")
-    talk("Vashirr, the former King of Nacastrum, is forming an army of magic-wielding warriors.")
-    talk("Most of you know how to defend yourselves and have no problem fighting the beasts that threaten us daily.")
-    talk("But these marauders are unlike anything we've ever seen.")
-    talk("Enough talk, it is time we hone your skills to fight when the time comes.")
-    print()
-    talk("We will begin training based of what your speciality is.")
-    print()
-
-    # Introduce Classes
-    talk("Hunters are known as the Packstalkers. They use the aspect of the Wolf.")
-    talk("Scouts are known as the Skulks of Cataracta. They use the aspect of the Fox.")
-    talk("Guardians are known as the Varatho Guardians. They use the aspect of the Bear.")
-    print()
-    talk("I need Hunters with me; Scouts with Dentros; Guardians with Acustos.")
-    talk("You know who you are.")
-    print()
+    print("You enter the courtyard and see dozens of druids training.")
+    print("Suddenly, another Druid appears next to you and speaks")
+    talk("Nice of you to join us! My name is Dentros.")
+    print("You introduce yourself and tell Dentros that you're here to join the legion.")
+    talk("Well, let's not waste anytime then!.")
+    talk("We have three spirit animals that are best known for their skill in combat.")
+    talk("The Wolf, the Bear, and the Fox")
+    talk("Which are you?")
     while True:
-        hunter = ["HUNTER"]
-        scout = ["SCOUT"]
-        guardian = ["GUARDIAN"]
-        user_class = input("What class are you? (Hunter, Scout, Guardian)")
+        wolf = ["WOLF"]
+        fox = ["FOX"]
+        bear = ["BEAR"]
+        user_class = input()
         user_class = user_class.upper()
 
-        if containsAny(user_class, hunter):
+        if containsAny(user_class, wolf):
             # Attack
-            config.player.set_atk(20)
-            config.player.set_max_atk(20)
-
-            # Defense
-            config.player.set_def(5)
-            config.player.set_max_def(5)
+            config.player.set_atk(10)
+            config.player.set_max_atk(10)
 
             # Speed
             config.player.set_speed(10)
             config.player.set_max_speed(10)
 
             # Luck
-            config.player.set_luck(15)
-            config.player.set_max_luck(15)
+            config.player.set_luck(5)
+            config.player.set_max_luck(5)
 
             # Hp
-            config.player.set_hp(80)
-            config.player.set_max_hp(80)
+            config.player.set_hp(20)
+            config.player.set_max_hp(20)
 
-            config.player.set_class("hunter")
+            config.player.set_class("wolf")
             config.player.addForm("Wolf")
 
             break
 
         elif containsAny(user_class, scout):
             # Attack
-            config.player.set_atk(10)
-            config.player.set_max_atk(10)
-
-            # Defense
-            config.player.set_def(5)
-            config.player.set_max_def(5)
+            config.player.set_atk(15)
+            config.player.set_max_atk(15)
 
             # Speed
-            config.player.set_speed(25)
-            config.player.set_max_speed(25)
+            config.player.set_speed(15)
+            config.player.set_max_speed(15)
 
             # Luck
             config.player.set_luck(5)
             config.player.set_max_luck(5)
 
             # Hp
-            config.player.set_hp(75)
-            config.player.set_max_hp(75)
+            config.player.set_hp(15)
+            config.player.set_max_hp(15)
 
-            config.player.set_class("scout")
+            config.player.set_class("fox")
             config.player.addForm("Fox")
             break
 
         elif containsAny(user_class, guardian):
             # Attack
-            config.player.set_atk(5)
-            config.player.set_max_atk(5)
-
-            # Defense
-            config.player.set_def(5)
-            config.player.set_max_def(5)
+            config.player.set_atk(10)
+            config.player.set_max_atk(10)
 
             # Speed
             config.player.set_speed(0)
             config.player.set_max_speed(0)
 
             # Luck
-            config.player.set_luck(10)
-            config.player.set_max_luck(10)
+            config.player.set_luck(5)
+            config.player.set_max_luck(5)
 
             # Hp
-            config.player.set_hp(80)
-            config.player.set_max_hp(80)
+            config.player.set_hp(25)
+            config.player.set_max_hp(25)
 
-            config.player.set_class("guardian")
+            config.player.set_class("bear")
             config.player.addForm("Bear")
             break
 
@@ -125,163 +94,28 @@ def courtyard_logic():
         # Tutorial
         # ---------------------------------------
 
-        if config.player.get_class() == config.player.hunterId:  # wolf
+        if config.player.get_class() == config.player.wolfId:  # wolf
             print()
-            print(">>>Hunter Training<<<")
-            print()
-            print()
-            print("You follow the tall man wearing the pelts and skulls of beasts he has presumably slain.")
-            talk("My name is Cellious.")
-            talk("I will help you hone your skills under the aspect of the wolf.")
-            print()
-            talk("First, you must let yourself go.")
-            talk("You must shed yourself of your human mantle and assume the form you hold in you.")
-            print()
-            while True:
-                ans = input("Type 'wolf form' to turn into a wolf.")
-                print()
-                w = ["WOLF FORM", "SHAPESHIFT", "WOLF"]
-                if containsAny(ans, w):
-                    print("You focus your mind and search your soul for the spirit Cellious spoke of.")
-                    print("Your blood runs hot, you can feel and hear your heart pounding in your chest.")
-                    print("Every fiber of your being begins to shift your Druidic form into one of a vicious creature.")
-                    print("Your spine cracks and your ears shift upward.")
-                    print("Your nose changes form and your jaw extends as your teeth begin to protrude from your mouth.")
-                    print("Finally, your body comes to a pause and your mind calms.")
-                    print()
-                    print("You, as with all the others in your group, are now Wolves.")
-                    print()
-                    break
-                else:
-                    print("You make an attempt to shift, but fail to do so.")
-                    talk("Focus and search your soul! Try again!")
-                    print()
-
-            print("Cellious laughs and looks around with a prideful grin.")
-            talk("Take a look around at your fellow Packstalkers.")
-            talk("Notice all of you have different markings and fangs.")
-            talk("Your marks are unique only to you and you alone.")
-            talk("Though we appear different to one another, we hunt as one.")
-            print()
-            talk("You now walk as a lion amongst sheep.")
-            talk("All creatures will fear your bloodthirsty form as you stride toward your prey.")
-            print()
-            talk("Now to the good part. Let's try some friendly duels.")
-
-            # IMPLEMENT DUELS HERE AGAINST ANOTHER WOLF
-            print("\n\nNEED TO IMPLEMENT\n\n")
-
-            talk("Good.")
-            talk("As you can see, a good strategy can lead to devastating attacks.")
-            talk("You must learn to use all of your skills in unison.")
-            print()
-            talk("For example, next we are goi-")
-            print("Cellious is interrupted by a flash of bright light followed by a cascade of darkness.")
-            print()
-            break
-
-        if config.player.get_class() == config.player.scoutId:  # fox
-            print()
-            print(">>>Scout Training<<<")
-            print()
-            print()
-            print("You follow the older man carrying a staff and await further instruction.")
-            talk("My name is Dentros.")
-            talk("I will teach you how to properly carry yourself in your frail form.")
-            talk("We may not be as intimidating as Packstalkers or as large as the Varatho Guardians, "
-                 "but we can strike just as hard.")
-            print()
-            talk("Let us begin by transforming into our proper form.")
-            talk("You must allow yourself to be free of your Druid form and become one with those who roam these woods.")
-            print()
-            while True:
-                ans = input("Type 'fox form' to turn into a fox.")
-                print()
-                w = ["FOX FORM", "SHAPESHIFT", "FOX"]
-                if containsAny(ans, w):
-                    print("As you search for the aspect of the fox hiding inside you, you feel your body begin to heat.")
-                    print("Your mind, body, and soul become one.")
-                    print("Your spine cracks and your ears shift upward.")
-                    print("Your nose changes form and your jaw extends as your teeth begin to sharpen.")
-                    print("Finally, your body comes to a pause and your mind calms.")
-                    print()
-                    print("You, along with the others in your group, are now Fox.")
-                    break
-                else:
-                    print("You make an attempt to shift, but fail to do so.")
-                    talk("It's okay. Relax yourself and try again.")
-                    print()
-            talk("Well done!")
-            talk("Look at those around you.")
-            talk("Notice the differences between each of you.")
-            talk("Your markings are unique to you and only you.")
-            talk("Though we all appear different, we all must communicate and work together.", "\n")
-            talk("The information we can gather may be the difference between life or death for our people.")
-            talk("But scouting isn't the only thing we are good for.")
-            talk("There are times when we must strike our enemies or be prepared to defend ourselves.", "\n")
-            talk("Now to the good part. Let's try some friendly duels.")
-
-            # IMPLEMENT DUELS HERE AGAINST ANOTHER FOX
-            print("\n\nNEED TO IMPLEMENT\n\n")
-
-            talk("Nicely done!")
-            talk("As you can see, focusing and exploiting weaknesses in your enemy is what the Skulks are all about.")
-            talk("To work effectively, you must use all your abilities in unison.")
-            print()
-            talk("For example, next we are goi-")
-            print("Dentros is interrupted by a flash of bright light followed by a cascade of darkness.")
+            talk("Ah, I could tell your spirit animal was the wolf when I saw you.")
+            talk("The wolves are very formidable in battle.")
+            talk("They hit hard and can take hits well too.")
             print()
             break
 
         if config.player.get_class() == config.player.guardianId:  # bear
-            print()
-            print(">>>Guardian Training<<<")
-            print()
-            print()
-            talk("You follow the large Druidic woman who is plated in metals and blue crystals.")
-            talk("My name is Acustos.")
-            talk("I will teach you all that you must know to defend our people.")
-            talk("Our role in protecting our kind is one of the most important.")
-            talk("Should something or someone threaten our home, we are the first and last line of defense.")
-            print()
-            while True:
-                ans = input("Type 'bear form' to turn into a bear.")
-                print()
-                w = ["BEAR FORM", "SHAPESHIFT", "BEAR"]
-                if containsAny(ans, w):
-                    print("You take a deep breath and focus your mind on the Aspect of the Bear.")
-                    print("The blood rushing through your body pushes outward, forcing your body to grow.")
-                    print("Your spine cracks and your ears round off and shrink.")
-                    print("Your nose changes form and your jaw extends as your teeth begin to sharpen.")
-                    print("Your body becomes covered in rough fur and your hands become claws.")
-                    print("Finally, your body comes to a pause and your mind calms.")
-                    print()
-                    print("You, along with the others in your group, are now Bears.")
-                    break
-                else:
-                    print("You make an attempt to shift, but fail to do so.")
-                    talk("When the time comes, you must be able to transform at will and without fail! Try again!")
-                    print()
-            talk("Great work, Guardians!")
-            talk("Now, look around you.")
-            talk("Notice that all of you appear different to each other.")
-            talk("Your markings and build are unique to you and only you.")
-            talk("Even though we look different, we must stand as one against the forces that seek to tear us apart.", "\n")
-            talk("But your stature alone will not save you.")
-            talk("You must learn to fight!", "\n")
-            talk("Now to the good part. Let's try some duels.")
-
-            # IMPLEMENT DUELS HERE AGAINST ANOTHER BEAR
-            print("\n\nNEED TO IMPLEMENT\n\n")
-
-            talk("Nicely done!")
-            talk("You must use everything you can to defend our people.")
-            talk("There are many abilities you possess that can turn the tide of battle.")
-            print()
-            talk("For example, next we are goi-")
-            print("Acustos is interrupted by a flash of bright light followed by a cascade of darkness.")
+            rint()
+            talk("Yes, the Bear. Bears are our front-line defense.")
+            talk("They can take quite a beating before they're defeated.")
             print()
             break
+        if config.player.get_class() == config.player.scoutId:  # fox
+            print()
+            talk("Hm, yes a fox. My spirit animal is the fox as well.")
+            talk("We are well known for our ability to move quickly and silently.")
+            talk("Foxes make up most of our scouting force.")
+            print()
+            break
+
 
     cataracta_battle()
     config.current_room_id = "c_portal_room"
@@ -289,55 +123,38 @@ def courtyard_logic():
 
 
 def cataracta_battle():
-    print("Before anyone can respond to the sudden change of scenery, a dark portal forms.")
-    print("Almost instantaneously, hundreds of burly men charge from the portal.")
-    print("You immediately realize that these are Agromanians.")
+    print("You head further into the courtyard to see the king of Cataracta, Kimious, walk out of the Cataractan keep.")
+    print("He speaks out to the druids in the courtyard as you make your way to the front to get a good view.")
+    talk("My friends! The time to fight is drawing near!")
+    talk("Our people are under constant threat of an Agromanian invasion.")
+    talk("The attack on Oceandale was far too close to Cataracta.")
+    talk("We can no longer rely on our hidden passages and mountainess terrain to defend us.")
+    talk("We must take the fight to them!")
+    print("The crowd roars in agreement.")
+    talk("Your undying loyalty to our home speaks volumes an-")
 
-    if config.player.get_class() == "guardian":
-        print("As the slaughter of your people begins, Acustos shouts above the chaos.")
-        talk("Varatho Guardians, training is over!")
-        talk("Your time has come, hold your ground!")
-        print()
-    elif config.player.get_class() == "scout":
-        print("As the slaughter of your people begins, Dentros shouts above the chaos.")
-        talk("Skulks, training is over!")
-        talk("Use what you've learned and defend yourselves!")
-        print()
-
-    elif config.player.get_class() == "hunter":
-        print("As the slaughter of your people begins, Cellious shouts above the chaos.")
-        talk("Packstalkers, training is over!")
-        talk("Shows these cowards what you're made of!")
-        print()
-
-    print("One character stands out from the hoard of Agromanians pouring from the portal.")
-    print("He stands tall and proud, holding a staff formed of grey wood and purple stones in his left hand.")
-    print("A scar crosses his left eye, and continues down to his chin.")
-    print("He is dressed in black and purple robes, unlike the Agromanian.")
-    print("As he makes his way across the courtyard, he points the tip of his staff toward your group.")
-    print("The end of the staff begins to glow and a blast of dark purple energy is launched in your direction.")
+    print("Kimious is interrupted by a blinding flash of light, followed by a cascade of darkness.")
+    print("The sky turns blood red as a dark portal forms at the entrance of the keep.")
+    print("A man donned in a dark hooded robe, holding a gray wooden staff walks out of the portal.")
+    print("The man has a scar running across his left eye that continues to his chin.")
+    print("From behind the man floods dozens of what brutish warriors.")
     print()
-    print("You manage to jump out of the way before it arrives, but some of your group aren't as lucky.")
-    print("The magic burns clean through a few of your group members and you watch as their bodies fall to the ground.")
+    print("Destros shouts out to you")
+    talk("Agromanians! They've found us! But how?!")
+    print("Guards rush to protect Kimious, but they're quickly outmatched by the Agromanians sheer numbers")
+    print("The hooded man points his staff to Kimious and blasts him with a bolt of dark energy.")
+    print("Kimious falls to the floor, lifelessly.")
     print()
-    print("The man's skill in magic shows beyond doubt that he is Vashirr, the mage you've heard stories about.")
-    print("Vashirr pauses for a moment and then begins to speak in a rough voice.")
-    print()
-    talk("Druid! Your opposition has forced my hand.")
-    talk("Know that Vashirr has brought an end to your twisted kind.")
-    print()
-    print("Shouts of defiance rage from the Cataractan people.")
-    talk("Your weak attempts to defend yourselves only delay the inevitable.")
-    print()
-    print("An Agromanian approaches you, with his weapon drawn, ready to strike you down.")
-    print()
+    print("The Druids in the courtyard shout in horror and charge in to fight the oncoming Agromanians")
+    print("The hooded man points his staff toward you and unleashes another bolt of energy.")
+    print("Before you can react, Dentros shoves you out of the line of fire and takes the hit.")
+    print("As you stumble over, an Agromanian confronts you.")
 
     # Always set stats for enemy before combat!!!!
     config.enemy.setStats(nameIn="Agromanian Grunt",
-                          atkIn=15,
-                          defIn=5,
-                          hpIn=60,
-                          spdIn=9)
+                          atkIn=5,
+                          hpIn=15,
+                          spdIn=10)
     config.enemy.set_text("The " + config.enemy.get_name() + " lays his mace into the side of your head.")
 
     print("\n\nNEED TO IMPLEMENT\n\n")

@@ -38,9 +38,6 @@ def loadParameters():
     config.player.set_atk(all_stats["atk"])
     config.player.set_max_atk(all_stats["maxAtk"])
 
-    config.player.set_def(all_stats["def"])
-    config.player.set_max_def(all_stats["maxDef"])
-
     config.player.set_speed(all_stats["speed"])
     config.player.set_max_speed(all_stats["maxSpeed"])
 

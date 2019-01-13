@@ -2,7 +2,7 @@ import Logic.config as config
 
 
 class Enemy:
-    def __init__(self, atk, defense, speed, hp, name):
+    def __init__(self, atk, speed, hp, name):
 
         # Name
         self.name = name
@@ -19,9 +19,6 @@ class Enemy:
         self.hp = hp
         self.maxHp = hp
 
-        # Defense
-        self.defense = defense
-        self.maxDef = defense
 
         # Kill player text
         self.text = ""
@@ -34,7 +31,7 @@ class Enemy:
 
     def display_stats(self):
         output = ""
-        output += str(self.name) + ": HP: " + str(self.hp) + ", Atk: " + str(self.atk) + ", Def: " + str(self.defense)
+        output += str(self.name) + ": HP: " + str(self.hp) + ", Atk: " + str(self.atk)
         print(output)
 
     def set_stats(self, name, atk, defense, hp, speed, text=""):
@@ -99,16 +96,6 @@ class Enemy:
 
     def get_max_hp(self):
         return self.maxHp
-
-    # Defense
-    def set_def(self, defense):
-        self.defense = defense
-
-    def get_def(self):
-        return self.defense
-
-    def set_max_def(self, defense):
-        self.maxDef = defense
 
     def get_max_def(self):
         return self.maxDef

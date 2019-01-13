@@ -30,8 +30,7 @@ player = Player(name="",
                 hp=0,
                 atk=0,
                 luck=0,
-                defense=0,
-                spd=0,
+                speed=0,
                 gold=0,
                 class_id="")
 
