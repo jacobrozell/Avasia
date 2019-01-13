@@ -1,11 +1,13 @@
 import Logic.config as config
+import Logic.util as util
 import random as random
 enemy = config.enemy
 player = config.player
 
 all_combat_commands = ["ATTACK", "HEAL"]
-combat_heal = ["HEAL," "EAT", "DRINK", "USE ITEM", "USE"]
-help = ["HELP", "COMMANDS"]
+combat_heal = ["HEAL", "EAT", "DRINK", "USE ITEM", "USE"]
+combat_help = ["HELP", "COMMANDS"]
+attack = ["ATTACK", "STRIKE", "FIGHT"]
 luck_roll = 0
 
 while True:
@@ -17,10 +19,10 @@ while True:
     command = input("What do will you do?")
     command.upper()
 
-    if util.containsAny(command,help):
+    if util.containsAny(command,combat_help):
         print(all_combat_commands)
         print()
-    elif util.containsAny(command,heal):
+    elif util.containsAny(command,combat_heal):
         print("What do you want to use?")
         config.player.print_player_inventory()
         itemToBeEaten = input()
@@ -51,7 +53,7 @@ while True:
                 break
 
 if player.hp <= 0:
-    #return game over
+
 else:
     print(enemy.name, " was slain!")
     #return to previous spot
