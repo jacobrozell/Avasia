@@ -136,7 +136,6 @@ def cataracta_battle():
     print("Kimious is interrupted by a blinding flash of light, followed by a cascade of darkness.")
     print("The sky turns blood red as a dark portal forms at the entrance of the keep.")
     print("A man donned in a dark hooded robe, holding a gray wooden staff walks out of the portal.")
-    print("The man has a scar running across his left eye that continues to his chin.")
     print("From behind the man floods dozens of what brutish warriors.")
     print()
     print("Destros shouts out to you")
@@ -157,23 +156,51 @@ def cataracta_battle():
                           spdIn=10)
     config.enemy.set_text("The " + config.enemy.get_name() + " lays his mace into the side of your head.")
 
-    print("\n\nNEED TO IMPLEMENT\n\n")
-    config.player.set_hp(config.player.get_max_hp())
     print()
-    # --------------------------------------------------------------------
-    print("As the battle continues, weak Agromanian's fall to their death.")
-    print("The people of Cataracta seem to be easily taking Vashirr's army down.")
-    print("But as you take one Agromanian down, three more take its place.")
+    print("You quickly dispatch the Agromanian and reassess the area around you.")
+    print("Destros is lying on the floor and an Agromanian is charging toward him.")
+    print("You swiftly position yourself in-between Destros and the Agromanian.")
+    config.enemy.setStats(nameIn="Agromanian Grunt",
+                          atkIn=5,
+                          hpIn=15,
+                          spdIn=10)
+    config.enemy.set_text("The " + config.enemy.get_name() + "'s sword pierces your chest.")
+    print("Another Agromanian falls to their death.")
+    print("You turn to help Destros, but it seems your efforts were in vain.")
+    print("By the time you managed to get to his side, he had already passed.")
     print()
-    print("The dark portal continues to spew out Agromanian warriors like a waterfall.")
-    print("Before you can even think about what is going on around you, another Agromanian charges toward you.")
+    print("Filled with rage, you turn to find another target,")
+    print("but you quickly realize that all of the fighting has come to a stand still.")
     print()
-    config.enemy.setStats(nameIn="Agromanian Warrior",
-                          atkIn=15,
-                          defIn=10,
-                          hpIn=90,
-                          spdIn=7)
-    config.enemy.set_text("The " + config.enemy.get_name() + " plows his sword into your chest.")
+    print("Countless Cataractan lie dead on the ground in pools of their own blood.")
+    print("Any survivors are being held hostage by Agromanians around you.")
+    print()
+    print("It is in everyone's best interest if you stand still.")
+    print()
+    print("From out of the crowd of Agromanians surrounding you, the hooded man comes.")
+    print("He walks forward and is only a few feet in-front of you.")
+    print("He removes his hood.")
+    print("The man has a scar running across his left eye that continues to his chin.")
+    print("He speaks to you in a deep, raspy voice.")
+    print()
+    talk("Listen to me, and listen carefully.")
+    print("He places the tip of his staff to your head.")
+    print("You can hear and feel the energy resonating from it.")
+    print()
+    talk("I have a message for you to deliver.")
+    talk("Tell King Kaefden IV of the horrors his ignorance has brought.")
+    talk("Tell him that Cataracta and its king have fallen.")
+    talk("Tell him that so long as he holds his unearned claim on this land...")
+    print()
+    talk("I will not stop.")
+    print()
+    print("Vashirr turns and with a snap, the Agromanians execute every Druid in their captivity.")
+    print("You can only watch in horror as countless people are mercilessly massacred.")
+    print("Vashirr returns through the dark portal and before you can do anything to stop the onslaught,")
+    print("an Agromanian bashes your head in with his axe, knocking you out cold.")
+
+
+
 
     print("\n\nNEED TO IMPLEMENT\n\n")
 
