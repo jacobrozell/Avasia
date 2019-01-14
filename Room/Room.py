@@ -1,4 +1,4 @@
-from Logic.util import containsAny
+from Logic.util import containsAny, set_color_to
 import Logic.config as config
 
 
@@ -13,16 +13,16 @@ class Room:
     def event(self):
         # This is a linking room
         if self.on_enter is None:
-            print(config.room_color, "\n>>>" + self.name + "<<<\n\n")
-            print(config.base_color, end='')
+            self.print_name()
             print(self.des)
         else:
             # Logic Room
             return self.on_enter()
 
     def print_name(self):
-        print(config.room_color, "\n>>>" + self.name + "<<<\n\n")
-        print(config.base_color, end='')
+        set_color_to(config.room_color)
+        print("\n>>>" + self.name + "<<<\n\n")
+        set_color_to(config.base_color)
 
     def direction(self, command):
         north = ["NORTH"]

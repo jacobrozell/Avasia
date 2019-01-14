@@ -10,19 +10,23 @@ def containsAny(string, options):
     return False
 
 
+def set_color_to(color):
+    print(color, end='')
+
+
 def talk(talkMessage, message=None):
     if message is None:
         print(config.talk_color, "\"" + str(talkMessage) + "\"")
     else:
         print(config.talk_color, "\"" + str(talkMessage) + "\"" + " " + str(message))
 
-    print(config.base_color, end='')
+    set_color_to(config.base_color)
 
 
 def intro():
     from colorama import init
     init()
-    print(config.base_color, end='')
+    set_color_to(config.base_color)
 
     decision = False
     print("\nWelcome to Avasia: Sword of Courage!\n")

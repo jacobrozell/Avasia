@@ -120,10 +120,11 @@ def cataracta_battle():
     talk("My friends! The time to fight is drawing near!")
     talk("Our people are under constant threat of an Agromanian invasion.")
     talk("The attack on Oceandale was far too close to Cataracta.")
-    talk("We can no longer rely on our hidden passages and mountainess terrain to defend us.")
+    talk("We can no longer rely on our hidden passages and the mountainess terrain to defend us.")
     talk("We must take the fight to them!", "\n")
 
     print("The crowd roars in agreement.\n")
+
     talk("Your undying loyalty to our home speaks volumes an-", "\n")
 
     print("Kimious is interrupted by a blinding flash of light, followed by a cascade of darkness.")
@@ -148,18 +149,21 @@ def cataracta_battle():
     config.enemy.set_stats(name="Agromanian Grunt",
                            atk=5,
                            hp=15,
-                           speed=10)
+                           speed=5)
     config.enemy.set_text("The " + config.enemy.get_name() + " lays his mace into the side of your head.")
     config.combat.start_combat()
 
     print("\nYou quickly dispatch the Agromanian and reassess the area around you.")
     print("Destros is lying on the floor and an Agromanian is charging toward him.")
-    print("You swiftly position yourself in-between Destros and the Agromanian.")
+    print("You swiftly position yourself in-between Destros and the Agromanian.\n")
+
+    # NEED SOME STORY EXCUSE TO HEAL HERE OR THIS IS ALMOST IMPOSSIBLE
+    config.player.restore_health_to_max()
 
     config.enemy.set_stats(name="Agromanian Warrior",
                            atk=6,
                            hp=18,
-                           speed=8)
+                           speed=3)
     config.enemy.set_text("The " + config.enemy.get_name() + "'s sword pierces your chest.")
     config.combat.start_combat()
 
@@ -190,51 +194,13 @@ def cataracta_battle():
     talk("Tell him that Cataracta and its king have fallen.")
     talk("Tell him that so long as he holds his unearned claim on this land...", "\n")
 
-    talk("I will not stop.")
-    print()
+    talk("I will not stop.", "\n")
+
     print("Vashirr turns and with a snap, the Agromanians execute every Druid in their captivity.")
     print("You can only watch in horror as countless people are mercilessly massacred.")
     print("Vashirr returns through the dark portal and before you can do anything to stop the onslaught,")
-    print("an Agromanian bashes your head in with his axe, knocking you out cold.")
+    print("An Agromanian bashes your head in with his axe, knocking you out cold.")
 
-    # TODO
-    print("\n\nNEED TO IMPLEMENT\n\n")
-
-    print()
-    print("With another foe slain, you look around you to find the next target.")
-    print("But you quickly realize that all of the fighting has come to a stand still.\n")
-
-    print("You gaze upon the countless dead Cataractan lying on the ground in pools of blood.")
-    print("Your people have swiftly become outmatched by the Agromanian's sheer numbers.")
-    print("Completely surrounded, you know that there is nothing you can do to stop the onslaught that has occured,")
-    print("But you will die fighting.\n")
-
-    print("Just as the hundreds of Agromanian begin to charge toward you, Vashirr calls for them to hault.")
-    print("The Agromanian stop like well-trained pets and await their orders.\n")
-
-    talk("You there.")
-    print("Vashirr levitates up into the air to get past the barbarians surrounding you and places "
-          "himself opposite you.")
-    print("Just as he walks in close proximity to you, you attempt to jump at him.")
-    print("Unfortunately, you only get a short distance before he blast you with his staff, causing you "
-          "to be paralyzed.\n")
-
-    talk("Compose yourself, druid. Today, you live.")
-    talk("I do, however, have a task for you.")
-    talk("I want you to bring a message to the King Kaefden IV.")
-    talk("Tell him that the Legions of Cataracta have fallen and that King Kimious has shared his people's fate.")
-    talk("Tell him of the horrors his ignorance have brought to your people.")
-    talk("Tell him that I am coming.", "\n")
-
-    print("Vashirr turns around and gestures at his men before walking through his portal.")
-    print("They all roar and turn towards all the homes and buildings in Cataracta.")
-    print("Cataractan bodies are thrown into the Varatho River.")
-    print("Houses are burned to the ground")
-    print("The keep is being destroyed and defiled.")
-    print("You are powerless to stop it.\n")
-
-    print("One of the Agromanian trudges to you and smashes your head with the hilt of his axe.")
-    print("You are knocked out cold.")
     print("------------------------------------------------------------------------------------------------\n\n\n")
 
     print("Time passes and you awaken alone in the same place you were before.")

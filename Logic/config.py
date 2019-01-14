@@ -1,5 +1,5 @@
-from Player.PlayerClass import Player
-from Enemy.EnemyClass import Enemy
+from Player.Player import Player
+from Enemy.Enemy import Enemy
 from Combat.Combat import Combat
 import colorama as c
 

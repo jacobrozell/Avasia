@@ -1,4 +1,6 @@
 import Logic.config as config
+import Logic.util as util
+from Logic.Save import loadParameters
 
 
 class Enemy:
@@ -33,7 +35,7 @@ class Enemy:
         print("A" + str(self.name) + " appeared!\n")
 
     def print_stats(self):
-        print(config.enemy.get_name() + ":\n\t HEALTH: " + str(config.enemy.get_hp()) +
+        print("\n" + config.enemy.get_name() + ":\n\t HEALTH: " + str(config.enemy.get_hp()) +
               "\n\t ATTACK: " + str(config.enemy.get_atk()) +
               "\n\t SPEED: " + str(config.enemy.get_speed()) + "\n")
 
@@ -58,8 +60,23 @@ class Enemy:
         self.text = text
 
     def kill_player(self):
-        print(config.die_color, self.text + "\nYou have died.\n")
-        print(config.base_color)
+        util.set_color_to(config.die_color)
+        print(self.text + "\nYou have died.\n\n")
+        util.set_color_to(config.base_color)
+        while True:
+            yes = ["YES", "y"]
+            no = ["NO", "n"]
+            ans = input("Would you like to load your last save?")
+            ans.upper()
+
+            if util.containsAny(ans, yes):
+                loadParameters()
+                break
+            elif util.containsAny(ans, no):
+                print("Thank you for playing!")
+                quit()
+            else:
+                print()
 
     def is_dead(self):
         if config.enemy.get_hp() <= 0:

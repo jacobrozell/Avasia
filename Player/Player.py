@@ -188,6 +188,9 @@ class Player:
     def kill_enemy(self):
         print("You killed " + config.enemy.get_name() + "!\n")
 
+    def restore_health_to_max(self):
+        self.hp = self.maxHp
+
     # ------Getters and Setters-----
     # Name
     def set_name(self, namein):

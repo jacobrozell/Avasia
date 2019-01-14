@@ -10,7 +10,7 @@ class Combat:
         self.needed_luck_to_hit = 5
 
     def start_combat(self):
-        print(config.combat_color, end='')
+        util.set_color_to(config.combat_color)
 
         combat_heal = ["HEAL", "EAT", "DRINK", "USE ITEM", "USE"]
         combat_help = ["HELP", "COMMANDS"]
@@ -35,7 +35,7 @@ class Combat:
                 self.roll_for_initiative()
                 self.attack_phase()
                 if self.there_is_a_casualty():
-                    print(config.base_color, end='')
+                    util.set_color_to(config.base_color)
                     break
 
     def roll_for_initiative(self):
