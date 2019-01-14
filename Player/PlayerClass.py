@@ -4,28 +4,24 @@ import Logic.config as config
 
 
 class Player:
-    def __init__(self, atk, spd, hp, luck, defense, name, gold, class_id):
+    def __init__(self, atk, speed, hp, luck, name, gold, class_id):
         self.name = name
 
         # Attack
         self.atk = atk
-        self.maxAtk = 0
+        self.maxAtk = atk
 
         # Speed
-        self.spd = spd
-        self.maxSpd = 0
+        self.speed = speed
+        self.maxSpeed = speed
         
         # Hp
         self.hp = hp
-        self.maxHp = 0
-
-        # Defense
-        self.defense = defense
-        self.maxDef = 0
+        self.maxHp = hp
 
         # Luck
         self.luck = luck
-        self.maxLuck = 0
+        self.maxLuck = luck
 
         # Gold
         self.gold = gold
@@ -62,6 +58,7 @@ class Player:
         self.trophyCount = 0
         self.maxTrophyCount = len(self.trophies)
 
+    # Item Related Methods:
     def return_item(self, string):
         for item in self.inventory:
             if string.replace(" ", "").lower() == item.id:
@@ -86,37 +83,17 @@ class Player:
                   + str(item.replace("'", "").replace("{}", ""))
                   + ", " + str(self.printInventory[item]))
 
-    def take_hit(self, damage):
-        self.hp -= damage
-
     def eat_food(self, amount):
         self.hp += amount
         if self.hp > self.maxHp:
             self.hp = self.maxHp
 
-    def display_stats(self):
-        output = ""
-        output += str(self.get_name()) + ": Hp: " + str(self.get_hp()) + ", Atk: " + str(
-            self.get_atk()) + ", Def: " + str(self.get_def())
-        output += ", Class: " + str(self.get_class().title())
-        print(output)
-
-    def check_hit(self, player_luck):
-        if player_luck == 0 or player_luck == 1:
-            return True
-        else:
-            chance = randint(1, player_luck)
-            if chance >= floor(player_luck * .5):
-                return True
-            else:
-                return False
-
+    # Level Related Methods:
     def reset_stats(self):
         self.atk = self.maxAtk
-        self.spd = self.maxSpd
+        self.speed = self.maxSpeed
         self.hp = self.maxHp
         self.luck = self.maxLuck
-        self.defense = self.maxDef
 
     def give_combat_exp(self):
         if self.playerLevel <= 3:
@@ -145,16 +122,15 @@ class Player:
             self.level_up()
 
     def level_up(self):
-        # Conditionals for each class
         self.playerLevel += 1
         print("You leveled up!")
         print("You are now level " + str(self.playerLevel) + "!")
         self.maxAtk += 1
-        self.maxDef += 1
-        self.maxSpd += 1
+        self.maxSpeed += 1
         self.maxHp += 1
         self.reset_stats()
 
+    # Trophy Related Methods:
     def unlocked_trophy(self, id):
         if id in self.trophies:
             trophyObject = self.trophies[id]
@@ -175,6 +151,42 @@ class Player:
             if value["value"] is True:
                 print(value["name"])
         print(config.base_color, end='')
+
+    # Combat Related Methods:
+    def is_faster_than_enemy(self):
+        if config.player.get_speed() >= config.enemy.get_speed():
+            return True
+        else:
+            return False
+
+    def is_dead(self):
+        if config.player.get_hp() <= 0:
+            return True
+        else:
+            return False
+
+    def attacks_enemy(self, ):
+        print("You attack " + config.enemy.get_name() + "!")
+        print("You deal " + str(config.player.get_atk()) + " damage!\n")
+        config.enemy.take_hit()
+
+    def print_stats(self):
+        print(config.player.get_name() + ":\n\t HEALTH: " + str(config.player.get_hp()) +
+                                         "\n\t ATTACK: " + str(config.player.get_atk()) +
+                                         "\n\t SPEED: " + str(config.player.get_speed()) +
+                                         "\n\t CLASS: " + str(config.player.get_class()) + "\n")
+
+    def luck_is_greater_than(self, neededLuck):
+        if config.player.get_luck() >= neededLuck:
+            return True
+        else:
+            return False
+
+    def take_hit(self):
+        self.hp -= config.enemy.get_atk()
+
+    def kill_enemy(self):
+        print("You killed " + config.enemy.get_name() + "!\n")
 
     # ------Getters and Setters-----
     # Name
@@ -210,31 +222,18 @@ class Player:
     def get_max_hp(self):
         return self.maxHp
 
-    # Defense
-    def set_def(self, defin):
-        self.defense = defin
-
-    def get_def(self):
-        return self.defense
-    
-    def set_max_def(self, defIn):
-        self.maxDef = defIn
-    
-    def get_max_def(self):
-        return self.maxDef
-
     # Speed
     def set_speed(self, int):
-        self.spd = int
+        self.speed = int
 
     def get_speed(self):
-        return self.spd
+        return self.speed
 
-    def set_max_speed(self, spdIn):
-        self.maxSpd = spdIn
+    def set_max_speed(self, speedIn):
+        self.maxSpeed = speedIn
         
     def get_max_speed(self):
-        return self.maxSpd
+        return self.maxSpeed
     
     # Luck
     def set_luck(self, luckIn):
@@ -294,7 +293,6 @@ class Player:
                 "class": self.get_class(),
                 "gold": self.get_gold(),
                 "atk": self.get_atk(),
-                "def": self.get_def(),
                 "speed": self.get_speed(),
                 "luck": self.get_luck(),
                 "hp": self.get_hp(),
@@ -303,7 +301,6 @@ class Player:
                 # "inventory": self.inventory,
                 "printInventory": self.printInventory,
                 "maxAtk": self.get_max_atk(),
-                "maxDef": self.get_max_def(),
                 "maxSpeed": self.get_max_speed(),
                 "maxLuck": self.get_max_luck(),
                 "maxHp": self.get_max_hp(),

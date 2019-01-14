@@ -1,5 +1,6 @@
 from Player.PlayerClass import Player
 from Enemy.EnemyClass import Enemy
+from Combat.Combat import Combat
 import colorama as c
 
 
@@ -19,7 +20,7 @@ portalRoom = False
 enemy = Enemy(name="",
               hp=0,
               atk=0,
-              defense=0,
+              luck=0,
               speed=0)
 
 
@@ -34,9 +35,13 @@ player = Player(name="",
                 gold=0,
                 class_id="")
 
+# Combat
+combat = Combat()
+
 # Colors
 base_color = str(c.Fore.LIGHTBLUE_EX)
 talk_color = str(c.Fore.CYAN)
 die_color = str(c.Fore.RED)
 room_color = str(c.Fore.BLACK)
 trophy_color = str(c.Fore.GREEN)
+combat_color = str(c.Fore.YELLOW)
