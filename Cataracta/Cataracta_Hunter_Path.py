@@ -1,11 +1,11 @@
 from Room.Room import Room
 
 
-def hunter_path():
+def Cataracta_Hunter_Path_Logic():
     print("That's the trail hunters use to go hunt.")
     print("You should make your way to the courtyard.")
     print()
     return "go back"
 
 
-hunter_path = Room(name="", des="", id="hunter_path", directions="", on_enter=hunter_path)
+Cataracta_Hunter_Path = Room(name="", des="", id="Cataracta_Hunter_Path", directions="", on_enter=Cataracta_Hunter_Path_Logic)

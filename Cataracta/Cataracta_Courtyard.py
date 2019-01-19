@@ -4,9 +4,9 @@ from Logic.util import talk, containsAny
 import Logic.Save as save
 
 
-def courtyard_logic():
+def Cataracta_Courtyard_Logic():
     save.saveParameters()
-    courtyard.print_name()
+    Cataracta_Courtyard.print_name()
     print("You enter the courtyard and see dozens of druids training.")
     print("Suddenly, another Druid appears next to you and speaks.\n")
 
@@ -132,7 +132,7 @@ def cataracta_battle():
     print("A man donned in a dark hooded robe, holding a gray wooden staff walks out of the portal.")
     print("From behind the man floods dozens of what brutish warriors.\n")
 
-    print("Destros shouts out to you.\n")
+    print("Dentros shouts out to you.\n")
 
     talk("Agromanians! They've found us! But how?!", "\n")
 
@@ -208,36 +208,5 @@ def cataracta_battle():
     print("You look to the Cataractan castle. Now in flames and rubble.")
     print("The entire city is in ashes.\n")
 
-    print("You feel a rush of despair and anger.")
-    print("Without a soul in sight, you start walking, mostly out of instinct.")
-    print("You head from the courtyard into the ruined gates of the once beautiful Cataractan Castle.")
-    print("The blue crystals that line the hallway, called Anula, are completely shattered and in disrepair.")
-    print("You make it to the throne room and find King Kimious dead on the floor, surrounded by his "
-          "most trusted guards.\n")
 
-    talk("What hope is there against a force such as this? You think to yourself.", "\n")
-    print("You pass a room that emanates a faint glow.")
-    print("As you walk into the room, you are greeted with a large stone circle with runes on the ground.")
-    print("At the center is a silver ring with the same runes, perpendicular to the ground.")
-    print("You realise that this is one of the teleporters that were made by the Mages when the people "
-          "of Avasia united long ago.")
-    print("Called 'Rings of Malkos', these portals were installed in every major city to allow easy and quick "
-          "access from place to place.\n")
-
-    print("On the ground near the center of the ring is a golden staff")
-    print("This staff is the key to activating the portal.")
-    print("It appears as though the Agromanians had removed it from its holding place to stop forces from "
-          "Aylova from coming to help.\n")
-
-    print("Realizing that even though you'd be doing what Vashirr wants, you must warn the people of Kaefden "
-          "before they succumb to the same fate.")
-    print("You quickly grab the staff and slam it down into its holding place.")
-    print("All of the runes lining the ground and Ring of Malkos burst to life with a radiant glow.\n")
-
-    print("With your home destroyed and your people slain, you enter the portal.\n")
-
-    print("Hopefully, King Kaefden will know what to do.")
-    print("Your journey starts here.\n")
-
-
-courtyard = Room(name="Courtyard", des="", id="courtyard", directions="", on_enter=courtyard_logic)
+Cataracta_Courtyard = Room(name="Courtyard", des="", id="Cataracta_Courtyard", directions="", on_enter=Cataracta_Courtyard_Logic)

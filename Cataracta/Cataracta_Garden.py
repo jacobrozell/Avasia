@@ -4,8 +4,8 @@ from Logic.util import containsAny, talk
 import Logic.config as config
 
 
-def c_fountain_logic():
-    c_fountain.print_name()
+def Cataracta_Garden_Logic():
+    Cataracta_Garden.print_name()
     print("Around the garden are young druid children playing while their parents socialize."
           "\nIn front of you is a fountain made of the blue crystal, Anula."
           "\nThe fountain is filled with gold pieces, scattered around the base, "
@@ -46,6 +46,6 @@ def c_fountain_logic():
             return "go back"
 
 
-c_fountain = Room(name="Castle Garden", des="", id="c_fountain", directions="", on_enter=c_fountain_logic)
+Cataracta_Garden = Room(name="Castle Garden", des="", id="Cataracta_Garden", directions="", on_enter=Cataracta_Garden_Logic)
 
 

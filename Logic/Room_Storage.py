@@ -1,18 +1,15 @@
 
 # Cataracta
-from Cataracta.Althalos_House import althalos_house
-from Cataracta.Fountain import c_fountain
-from Cataracta.Courtyard import courtyard
-from Cataracta.Doran_Pier import c_pier
-from Cataracta.Fishing import fishing_room
-from Cataracta.Hunter_Path import hunter_path
-from Cataracta.Middle_Cataracta import middle_c
-from Cataracta.North_Gate import nGate
-from Cataracta.North import north_c
-from Cataracta.Southeast import southeast_c
-from Cataracta.Southwest import southwest_c
-from Cataracta.Ulrics_Blacksmith import ulric_house
-from Cataracta.West import west_cataracta
+from Cataracta.Cataracta_Athalos import Cataracta_Athalos
+from Cataracta.Cataracta_Garden import Cataracta_Garden
+from Cataracta.Cataracta_Courtyard import Cataracta_Courtyard
+from Cataracta.Cataracta_Pier import Cataracta_Pier
+from Cataracta.Cataracta_Fishing import Cataracta_Fishing
+from Cataracta.Cataracta_Hunter_Path import Cataracta_Hunter_Path
+from Cataracta.Cataracta_North import Cataracta_North
+from Cataracta.Cataracta_Housing import Cataracta_Housing
+from Cataracta.Cataracta_Blacksmith import Cataracta_Blacksmith
+
 
 
 # Nacastrum Castle

@@ -3,8 +3,8 @@ from Logic.util import talk
 import Logic.config as Config
 
 
-def alt_house_logic():
-    althalos_house.print_name()
+def Cataracta_Athalos_Logic():
+    Cataracta_Athalos.print_name()
     print("You approach Althalos' shop.")
     print(
         "\nThe sight of the " + """ "Althalos' Wares" """ + "sign sparks memories of the eccentric shopkeeper.\n")
@@ -20,4 +20,4 @@ def alt_house_logic():
     return "go back"
 
 
-althalos_house = Room(name="Althalos' House", des="", id="althalos_house", directions="", on_enter=alt_house_logic)
+Cataracta_Athalos = Room(name="Althalos' House", des="", id="Cataracta_Athalos", directions="", on_enter=Cataracta_Athalos_Logic)

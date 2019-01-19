@@ -3,8 +3,8 @@ from Logic.util import talk, containsAny
 import Logic.config as config
 
 
-def pier_logic():
-    c_pier.print_name()
+def Cataracta_Pier_Logic():
+    Cataracta_Pier.print_name()
     print("You enter the fishing hut posted along side the Varatho river.")
     print("The hut reeks of fish and bait.")
     print("Various fishing poles line the walls in all shapes, sizes, and colors.")
@@ -67,4 +67,4 @@ def pier_logic():
             talk("Simple yes or no, boy.")
 
 
-c_pier = Room(name="Doran's Pier", des="", id="c_pier", directions="", on_enter=pier_logic)
+Cataracta_Pier = Room(name="Doran's Pier", des="", id="Cataracta_Pier", directions="", on_enter=Cataracta_Pier_Logic)

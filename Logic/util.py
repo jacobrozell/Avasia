@@ -79,4 +79,4 @@ def intro():
             config.player.add_gold(100)
             config.player.give_item(item.potion)
             config.player.unlocked_trophy("startedAdventure")
-            config.current_room_id = "southwest_c"
+            config.current_room_id = "Cataracta_Housing"

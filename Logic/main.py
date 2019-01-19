@@ -158,19 +158,16 @@ def mainloop():
 
 
 # Cataracta
-register_area(room.southwest_c)
-register_area(room.althalos_house)
-register_area(room.southeast_c)
-register_area(room.ulric_house)
-register_area(room.c_pier)
-register_area(room.middle_c)
-register_area(room.c_fountain)
-register_area(room.north_c)
-register_area(room.courtyard)
-register_area(room.hunter_path)
-register_area(room.west_cataracta)
-register_area(room.nGate)
-register_area(room.fishing_room)
+register_area(room.Cataracta_Athalos)
+register_area(room.Cataracta_Blacksmith)
+register_area(room.Cataracta_Courtyard)
+register_area(room.Cataracta_Fishing)
+register_area(room.Cataracta_Garden)
+register_area(room.Cataracta_Housing)
+register_area(room.Cataracta_Hunter_Path)
+register_area(room.Cataracta_North)
+register_area(room.Cataracta_Pier)
+
 
 # Nacastrum Castle
 register_area(room.c_portal_room)

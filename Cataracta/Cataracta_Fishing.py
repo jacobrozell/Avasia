@@ -5,8 +5,8 @@ from random import randint
 from Room.Room import Room
 
 
-def fishing():
-    fishing_room.print_name()
+def Cataracta_Fishing_Logic():
+    Cataracta_Fishing.print_name()
     print("You see the rippling water surrounding you.")
     print("You feel the cool breeze of you the wind over the water.")
     bait = randint(4, 7)
@@ -109,4 +109,4 @@ def fishing():
             return "reload"
 
 
-fishing_room = Room(name="Fishing", des="", id="fishing_id", directions="", on_enter=fishing)
+Cataracta_Fishing = Room(name="Fishing", des="", id="Cataracta_Fishing", directions="", on_enter=Cataracta_Fishing_Logic)

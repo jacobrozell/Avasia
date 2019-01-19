@@ -3,9 +3,9 @@ import Logic.config as config
 from Logic.util import talk
 
 
-def ulric_logic():
+def Cataracta_Blacksmith_Logic():
     if config.ulric is False:
-        ulric_house.print_name()
+        Cataracta_Blacksmith.print_name()
         print("You go south to Ulric's Blacksmith, a small building, with stacks of metal and materials everywhere.")
         print("You approach Ulric, who is sitting on the steps of his house.")
         print("He begins talking to you.")
@@ -21,12 +21,12 @@ def ulric_logic():
             config.ulric = True
         return "go back"
     else:
-        ulric_house.print_name()
+        Cataracta_Blacksmith.print_name()
         talk("Go bother my brother. I need to get back to work.")
         print()
         return "go back"
 
 
-ulric_house = Room(name="Ulric's House", des="", id="ulrics_blacksmith", directions="", on_enter=ulric_logic)
+Cataracta_Blacksmith = Room(name="Ulric's House", des="", id="Cataracta_Blacksmith", directions="", on_enter=Cataracta_Blacksmith_Logic)
 
 
