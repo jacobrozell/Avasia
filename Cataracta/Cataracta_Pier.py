@@ -38,7 +38,7 @@ def Cataracta_Pier_Logic():
                 print("He hands you an old fishing rod and some bait then points toward the door to the pier.\n")
                 talk("Becareful not to fall in the river.")
                 talk("Varatho ain't a kind beast to those who swim her rapids.")
-                config.current_room_id = "fishing_id"
+                config.current_room_id = "Cataracta_Fishing"
                 return "reload"
             if config.ulric:
                 print("You explain to Doran that his brother, Ulric, sent you.")
@@ -51,7 +51,7 @@ def Cataracta_Pier_Logic():
                 print()
                 print("Doran hands you an old fishing rod and some bait then points you towards the door to the pier.\n")
                 config.player.unlocked_trophy("brother")
-                config.current_room_id = "fishing_id"
+                config.current_room_id = "Cataracta_Fishing"
                 config.ulric = False
                 return "reload"
         elif containsAny(ans, no):

@@ -25,6 +25,7 @@ def Cataracta_Fishing_Logic():
 
         if util.containsAny(ans, y):
             item = randint(1, 10)
+            print(config.trophy_color)
 
             # Old shoe
             if item == 1:
@@ -88,14 +89,16 @@ def Cataracta_Fishing_Logic():
                 print()
 
             bait -= 1
+            print(config.base_color)
             # When you run out of bait
             if bait == 0:
+
                 print("You ran out of bait!")
                 print("You thank Doran and return the fishing pole.")
                 print("You leave the pier.\n")
                 if config.player.trophies["fished"]["value"] is False:
                     config.player.unlocked_trophy("fished")
-                config.current_room_id = "southeast_c"
+                config.current_room_id = "Cataracta_Shopping"
                 return "reload"
             else:
                 print("It seems you have enough bait to last " + str(bait) + " casts.\n")
@@ -104,7 +107,7 @@ def Cataracta_Fishing_Logic():
         elif util.containsAny(ans, n):
             print("You thank Doran and return the fishing pole.")
             print("You leave the pier.\n")
-            config.current_room_id = "southeast_c"
+            config.current_room_id = "Cataracta_Shopping"
             return "reload"
 
 
