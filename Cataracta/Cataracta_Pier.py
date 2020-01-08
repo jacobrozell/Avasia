@@ -31,7 +31,7 @@ def Cataracta_Pier_Logic():
         yes = ["YES"]
         no = ["NO", "LEAVE"]
         if containsAny(ans, yes):
-            if config.ulric is False:
+            if config.ulric is False and config.doran is False:
                 print("You pay Doran 15 gold.")
                 config.player.subtract_gold(15)
                 config.player.print_gold()
@@ -40,7 +40,7 @@ def Cataracta_Pier_Logic():
                 talk("Varatho ain't a kind beast to those who swim her rapids.")
                 config.current_room_id = "Cataracta_Fishing"
                 return "reload"
-            if config.ulric:
+            if config.ulric is True:
                 print("You explain to Doran that his brother, Ulric, sent you.")
                 print()
                 talk("Ay', you spoke to Ulric, did ye?")
